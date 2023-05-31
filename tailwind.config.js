@@ -26,6 +26,10 @@ module.exports = {
         DEFAULT: '#f4a261',
         dark: '#e76f51'
       }
+    },
+    fontFamily: {
+      sans: ['Montserrat', 'sans-serif'],
+      serif: ['Montserrat', 'sans-serif'],
     }
   },
   plugins: [],
