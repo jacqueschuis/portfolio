@@ -1,8 +1,9 @@
 const About = () => {
     return ( 
 
-        <section id="about"  className=" my-96 ">
+        <section id="about"  className="py-10">
             <h2>About</h2>
+            <p>I'm Jacques Pariseau, a self-taught web developer. I'm an academically-trained art historian</p>
         </section>
      );
 }

@@ -34,7 +34,7 @@ module.exports = {
         'hero-lg': ['calc(50px + (120 - 50) * ((100vw - 200px) / (1440 - 200)))', {
           lineHeight: '1'
         }],
-        'hero-sm': ['calc(25px + (60 - 25) * ((100vw - 200px) / (1440 - 200)))', {
+        'hero-sm': ['calc(30px + (75 - 30) * ((100vw - 200px) / (1440 - 200)))', {
           lineHeight: '1'
         }]
       }
