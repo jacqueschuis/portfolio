@@ -115,8 +115,8 @@ body {
 }
 
 p {
-  transition: 1s;
-}
+  word-break: normal;
+  white-space: normal;}
 
 .stack-carousel__prev,
 .stack-carousel__next {
