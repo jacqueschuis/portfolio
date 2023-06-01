@@ -1,6 +1,8 @@
 const Portfolio = () => {
-    return ( 
-        <h2>Portfolio</h2>
+    return (
+        <section className="my-40" id="portfolio">
+            <h2>Portfolio</h2>
+        </section>
      );
 }
  

@@ -4,17 +4,23 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Head from "next/head";
+import Education from "@/components/Education";
+import Work from "@/components/Work";
 
 const Home = () => {
     return ( 
         <>
-        <div className="bg-white">
+        <Head>
+            <title>Jacques Pariseau</title>
+        </Head>
             <Nav />
             <Hero />
-            <About />
+            <About id='about' />
             <Portfolio />
-            <Footer />
-        </div> 
+            <Education />
+            <Work />
+            <Footer /> 
         </>
      );
 }
