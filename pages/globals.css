@@ -106,8 +106,6 @@ body {
   padding: 0.8rem 0.6rem;
   width: calc(5rem + (14 - 4) * ((100vw - 200px) / (1440 - 200)));
   height: calc(5rem + (14 - 4) * ((100vw - 200px) / (1440 - 200)));
-  border: dotted 1px #262626;
-  border-color: inherit;
 }
 
 .tech:hover p {

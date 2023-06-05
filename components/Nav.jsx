@@ -10,6 +10,11 @@ const Nav = () => {
                 <Link href='#education' className="nav-link hover-underline-animation">Education</Link>
                 <Link href='#work' className="nav-link hover-underline-animation">Work</Link>
             </div>
+            <div className="text-end text-white inline-block md:hidden text-7xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </div>
         </nav>
      );
 }

@@ -19,4 +19,3 @@ const About = () => {
  
 export default About;
 
-// md:-translate-x-1/3 md:origin-top-right md:left-0 md:top-0 md:-rotate-90 mb-4 md:mb-0
