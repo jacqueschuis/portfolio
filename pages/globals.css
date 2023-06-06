@@ -56,8 +56,14 @@ body {
   display: block;
 }
 
-.hero {
+.hero{
   background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading{
+  background: -webkit-linear-gradient(right, #e9c46a, #e76f51 );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -117,13 +123,11 @@ body {
   display: inline-block;
 }
 
-p {
-  word-break: normal;
-  white-space: normal;}
 
 .stack-carousel__prev,
 .stack-carousel__next {
   cursor: pointer;
+  position: absolute;
   width: 2rem;
   height: 2rem;
   color: inherit;

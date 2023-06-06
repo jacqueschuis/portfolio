@@ -34,7 +34,7 @@ const StackCarousel = () => {
 
     const Stack = ({name, icon, index}) => {
         return (
-            <div className="tech flex flex-col items-center justify-center">
+            <div className="tech flex flex-col items-center justify-center carousel-item">
                 <i className={`${icon} text-5xl`}></i>
                 <p className="hidden text-light absolute bottom-0 text-sm text-center text-blue-light">{name}</p>
             </div>
