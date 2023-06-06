@@ -31,6 +31,17 @@ const Work = () => {
             ]
         }, 
         {
+            place: "Atwood Museum",
+            location: "Chatham, Massachusetts",
+            title: "Curatorial Intern",
+            date: "2021",
+            description: [
+                "Conducted extensive research on historical artifacts, strengthening the quality and accuracy of a 2022 year -long exhibition",
+                "Analyzed provenance and creation details of museum collection items, elevating the overall depth and context of exhibition texts",
+                "Contributed to the final curation decisions, ensuring a cohesive and engaging experience for visitors"
+            ]
+        },
+        {
             place: "University of Massachusetts Amherst",
             location: "Amherst, Massachusetts",
             title: "Graduate Teaching Assistant",
@@ -43,6 +54,16 @@ const Work = () => {
                 "Maintained departmental website, developing content, creating signup sheets, and designing advertisements",
                 "Led the production of the department graduation video, coordinating with professors to gather content and using Final Cut Pro to edit footage"
             ]
+        },
+        {
+            place: "EtonHouse International Preschool",
+            location: "Nanjing, Jiangsu, China",
+            title: "Teacher—Art and English as an Additional Language",
+            date: "2018 – 2020",
+            description: [
+                "Served as the head English teacher for two early childhood classes and the sole art teacher for the school",
+                "Collaborated with team members to design and launch a Reggio-Emilia curriculum"
+            ]
         }
     ]
 
@@ -51,8 +72,9 @@ const Work = () => {
 
         return (
             <div className="rounded-3xl shadow-lg box-border p-10 mb-5 break-inside-avoid-column cursor-pointer" onClick={() => setVisible(!visible)}>
-                <h3 className="text-2xl font-bold text-center md:text-start">{title}, <span className="font-normal text-base italic">{date}</span></h3>
-                <div className="flex-lg:flex-row flex-col justify-between text-blue-light text-center md:text-start my-2">
+                <h3 className="text-2xl font-bold">{title}</h3>
+                <p className="font-normal text-base italic">{date}</p>
+                <div className="flex-lg:flex-row flex-col justify-between text-blue-light my-2">
                     <p>{place}</p>
                     <p>{location}</p>
                 </div>
@@ -75,9 +97,9 @@ const Work = () => {
     }
 
     return ( 
-        <section className="py-12 min-h-screen w-full flex flex-col " id="work">
-            <h2 className="section-heading font-bold  text-5xl md:text-8xl mb-2 md:mb-5">Work</h2>
-            <div className="container md:columns-2 gap-10 self-center text-blue-dark">
+        <section className="py-12 min-h-screen w-full flex flex-col" id="work">
+            <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 md:mb-5">Work</h2>
+            <div className="container lg:columns-2 2xl:columns-3 gap-10 self-center text-blue-dark">
                 {work.map((item) => (
                     <WorkEntry {...item} />
                 ))}
