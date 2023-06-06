@@ -3,7 +3,7 @@ import StackCarousel from "./StackCarousel";
 const About = () => {
     return ( 
 
-        <section id="about" className="md:py-36 py-12 h-fit w-full container md:columns-2">
+        <section id="about" className="py-12 h-screen w-full container md:columns-2">
             <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 break-after-column md:text-end md:pr-5">About</h2>
             <div className="content text-blue-dark flex flex-col flex-initial">
                 <div className="body text-2xl">
