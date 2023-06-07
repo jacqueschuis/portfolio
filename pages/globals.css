@@ -62,6 +62,12 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.subheading{
+  background: -webkit-linear-gradient(left, #264653, #2a9d8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .section-heading{
   background: -webkit-linear-gradient(right, #e9c46a, #e76f51 );
   -webkit-background-clip: text;
