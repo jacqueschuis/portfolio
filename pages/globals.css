@@ -16,10 +16,6 @@
   }
 }
 
-/* body {
-  height: 100vh;
-  min-height: -webkit-fill-available;
-} */
 
 *{
   @apply box-border;
@@ -32,10 +28,6 @@ body {
   overflow-x: hidden;
 	@apply bg-white
 }
-
-/* #__next {
-  @apply w-screen
-} */
 
 .nav-link {
   @apply text-lg;
