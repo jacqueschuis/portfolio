@@ -1,7 +1,7 @@
-import tipCalculator from '../public/images/tipCalculator.PNG'
-import ageCalculator from '../public/images/ageCalculator.PNG'
-import cssIllustration from '../public/images/cssIllustrationLandingPage.PNG'
-import randomColor from '../public/images/randomColor.PNG'
+import tipCalculator from '../public/images/tipCalculator.png'
+import ageCalculator from '../public/images/ageCalculator.png'
+import cssIllustration from '../public/images/cssIllustrationLandingPage.png'
+import randomColor from '../public/images/randomColor.png'
 
 module.exports.education = [
     {
