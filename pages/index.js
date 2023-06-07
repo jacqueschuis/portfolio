@@ -16,7 +16,7 @@ const Home = () => {
         </Head>
             <Nav />
             <Hero />
-            <About id='about' />
+            <About />
             <Portfolio />
             <Education />
             <Work />
