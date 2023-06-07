@@ -1,5 +1,4 @@
 import { frontEndMentor } from "@/data/data";
-import Image from "next/image";
 import FrontEndMentorEntry from "./FrontEndMentorEntry";
 
 const FrontEndMentor = () => {

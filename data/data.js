@@ -1,6 +1,7 @@
 import tipCalculator from '../public/images/projectScreenshots/tipCalculator.PNG'
 import ageCalculator from '../public/images/projectScreenshots/ageCalculator.PNG'
 import cssIllustration from '../public/images/projectScreenshots/cssIllustrationLandingPage.PNG'
+import randomColor from '../public/images/projectScreenshots/randomColor.PNG'
 
 module.exports.education = [
     {
@@ -100,27 +101,27 @@ module.exports.work = [
 module.exports.personalProjects = [
     {
         name: "museo",
-        screenshot: "",
-        repo: "",
-        liveSite: "",
-        description: "",
-        tools: ["MongoDB", "Atlas Search", "Express", "JS", "CSS", "Bootstrap"]
+        screenshot: randomColor,
+        repo: "https://github.com/jacqueschuis/museo",
+        liveSite: "https://museo.onrender.com",
+        description: ["",],
+        tools: ["MongoDB", "Atlas Search", "Express", "EJS", "JS", "CSS", "Bootstrap"]
     },
     {
         name: "Portfolio",
-        screenshot: "",
-        repo: "",
-        liveSite: "",
-        description: "",
+        screenshot: randomColor,
+        repo: "https://github.com/jacqueschuis/portfolio",
+        liveSite: "/",
+        description: ["",],
         tools: ["NextJS", "React", "Tailwind", "HeadlessUI", "GSAP"]
     },
     {
         name: "Random Color Generator",
-        screenshot: "/images/projectScreenshots/randomColor.PNG",
-        repo: "",
-        liveSite: "",
-        description: "",
-        tools: ["HTML, CSS, JS, Bootstrap"]
+        screenshot: randomColor,
+        repo: "https://github.com/jacqueschuis/simple-color-generator",
+        liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
+        description: ["",],
+        tools: ["HTML", "CSS", "JS", "Bootstrap"]
     },
 ]
 
