@@ -1,5 +1,4 @@
 import { Transition } from "@headlessui/react";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -7,10 +6,10 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,challenge,descripti
     const [visible, setVisible] = useState(false);
 
         return (
-            <div className="rounded-3xl shadow-lg box-border p-10 mb-5 break-inside-avoid-column">
+            <div className="rounded-3xl shadow-lg box-border p-10 mb-5 break-inside-avoid-column flex flex-col">
                 <h3 onClick={() => setVisible(!visible)} className="transition-all cursor-pointer text-2xl font-bold mb-2 hover:text-blue-light">{name}</h3>
-                <Link href={liveSite}>
-                    <Image src={screenshot} className="rounded-3xl" />
+                <Link className="self-center" href={liveSite}>
+                    <img src={screenshot} className="rounded-3xl mb-5" />
                 </Link>
                 <div className="flex flex-row justify-between font-bold text-blue-light my-2">
                     <Link href={repo}>

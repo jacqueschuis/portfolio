@@ -1,10 +1,3 @@
-import tipCalculator from "../public/images/tipCalculator.png";
-import ageCalculator from "../public/images/ageCalculator.png";
-import cssIllustration from "../public/images/cssIllustrationLandingPage.png";
-import randomColor from "../public/images/randomColor.png";
-import portfolio from "../public/images/portfolio.png";
-import museo from "../public/images/museo.png";
-
 module.exports.education = [
   {
     institution: "University of Massachusetts Amherst",
@@ -103,7 +96,7 @@ module.exports.work = [
 module.exports.personalProjects = [
   {
     name: "museo",
-    screenshot: museo,
+    screenshot: "/images/museo.png",
     repo: "https://github.com/jacqueschuis/museo",
     liveSite: "https://museo.onrender.com",
     description: [
@@ -126,7 +119,7 @@ module.exports.personalProjects = [
   },
   {
     name: "Portfolio",
-    screenshot: portfolio,
+    screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
     liveSite: "/",
     description: [
@@ -137,7 +130,7 @@ module.exports.personalProjects = [
   },
   {
     name: "Random Color Generator",
-    screenshot: randomColor,
+    screenshot: "/images/randomColor.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
     description: [
@@ -152,7 +145,7 @@ module.exports.personalProjects = [
 module.exports.frontEndMentor = [
   {
     name: "Tip Calculator",
-    screenshot: tipCalculator,
+    screenshot: "/images/tipCalculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
     challenge:
@@ -166,7 +159,7 @@ module.exports.frontEndMentor = [
   },
   {
     name: "CSS Illustration",
-    screenshot: cssIllustration,
+    screenshot: "/images/cssIllustrationLandingPage.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
     challenge:
@@ -179,7 +172,7 @@ module.exports.frontEndMentor = [
   },
   {
     name: "Age Calculator",
-    screenshot: ageCalculator,
+    screenshot: "/images/ageCalculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
     challenge:
