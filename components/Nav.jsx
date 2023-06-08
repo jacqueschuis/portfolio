@@ -3,6 +3,7 @@ import NavLinks from "./NavLinks";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 
+
 const Nav = () => {
     const [visible, setVisible] = useState(false);   
 

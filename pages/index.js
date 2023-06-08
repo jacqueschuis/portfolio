@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import Education from "@/components/Education";
 import Work from "@/components/Work";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 const Home = () => {
     return ( 
@@ -20,7 +22,8 @@ const Home = () => {
             <Portfolio />
             <Education />
             <Work />
-            <Footer /> 
+            <ScrollToTop />
+            <Footer />
         </>
      );
 }

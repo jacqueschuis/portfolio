@@ -1,12 +1,13 @@
-import Link from "next/link";
+let Scroll = require('react-scroll');
+let scroller = Scroll.scroller;
 
 const NavLinks = () => {
     return ( 
         <>
-            <Link href='#about' className="nav-link hover-underline-animation">About</Link>
-            <Link href='#portfolio' className="nav-link hover-underline-animation">Portfolio</Link>
-            <Link href='#education' className="nav-link hover-underline-animation">Education</Link>
-            <Link href='#work' className="nav-link hover-underline-animation">Work</Link>
+            <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('about', {smooth: true})}}>About</a>
+            <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('portfolio', {smooth: true})}}>Portfolio</a>
+            <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('education', {smooth: true})}}>Education</a>
+            <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('work', {smooth: true})}}>Work</a>
         </>
      );
 }
