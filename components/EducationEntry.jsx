@@ -32,10 +32,16 @@ const EducationEntry = ({institution, degree, subject, location, years, speciali
                                     leaveFrom='opacity-100 translate-y-0'
                                     leaveTo='opacity-0 -translate-y-1'>
                                     {description.map((entry) => (
-                                        <li className="mb-2">{entry}</li>
+                                        <li className="mb-2" key={entry.index}>{entry}</li>
                                     ))}
                                 </Transition.Child>
                             </ul>
+                            <div className="w-full h-[50px] text-orange-dark flex items-end justify-center leading-none ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="transition-all hover:text-orange-light cursor-pointer" onClick={() => setVisible(!visible)}>
+                                    <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                                </svg>
+                            </div>
+                            
                         </div>
                 </Transition>
             </div>

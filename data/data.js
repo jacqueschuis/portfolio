@@ -121,7 +121,7 @@ module.exports.personalProjects = [
     name: "Portfolio",
     screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
-    liveSite: "/",
+    liveSite: "https://portfolio-jacqueschuis.vercel.app/",
     description: [
       "Serverless NextJS app for everything about me",
       "HeadlessUI and GSAP for animations and transitions",
