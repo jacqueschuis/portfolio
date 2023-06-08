@@ -130,7 +130,7 @@ module.exports.personalProjects = [
   },
   {
     name: "Random Color Generator",
-    screenshot: "/images/randomColor.png",
+    screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
     description: [
@@ -145,7 +145,7 @@ module.exports.personalProjects = [
 module.exports.frontEndMentor = [
   {
     name: "Tip Calculator",
-    screenshot: "/images/tipCalculator.png",
+    screenshot: "/images/tip-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
     challenge:
@@ -159,7 +159,7 @@ module.exports.frontEndMentor = [
   },
   {
     name: "CSS Illustration",
-    screenshot: "/images/cssIllustrationLandingPage.png",
+    screenshot: "/images/css-landing.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
     challenge:
@@ -172,7 +172,7 @@ module.exports.frontEndMentor = [
   },
   {
     name: "Age Calculator",
-    screenshot: "/images/ageCalculator.png",
+    screenshot: "/images/age-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
     challenge:
