@@ -36,6 +36,9 @@ module.exports = {
         }],
         'hero-sm': ['calc(30px + (75 - 30) * ((100vw - 200px) / (1440 - 200)))', {
           lineHeight: '1'
+        }],
+        'hamburger': ["calc(50px + (75 - 50) * ((100vw - 100px) / (800 - 200)))", {
+          lineHeight: '1'
         }]
       }
     },
