@@ -3,10 +3,19 @@ import { Transition } from "@headlessui/react";
 
 const WorkEntry = ({place, location, title, date, description}) => {
     const [visible, setVisible] = useState(false);
+
+    const classes = visible ? "rotate-0 transition-all hover:text-orange-light cursor-pointer" : "rotate-180 transition-all hover:text-orange-light cursor-pointer"
     
     return (
         <div className="rounded-3xl shadow-lg box-border p-10 mb-5 break-inside-avoid-column " >
-            <h3 onClick={() => setVisible(!visible)} className="cursor-pointer text-2xl font-bold transition-all hover:text-blue-light">{title}</h3>
+            <div className="flex h-full justify-between items-center relative">
+                <h3 onClick={() => setVisible(!visible)} className="w-3/4 cursor-pointer text-2xl font-bold transition-all hover:text-blue-light">{title}</h3>
+                <div className="absolute flex items-center justify-center w-[40px] h-[40px] md:w-[50px] md:h-[50px]  text-orange-dark transition-all hover:text-orange-light cursor-pointer right-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className={classes} onClick={() => setVisible(!visible)}>
+                        <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                    </svg>
+                </div> 
+            </div>
             <p className="font-normal text-base italic">{date}</p>
             <div className="flex-lg:flex-row flex-col justify-between text-blue-light my-2">
                 <p>{place}</p>
@@ -34,6 +43,15 @@ const WorkEntry = ({place, location, title, date, description}) => {
                     ))}
                 </Transition.Child>
             </ul>
+            </Transition>
+            <Transition
+            show={visible}
+            enter='transition ease-out duration-200'
+            enterFrom='scale-0'
+            enterTo='scale-100'
+            leave='transition ease-in duration-150'
+            leaveFrom='scale-100'
+            leaveTo='scale-0'>
             <div className="w-full h-[50px] text-orange-dark flex items-end justify-center leading-none ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="transition-all hover:text-orange-light cursor-pointer" onClick={() => setVisible(!visible)}>
                     <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>

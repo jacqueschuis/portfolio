@@ -99,17 +99,18 @@ module.exports.personalProjects = [
     screenshot: "/images/museo.png",
     repo: "https://github.com/jacqueschuis/museo",
     liveSite: "https://museo.onrender.com",
+    summary: "Full-stack application for finding inspiration",
     description: [
-      "Full-stack application for finding inspiration",
       "4 interconnected data models",
       "MasonryJS, Flickity, VanillaTilt, ImagesLoaded library integration",
       "Robust JOI data validation",
-      "Atlas Search querying for filtering each type of data and site-wide search",
-      "Built primarily with Bootstrap, but significant amounts of custom CSS was required to style the app",
+      "Atlas Search for filtering each type of data and searching app-wide",
+      "Responsive design through Bootstrap",
+      "Custom CSS for cohesive design",
     ],
     tools: [
       "MongoDB",
-      "Atlas Search",
+      "Atlas",
       "Express",
       "EJS",
       "JS",
@@ -122,8 +123,8 @@ module.exports.personalProjects = [
     screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
     liveSite: "https://portfolio-jacqueschuis.vercel.app/",
+    summary: "Serverless NextJS app for everything about me",
     description: [
-      "Serverless NextJS app for everything about me",
       "HeadlessUI and GSAP for animations and transitions",
     ],
     tools: ["NextJS", "React", "Tailwind", "HeadlessUI", "GSAP"],
@@ -133,10 +134,11 @@ module.exports.personalProjects = [
     screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
+    summary: 'Widget application for generating random HEX or RGB colors',
     description: [
-      "Widget application for generating random HEX or RGB colors through a Javascript class",
-      "Dynamic page styling depending on the color generated",
-      "Translation of your random colors between HEX and RGB systems with custom JS functions",
+      "DOM manipulation for dynamic page styling based on results",
+      "Translation between HEX and RGB systems",
+      "Javascript Class functions for simplifying code/all functionality"
     ],
     tools: ["HTML", "CSS", "JS", "Bootstrap"],
   },
@@ -150,8 +152,9 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX",
+      summary: 'Widget for calculating the tip/total cost per person',
     description: [
-      "Tip calculator with custom validation and error handling",
+      "Custom validation and error handling",
       "Responsive design through CSS flexbox and grid",
       "Live-updating results through custom event handlers",
     ],
@@ -164,8 +167,8 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY",
+    summary: 'Landing page made completely with CSS',
     description: [
-      "Responsive landing page design written completely with vanilla CSS",
       "Extensive usage of 'calc( )' and CSS flexbox for responsive sizing",
     ],
     tools: ["HTML", "CSS", "JS"],
@@ -177,8 +180,10 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q",
+    summary: 'Age calculator widget',
     description: [
-      "Responsive age calculator widget with custom data validation and error handling",
+      "Responsive design with custom CSS", 
+      "Custom data validation and error handling",
     ],
     tools: ["HTML", "CSS", "JS"],
   },
