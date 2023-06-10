@@ -5,10 +5,10 @@ const PersonalProjects = () => {
     return ( 
         <section className="py-12 w-full h-fit flex flex-col">
             <div className="container flex flex-col self-center">
-                <h2 className="subheading font-bold text-3xl md:text-5xl mb-2 md:mb-5">Personal Projects</h2>
-                <div className="container lg-columns-2 2xl:columns-3 gap-10 justify-self-center self-center text-blue-dark">
+                <h3 className="subheading font-bold text-3xl md:text-5xl mb-2 md:mb-5">Personal Projects</h3>
+                <div className="container lg:columns-2 2xl:columns-3 gap-10 justify-self-center self-center text-blue-dark">
                     {personalProjects.map((item) => (
-                        <PersonalProjectEntry{...item} />
+                        <PersonalProjectEntry {...item} />
                     ))}
                 </div>
             </div>

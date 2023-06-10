@@ -108,15 +108,7 @@ module.exports.personalProjects = [
       "Responsive design through Bootstrap",
       "Custom CSS for cohesive design",
     ],
-    tools: [
-      "MongoDB",
-      "Atlas",
-      "Express",
-      "EJS",
-      "JS",
-      "CSS",
-      "Bootstrap",
-    ],
+    tools: ["MongoDB", "Express", "EJS", "JS", "Bootstrap"],
   },
   {
     name: "Portfolio",
@@ -124,23 +116,21 @@ module.exports.personalProjects = [
     repo: "https://github.com/jacqueschuis/portfolio",
     liveSite: "https://portfolio-jacqueschuis.vercel.app/",
     summary: "Serverless NextJS app for everything about me",
-    description: [
-      "HeadlessUI and GSAP for animations and transitions",
-    ],
-    tools: ["NextJS", "React", "Tailwind", "HeadlessUI", "GSAP"],
+    description: ["HeadlessUI and GSAP for animations and transitions"],
+    tools: ["NextJS", "Tailwind", "GSAP"],
   },
   {
     name: "Random Color Generator",
     screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
-    summary: 'Widget application for generating random HEX or RGB colors',
+    summary: "Widget application for generating random HEX or RGB colors",
     description: [
       "DOM manipulation for dynamic page styling based on results",
       "Translation between HEX and RGB systems",
-      "Javascript Class functions for simplifying code/all functionality"
+      "Javascript Class functions for simplifying code/all functionality",
     ],
-    tools: ["HTML", "CSS", "JS", "Bootstrap"],
+    tools: ["HTML", "JS", "Bootstrap"],
   },
 ];
 
@@ -152,7 +142,7 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX",
-      summary: 'Widget for calculating the tip/total cost per person',
+    summary: "Widget for calculating the tip/total cost per person",
     description: [
       "Custom validation and error handling",
       "Responsive design through CSS flexbox and grid",
@@ -167,7 +157,7 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY",
-    summary: 'Landing page made completely with CSS',
+    summary: "Landing page made completely with CSS",
     description: [
       "Extensive usage of 'calc( )' and CSS flexbox for responsive sizing",
     ],
@@ -180,9 +170,9 @@ module.exports.frontEndMentor = [
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
     challenge:
       "https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q",
-    summary: 'Age calculator widget',
+    summary: "Age calculator widget",
     description: [
-      "Responsive design with custom CSS", 
+      "Responsive design with custom CSS",
       "Custom data validation and error handling",
     ],
     tools: ["HTML", "CSS", "JS"],
