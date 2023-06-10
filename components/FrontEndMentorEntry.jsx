@@ -62,7 +62,7 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,challenge,descripti
 
                 <div className="flex flex-row items-between font-bold my-2">
                     <h4 className="font-bold text-blue-dark">Links:</h4>
-                    <div className="flex justify-end w-full gap-5 text-blue-light">
+                    <div className="flex flex-wrap box-border pl-5 justify-end w-full gap-5 text-blue-light">
                     <Link href={repo}>
                         <p className="transition-all hover:text-blue-dark">GitHub</p>
                     </Link>
