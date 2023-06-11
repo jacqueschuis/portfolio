@@ -4,19 +4,25 @@ let Scroll = require('react-scroll');
 let Element = Scroll.Element;
 
 const Contact = () => {
+
+const user = 'jacquespariseau93'
+const domain = 'gmail.com'
+  
     return ( 
         <Element name="contact">
-            <section id="contact" className="py-12 w-full relative text-white">
+            <section id="contact" className="py-12 w-full relative text-white bg-gradient-to-r from-blue-light via-orange-light to-orange-dark">
                 <div className="md:px-16 px-5 mb-20 flex flex-col">
                     <h2 className="font-bold text-5xl md:text-8xl mb-6 md:mb-10">Contact</h2>
-                    <div className="self-center flex sm:flex-row gap-5 justify-center flex-col">
-                        <p className='w-full sm:w-1/3 md:w-1/2 lg:w-2/5 text-2xl leading-relaxed  text-center md:text-end'>I am open to all work opportunities; feel free to contact me with the following form, and I will get back to you!</p>
-                        <form action="" className="md:w-1/2 xl:w-1/4 flex flex-col justify-center gap-3" >
-                            <input placeholder='Name' type="text" className='transition-all form-input bg-transparent border border-white rounded-lg py-2 pl-4 focus:border-white !ring-0 focus:shadow-sm focus:shadow-white placeholder:text-white' />
-                            <input placeholder='Email' type="email" className='transition-all form-input bg-transparent border border-white rounded-lg py-2 pl-4 focus:border-white !ring-0 focus:shadow-sm focus:shadow-white placeholder:text-white' />
-                            <textarea placeholder='Message' rows={4} className='transition-all form-textarea bg-transparent border border-white rounded-lg py-2 pl-4 focus:border-white !ring-0 focus:shadow-sm focus:shadow-white placeholder:text-white' />
-                            <button className="transition-all box-border p-3 bg-transparent text-white rounded-lg border border-white self-end hover:bg-white hover:text-blue-dark">Submit</button>
-                        </form>
+                    <div className="container self-center w-full flex flex-col md:flex-row gap-5 md:gap-16 justify-center items-center">
+                        <p className='md:w-[500px] text-xl leading-relaxed text-center md:text-end'>I am open to all work opportunities and happy to respond to any questions/comment. Feel free to contact me by email:</p>
+                        <div className="flex items-center justify-center">
+                            <a href={`mailto:${user}@${domain}`} className='text-white transition-all hover:text-blue-dark'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" className="w-28 ">
+                                    <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+                                    <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <Footer />

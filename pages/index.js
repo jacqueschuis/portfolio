@@ -16,7 +16,10 @@ const Home = () => {
       <Head>
         <title>Jacques Pariseau</title>
       </Head>
-      <div className="md:px-16 px-5 flex flex-col ">
+      <div
+        id="top-section"
+        className="md:px-16 px-5 flex flex-col bg-white relative shadow-2xl"
+      >
         <Nav />
         <Hero />
         <About />
@@ -24,8 +27,10 @@ const Home = () => {
         <Education />
         <Work />
       </div>
-      <Contact />
-      <ScrollToTop />
+      <div id="bottom-section" className="relative">
+        <Contact />
+        <ScrollToTop />
+      </div>
     </>
   );
 };

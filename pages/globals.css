@@ -47,14 +47,23 @@ body {
   display: block;
 }
 
+#top-section,
+#bottom-section {
+  transform-style: preserve-3d;
+}
+
+#top-section {
+  z-index: 1;
+}
+
+#bottom-section {
+  z-index: 0;
+}
+
 .hero {
   background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-#contact {
-  background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51);
 }
 
 .subheading {
@@ -141,12 +150,6 @@ body {
   padding-left: 0.1rem;
   border: none;
   border-color: inherit;
-}
-
-svg {
-  width: 50%;
-  height: 50%;
-  color: inherit;
 }
 
 .stack-carousel__next {

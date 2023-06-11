@@ -43,15 +43,7 @@ module.exports = {
             lineHeight: "1",
           },
         ],
-        hamburger: [
-          "calc(50px + (75 - 50) * ((100vw - 100px) / (800 - 200)))",
-          {
-            lineHeight: "1",
-          },
-        ],
       },
     },
   },
-
-  plugins: [require("@tailwindcss/forms")],
 };
