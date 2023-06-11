@@ -8,6 +8,7 @@ const NavLinks = () => {
             <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('portfolio', {smooth: true})}}>Portfolio</a>
             <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('education', {smooth: true})}}>Education</a>
             <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('work', {smooth: true})}}>Work</a>
+            <a className="nav-link hover-underline-animation" onClick={() => {scroller.scrollTo('contact', {smooth: true})}}>Contact</a>
         </>
      );
 }
