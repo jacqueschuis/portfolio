@@ -29,8 +29,8 @@ const Home = () => {
       </div>
       <div id="bottom-section" className="relative">
         <Contact />
-        <ScrollToTop />
       </div>
+      <ScrollToTop />
     </>
   );
 };

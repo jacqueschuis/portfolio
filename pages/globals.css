@@ -60,6 +60,10 @@ body {
   z-index: 0;
 }
 
+#scroll-to-top {
+  z-index: 2;
+}
+
 .hero {
   background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51);
   -webkit-background-clip: text;
