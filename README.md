@@ -81,8 +81,7 @@ My portfolio is functionally complete. Everything works and looks good, but I do
 
 I have incorporated basic transitions through Headless UI into many of the dynamic elements, but I would like to incorporate a larger animation library to make the entire app feel more dynamic. I've also used React Scroll to make all of my links more interesting to use. I'd like to add:
 
-- Animations for the expandable divs to grow as opposed to just appearing larger/smaller
-- Some sort of hover/on load animation for the hero text
+- Some sort of hover/on-load animation for the hero text
 - Potentially a parallax effect on the entries
 
 I've experimented with a couple of different ones, but I'm pushing this addition off until I've done more research/testing. GSAP feels like it might be the most likely contender, but I'm considering Framer Motion and React Spring as well.

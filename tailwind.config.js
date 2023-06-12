@@ -44,6 +44,9 @@ module.exports = {
           },
         ],
       },
+      transitionTimingFunction: {
+        'custom-in-out': 'cubic-bezier(.85,.14,.17,.83)'
+      }
     },
   },
 };
