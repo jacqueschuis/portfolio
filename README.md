@@ -2,7 +2,7 @@
 
 ![](./public/images/portfolio.png)
 
-##[live site](https://j-par.com)
+## [live site](https://j-par.com)
 
 ## Table of Contents
 
@@ -79,7 +79,13 @@ My portfolio is functionally complete. Everything works and looks good, but I do
 
 1. Animation/Transitions
 
-I have incorporated basic transitions through Headless UI into many of the dynamic elements, but I would like to incorporate a larger animation library to make the entire app feel more dynamic. I'd like the expandable divs to grow as opposed to just appearing larger/smaller. I'd like some sort of hover animation on the hero text. I'd potentially like a parallax effect on the entries. I've experimented with a couple of different ones, but I'm pushing this addition off until I've done more research/testing. GSAP feels like it might be the most likely contender, but I'm considering Framer Motion and React Spring as well.
+I have incorporated basic transitions through Headless UI into many of the dynamic elements, but I would like to incorporate a larger animation library to make the entire app feel more dynamic. I've also used React Scroll to make all of my links more interesting to use. I'd like to add:
+
+- Animations for the expandable divs to grow as opposed to just appearing larger/smaller
+- Some sort of hover/on load animation for the hero text
+- Potentially a parallax effect on the entries
+
+I've experimented with a couple of different ones, but I'm pushing this addition off until I've done more research/testing. GSAP feels like it might be the most likely contender, but I'm considering Framer Motion and React Spring as well.
 
 ## Author
 
