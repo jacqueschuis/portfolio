@@ -7,8 +7,11 @@ import Education from "@/components/Education";
 import Work from "@/components/Work";
 import ScrollToTop from "@/components/ScrollToTop";
 import Contact from "@/components/Contact";
+import { useWindowScroll } from "react-use";
 
 const Home = () => {
+  const {x, y} = useWindowScroll();
+
   return (
     <>
       <Head>
@@ -28,7 +31,7 @@ const Home = () => {
       <div id="bottom-section" className="relative">
         <Contact />
       </div>
-      <ScrollToTop />
+      <ScrollToTop y={y} />
     </>
   );
 };
