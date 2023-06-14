@@ -1,4 +1,12 @@
+import { useState } from "react";
+import { useTrail, animated } from "@react-spring/web";
+
 const Hero = () => {
+    const [state, setState] = useState(true);
+
+    const items = ["jacques", "pariseau"];
+    const config = {mass: 5, tension: 2000, friction: 200};
+
     return (
         <section className="hero flex flex-col items-center w-full md:my-10 h-fit py-36">
             <h1 className="font-bold text-hero-lg flex flex-col"><span className="name">Jacques</span><span className="name">Pariseau</span></h1>

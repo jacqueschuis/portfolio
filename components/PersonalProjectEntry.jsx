@@ -59,7 +59,7 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, summar
 
                 <div className="w-full bg-orange-dark box-border rounded-xl text-white transition-all hover:bg-orange my-5 p-2 cursor-pointer" onClick={visible ? handleHide : handleShow}>
                     <p className="font-bold text-center">
-                        {!visible && `Details`}{visible && `Hide`}
+                        {visible ? `Hide` : `Details`}
                     </p>
                     <animated.div style={{...detailsSpring}}>
                         <ul className="list-inside list-disc mt-2">
