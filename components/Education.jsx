@@ -1,9 +1,11 @@
 import { education } from "@/data/data";
 import EducationEntry from "./EducationEntry";
+import { useState } from "react";
 let Scroll = require('react-scroll');
 let Element = Scroll.Element;
 
 const Education = () => {
+    const[isFocus, setIsFocus] = useState(false);
 
     return ( 
         <Element name="education">

@@ -1,40 +1,50 @@
 import { useState } from "react"
-import { Transition } from "@headlessui/react";
+import {useSpring, animated} from '@react-spring/web';
 
 const WorkEntry = ({place, location, title, date, description}) => {
     const [visible, setVisible] = useState(false);
+
+    const [detailsSpring, api] = useSpring(() => ({
+        from: { maxHeight: '0px', opacity: 0, overflow: 'hidden'},
+    }))
+
+    const handleShow = () => {
+        api.start({
+            from: {maxHeight: '0px', opacity: 0},
+            to: {maxHeight: '1000px', opacity: 1}
+        });
+        setVisible(!visible);
+    };
+
+    const handleHide = () => {
+        api.start ({
+            from: {maxHeight: '1000px', opacity: 1},
+            to: {maxHeight: '0px', opacity: 0,}
+        });
+        setVisible(!visible);
+    }
     
     return (
-        <div className="rounded-3xl shadow-lg box-border p-10 mb-5 break-inside-avoid-column " >
-            <div className="flex h-full justify-between items-center relative">
-                <h3 onClick={() => setVisible(!visible)} className="w-full cursor-pointer text-2xl font-bold transition-all hover:text-blue-light">{title}</h3>
+        <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid-column" >
+            <div className="flex justify-between items-center relative">
+                <h3 onClick={visible ? handleHide : handleShow} className="w-full cursor-pointer text-2xl font-bold transition-all hover:text-blue-light">{title}</h3>
             </div>
             <p className="font-normal text-base italic">{date}</p>
-            <div className="flex-lg:flex-row flex-col justify-between text-blue-light my-5">
+            <div className="flex lg:flex-row flex-col justify-between text-blue-light my-5">
                 <p>{place}</p>
                 <p>{location}</p>
             </div>
-            <div className="w-full bg-orange-dark box-border rounded-3xl text-white transition-all hover:bg-orange p-2 text-center cursor-pointer" onClick={() => setVisible(!visible)}>
-                <p className="font-bold">
+            <div className="w-full bg-orange-dark box-border rounded-xl text-white transition-all hover:bg-orange my-5 p-2 cursor-pointer" onClick={visible ? handleHide : handleShow}>
+                <p className="font-bold text-center">
                     {!visible && `Details`}{visible && `Hide`}
                 </p>
-                <Transition
-                    show={visible}
-                    className="transition-all overflow-hidden"
-                    enter="duration-300 ease-in"
-                    enterFrom="transform max-h-0"
-                    enterTo="transform max-h-[9999px]"
-                    leave="duration-200 ease-out"
-                    leaveFrom="transform max-h-[9999px]"
-                    leaveTo="transform max-h-0">
-                <div className="mt-5 box-border px-3">
-                    <ul className="list-inside list-disc mb-5">
+                <animated.div style={{...detailsSpring}}>
+                    <ul className="list-inside list-disc mt-2">
                         {description.map((entry) => (
-                            <li className="mb-2" key={entry.index}>{entry}</li>
+                            <li className="mb-1 pl-3" key={entry.index}>{entry}</li>
                         ))}
                     </ul>
-                </div>
-                </Transition>
+                </animated.div>
             </div>
         </div>
     )
