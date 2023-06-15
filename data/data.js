@@ -104,8 +104,9 @@ module.exports.personalProjects = [
     liveSite: "https://museo.onrender.com",
     description: [
       "Full-stack Node application with an Express backend and MongoDB",
-      "4 interconnected data models",
+      "4 interconnected MongoDB data models",
       "MasonryJS, Flickity, VanillaTilt, ImagesLoaded library integration",
+      "User authentication through Passport JS",
       "Extensive use of EJS templating with conditionals",
       "Robust JOI data validation",
       "Atlas Search for filtering each type of data and searching app-wide",
