@@ -7,7 +7,7 @@ let scroller = Scroll.scroller;
 const About = () => {
     return ( 
         <Element name="about" id="about">
-            <section  className="py-12 min-h-screen w-full flex flex-col">
+            <section  className="py-12 mb-20 w-full flex flex-col">
                 <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 break-after-column">About</h2>
                 <div className="content text-blue-dark flex flex-col container self-center rounded-3xl shadow-lg box-border p-10">
                     <ul className="body text-2xl list-inside">

@@ -6,7 +6,7 @@ let Element = Scroll.Element;
 const Portfolio = () => {
     return (
         <Element name="portfolio">
-            <section className="py-12 min-h-screen w-full" id="portfolio">
+            <section className="py-12 mb-20  w-full" id="portfolio">
                 <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 md:mb-5">Portfolio</h2>
 
                 <PersonalProjects />

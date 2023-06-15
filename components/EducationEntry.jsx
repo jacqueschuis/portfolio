@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useSpring, animated} from '@react-spring/web';
 
-const EducationEntry = ({institution, degree, subject, location, years, specialization, description}) => {
+const EducationEntry = ({institution, degree, subject, location, years, specialization, description, specialEvent, specialEventDescription}) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [expand, expandApi] = useSpring(() => ({
@@ -48,11 +48,21 @@ const EducationEntry = ({institution, degree, subject, location, years, speciali
 
                     <animated.div style={expand}>
                         <p className="my-2 pl-5"><span className="font-bold">Specializations:</span> {specialization}</p>
-                        <ul className="list-inside list-disc">
+                        <ul className="list-inside list-disc mb-2">
                             {description.map((entry) => (
                                 <li className="mb-1 pl-5" key={entry.index}>{entry}</li>
                             ))}
                         </ul>
+                        {specialEvent &&
+                            <p className="mb-2 pl-5 font-bold">{specialEvent}</p>
+                        }
+                        {specialEventDescription && 
+                            <ul className="list-inside list-disc">
+                            {specialEventDescription.map((entry) => (
+                                <li className="mb-1 pl-5" key={entry.index}>{entry}</li>
+                            ))}
+                        </ul>
+                        }
                     </animated.div>
                 </div>
             </div>
