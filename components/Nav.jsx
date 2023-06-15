@@ -5,27 +5,20 @@ import { useSpring, animated } from "@react-spring/web";
 
 
 const Nav = () => {
-    const [visible, setVisible] = useState(false);
-    
-    const [detailsSpring, api] = useSpring(() => ({
-        from: { maxHeight: '0px', opacity: 0, overflow: 'hidden'}
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const [expand, expandApi] = useSpring(() => ({
+        maxHeight: isExpanded ? '1000px' : '0px',
+        opacity: isExpanded ? 1 : 0,
+        overflow: 'hidden'
     }))
 
-    const handleShow = () => {
-        api.start({
-            from: {maxHeight: '0px', opacity: 0},
-            to: {maxHeight: '1000px', opacity: 1}
+    const handleClick = () => {
+        expandApi.start({
+            maxHeight: isExpanded ? '0px' : '1000px',
+            opacity: isExpanded ? 0 : 1,
         });
-        setVisible(!visible);
-
-    };
-
-    const handleHide = () => {
-        api.start ({
-            from: {maxHeight: '1000px', opacity: 1},
-            to: {maxHeight: '0px', opacity: 0}
-        });
-        setVisible(!visible);
+        setIsExpanded(!isExpanded);
     }
 
 
@@ -39,14 +32,14 @@ const Nav = () => {
                             <div className="pr-10 hidden md:flex gap-9 text-white font-thin">
                                 <NavLinks />
                             </div>
-                            <div className="hamburger text-end text-white inline-block md:hidden pr-5" onClick={visible ? handleHide : handleShow}>
+                            <div className="hamburger text-end text-white inline-block md:hidden pr-5" onClick={handleClick}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" className="w-10">
                                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                                 </svg>
                             </div>
                         </div>
                     </div>
-                    <animated.div className="w-full h-fit rounded-xl flex md:hidden flex-col items-center gap-1 text-white font-thin" style={{...detailsSpring}}>
+                    <animated.div className="w-full h-fit rounded-xl flex md:hidden flex-col items-center gap-1 px-5 text-white font-thin" style={expand}>
                         <NavLinks />
                     </animated.div>
                 </nav>

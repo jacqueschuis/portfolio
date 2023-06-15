@@ -1,10 +1,10 @@
 module.exports.education = [
   {
-    institution: "University of Massachusetts Amherst",
+    institution: "UMass Amherst",
     degree: "Master of Arts",
     subject: "History of Art and Architecture",
     years: "2020 – 2022",
-    location: "Amherst, Massachusetts",
+    location: "Amherst, MA, USA",
     specialization: "Ancient Roman Art, Nineteenth Century Art",
     description: [
       "Selected as one of only three students to receive a full scholarship to the Master of Arts program",
@@ -20,7 +20,7 @@ module.exports.education = [
     degree: "Bachelor of Arts",
     subject: "Studio Art, Art History",
     years: "2014 – 2018",
-    location: "Greenville, South Carolina",
+    location: "Greenville, SC, USA",
     specialization: "Graphic Design, Painting, Photography",
     description: [
       "Served as the Keynote Speaker at Furman Engaged, delivering a presentation on moral relativism to an audience of approximately 50 attendees",
@@ -32,7 +32,7 @@ module.exports.education = [
 module.exports.work = [
   {
     place: "Bertera Auto Group",
-    location: "West Springfield, Massachusetts",
+    location: "West Springfield, MA, USA",
     title: "Digital Marketing Specialist",
     date: "2023 – Present",
     description: [
@@ -46,7 +46,7 @@ module.exports.work = [
   },
   {
     place: "Fleet Feet",
-    location: "Longmeadow, Massachusetts",
+    location: "Longmeadow, MA, US",
     title: "Marketing and Community Outreach Coordinator",
     date: "2022 – 2023",
     description: [
@@ -58,7 +58,7 @@ module.exports.work = [
   },
   {
     place: "Atwood Museum",
-    location: "Chatham, Massachusetts",
+    location: "Chatham, MA, US",
     title: "Curatorial Intern",
     date: "2021",
     description: [
@@ -68,8 +68,8 @@ module.exports.work = [
     ],
   },
   {
-    place: "University of Massachusetts Amherst",
-    location: "Amherst, Massachusetts",
+    place: "UMass Amherst",
+    location: "Amherst, MA, USA",
     title: "Graduate Teaching Assistant",
     date: "2020 – 2022",
     description: [
@@ -82,7 +82,7 @@ module.exports.work = [
     ],
   },
   {
-    place: "EtonHouse International Preschool",
+    place: "EtonHouse International School",
     location: "Nanjing, Jiangsu, China",
     title: "Teacher—Art and English as an Additional Language",
     date: "2018 – 2020",
@@ -99,32 +99,35 @@ module.exports.personalProjects = [
     screenshot: "/images/museo.png",
     repo: "https://github.com/jacqueschuis/museo",
     liveSite: "https://museo.onrender.com",
-    summary: "Full-stack application for finding inspiration",
     description: [
+      "Full-stack Node application with an Express backend and MongoDB",
       "4 interconnected data models",
       "MasonryJS, Flickity, VanillaTilt, ImagesLoaded library integration",
+      "Extensive use of EJS templating with conditionals",
       "Robust JOI data validation",
       "Atlas Search for filtering each type of data and searching app-wide",
       "Responsive design through Bootstrap",
       "Custom CSS for cohesive design",
     ],
-    tools: ["MongoDB", "Express", "EJS", "JS", "Bootstrap"],
+    tools: ["MongoDB", "Express", "Node.js"],
   },
   {
     name: "Portfolio",
     screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
-    liveSite: "https://portfolio-jacqueschuis.vercel.app/",
-    summary: "Serverless NextJS app for everything about me",
-    description: ["HeadlessUI and GSAP for animations and transitions"],
-    tools: ["NextJS", "Tailwind", "GSAP"],
+    liveSite: "https://j-par.com/",
+    description: [
+      "React Spring for animations and transitions",
+      "Responsive layout through Tailwind CSS",
+      "Custom Tailwind theme for style consistency across app",
+    ],
+    tools: ["NextJS", "Tailwind", "React Spring"],
   },
   {
-    name: "Random Color Generator",
+    name: "Color Generator",
     screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
-    summary: "Widget application for generating random HEX or RGB colors",
     description: [
       "DOM manipulation for dynamic page styling based on results",
       "Translation between HEX and RGB systems",
@@ -140,25 +143,22 @@ module.exports.frontEndMentor = [
     screenshot: "/images/tip-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
-    challenge:
-      "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX",
-    summary: "Widget for calculating the tip/total cost per person",
     description: [
-      "Custom validation and error handling",
+      "Custom validation and error handling through regular expressions",
+      "Vanilla CSS only",
       "Responsive design through CSS flexbox and grid",
       "Live-updating results through custom event handlers",
     ],
     tools: ["HTML", "CSS", "JS"],
   },
   {
-    name: "CSS Illustration",
+    name: "CSS Landing Page",
     screenshot: "/images/css-landing.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
-    challenge:
-      "https://www.frontendmentor.io/challenges/chat-app-css-illustration-O5auMkFqY",
-    summary: "Landing page made completely with CSS",
     description: [
+      "Exclusively built with vanilla CSS",
+      "Brief provided only 4 images; everything else is CSS",
       "Extensive usage of 'calc( )' and CSS flexbox for responsive sizing",
     ],
     tools: ["HTML", "CSS", "JS"],
@@ -168,12 +168,9 @@ module.exports.frontEndMentor = [
     screenshot: "/images/age-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
-    challenge:
-      "https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q",
-    summary: "Age calculator widget",
     description: [
       "Responsive design with custom CSS",
-      "Custom data validation and error handling",
+      "Custom data validation and error handling through conditionals",
     ],
     tools: ["HTML", "CSS", "JS"],
   },
