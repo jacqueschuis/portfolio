@@ -61,7 +61,7 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}
                     </div>
 
                     <animated.div style={expand}>
-                        <ul className="list-inside list-disc mt-2">
+                        <ul className="list-inside list-disc mt-2" key="personalProject">
                             {description.map((entry) => (
                                 <li className="mb-1 pl-5" key={entry.index}>{entry}</li>
                             ))}
