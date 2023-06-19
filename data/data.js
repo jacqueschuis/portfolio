@@ -131,7 +131,7 @@ module.exports.personalProjects = [
     name: "Color Generator",
     screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
-    liveSite: "https://jacqueschuis.github.io/simple-color-generator/",
+    liveSite: "https://simple-color-generator.vercel.app/",
     description: [
       "DOM manipulation for dynamic page styling based on results",
       "Translation between HEX and RGB systems",
