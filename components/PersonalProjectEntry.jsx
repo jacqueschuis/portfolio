@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 
@@ -30,16 +29,16 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}
         return (
             <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid-column">
                 <div className="flex justify-between items-center">
-                    <Link href={liveSite}>
+                    <a href={liveSite} target="_blank">
                         <h3 className="w-full transition-all cursor-pointer text-2xl flex flex-col font-bold mb-2 hover:text-blue-light">{name}</h3>
-                    </Link>
-                    <Link href={repo}>
+                    </a>
+                    <a href={repo} target="_blank">
                         <p className="transition-all text-blue-light hover:text-blue-dark">GitHub</p>
-                    </Link>
+                    </a>
                 </div>
-                <Link className="self-center" href={liveSite}>
+                <a className="self-center" href={liveSite} target="_blank">
                     <img src={screenshot} className="rounded-3xl mb-2" />
-                </Link>
+                </a>
 
                 <div className="flex justify-between text-blue-light mb-2 text-sm">
                     <p className="font-bold text-blue-dark">Tools:</p>
