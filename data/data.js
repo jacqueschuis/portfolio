@@ -135,7 +135,8 @@ module.exports.personalProjects = [
     description: [
       "DOM manipulation for dynamic page styling based on results",
       "Translation between HEX and RGB systems",
-      "Javascript Class functions for simplifying code/all functionality",
+      "Javascript constructor function for handling color generation",
+      "Clipboard API integration",
     ],
     tools: ["HTML", "JS", "Bootstrap"],
   },
