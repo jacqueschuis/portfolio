@@ -24,7 +24,7 @@ const Portfolio = () => {
 
                     <hr className="w-2/3 h-1 mx-auto my-8 bg-grey border-0 rounded md:my-10"/>
 
-                    <div className="md:text-center subheading break-inside-avoid">
+                    <div className="md:text-center subheading break-inside-avoid lg:break-before-column xl:break-before-auto">
                         <h3 className='font-bold text-3xl md:text-5xl mb-2'>Frontend Mentor</h3>
                         <p className="italic text-xs">Front-end challenges built from scratch by me, adhering to Frontend Mentor's design and functionality brief</p>
                     </div>
