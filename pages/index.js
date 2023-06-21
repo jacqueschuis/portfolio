@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
 import Nav from "@/components/Nav";
 import Head from "next/head";
 import Education from "@/components/Education";
@@ -8,6 +7,7 @@ import Work from "@/components/Work";
 import ScrollToTop from "@/components/ScrollToTop";
 import Contact from "@/components/Contact";
 import { useWindowScroll } from "react-use";
+import Portfolio from "@/components/NewPortfolio";
 
 const Home = () => {
   const {x, y} = useWindowScroll();
@@ -19,7 +19,7 @@ const Home = () => {
       </Head>
       <div
         id="top-section"
-        className="md:px-16 px-5 flex flex-col bg-white relative shadow-2xl"
+        className="md:px-16 px-5 flex flex-col bg-white relative shadow-xl"
       >
         <Nav />
         <Hero />

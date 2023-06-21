@@ -25,7 +25,7 @@ const [isExpanded, setIsExpanded] = useState(false);
         setIsExpanded(!isExpanded);
     }    
     return (
-        <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid-column" >
+        <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid" >
             <div className="flex justify-between items-center">
                 <h3 onClick={handleClick} className="w-full cursor-pointer text-2xl font-bold transition-all hover:text-blue-light">{title}</h3>
             </div>

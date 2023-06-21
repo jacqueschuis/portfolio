@@ -29,7 +29,7 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}
             <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid-column">
                 <div className="flex justify-between items-center">
                     <a href={liveSite} target="_blank">
-                        <h3 className="w-full transition-all cursor-pointer text-2xl font-bold mb-2 hover:text-blue-light">{name}</h3>
+                        <h3 className="text-blue-dark w-full transition-all cursor-pointer text-2xl font-bold mb-2 hover:text-blue-light">{name}</h3>
                     </a>
                     <a href={repo} target="_blank">
                         <p className="transition-all text-blue-light hover:text-blue-dark">GitHub</p>

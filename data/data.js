@@ -37,7 +37,7 @@ module.exports.education = [
 module.exports.work = [
   {
     place: "Bertera Auto Group",
-    location: "West Springfield, MA, USA",
+    location: "W. Springfield, MA",
     title: "Digital Marketing Specialist",
     date: "2023 – Present",
     description: [
@@ -50,7 +50,7 @@ module.exports.work = [
   },
   {
     place: "Fleet Feet",
-    location: "Longmeadow, MA, US",
+    location: "Longmeadow, MA",
     title: "Marketing and Community Outreach Coordinator",
     date: "2022 – 2023",
     description: [
@@ -61,19 +61,8 @@ module.exports.work = [
     ],
   },
   {
-    place: "Atwood Museum",
-    location: "Chatham, MA, US",
-    title: "Curatorial Intern",
-    date: "2021",
-    description: [
-      "Conducted extensive research on historical artifacts, strengthening the quality and accuracy of a 2022 year-long exhibition",
-      "Analyzed provenance and creation details of museum collection items",
-      "Contributed to the final curation decisions",
-    ],
-  },
-  {
     place: "UMass Amherst",
-    location: "Amherst, MA, USA",
+    location: "Amherst, MA",
     title: "Graduate Teaching Assistant",
     date: "2020 – 2022",
     description: [
@@ -85,8 +74,19 @@ module.exports.work = [
     ],
   },
   {
+    place: "Atwood Museum",
+    location: "Chatham, MA",
+    title: "Curatorial Intern",
+    date: "2021",
+    description: [
+      "Conducted extensive research on historical artifacts, strengthening the quality and accuracy of a 2022 year-long exhibition",
+      "Analyzed provenance and creation details of museum collection items",
+      "Contributed to the final curation decisions",
+    ],
+  },
+  {
     place: "EtonHouse International School",
-    location: "Nanjing, Jiangsu, China",
+    location: "Nanjing, China",
     title: "Teacher—Art and English as an Additional Language",
     date: "2018 – 2020",
     description: [

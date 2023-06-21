@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 
-const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}) => {
+const PersonalProjectEntry = ({name, screenshot,repo,liveSite,description, tools}) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [expand, expandApi] = useSpring(() => ({
@@ -30,7 +30,7 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}
             <div className="rounded-3xl flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid-column">
                 <div className="flex justify-between items-center">
                     <a href={liveSite} target="_blank">
-                        <h3 className="w-full transition-all cursor-pointer text-2xl flex flex-col font-bold mb-2 hover:text-blue-light">{name}</h3>
+                        <h3 className="text-blue-dark w-full transition-all cursor-pointer text-2xl flex flex-col font-bold mb-2 hover:text-blue-light">{name}</h3>
                     </a>
                     <a href={repo} target="_blank">
                         <p className="transition-all text-blue-light hover:text-blue-dark">GitHub</p>
@@ -74,4 +74,4 @@ const FrontEndMentorEntry = ({name, screenshot,repo,liveSite,description, tools}
         );
 }
  
-export default FrontEndMentorEntry;
+export default PersonalProjectEntry;
