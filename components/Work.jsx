@@ -9,13 +9,9 @@ const Work = () => {
             <section className="py-12 mb-20  w-full flex flex-col" id="work">
                 <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 md:mb-5">Work</h2>
                 <div className="container lg:columns-2 xl:columns-3 gap-10 self-center text-blue-dark">
-                    <ul className="mb-5">
-                        <li>
-                            {work.map((item) => (
+                             {work.map((item) => (
                                 <WorkEntry {...item} />
                             ))}
-                        </li>
-                    </ul>
                 </div>
             </section>
         </Element>
