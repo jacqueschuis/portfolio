@@ -66,9 +66,10 @@ body {
 }
 
 .hero {
-  background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51);
+  background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
   background-clip: text;
-  color: rgba(0, 0, 0, 0);
+  color: rgba(255,255,255,0);
+  transition: .5s;
 }
 
 .subheading {
