@@ -45,6 +45,7 @@ body {
 
 .name {
   display: block;
+  overflow: hidden;
 }
 
 #top-section,
@@ -66,8 +67,8 @@ body {
 
 .hero {
   background: -webkit-linear-gradient(left, #264653, #2a9d8f, #e9c46a, #e76f51);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: rgba(0, 0, 0, 0);
 }
 
 .subheading {
@@ -115,3 +116,15 @@ body {
 .tech:hover p {
   display: inline-block;
 }
+
+/* .hero-letter {
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.5s;
+  opacity: 0;
+  transform: rotate(100deg) translateX(0.5em);
+}
+
+.animate {
+  transform: rotate(0) translateX(0);
+  opacity: 1;
+} */
