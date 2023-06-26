@@ -3,6 +3,7 @@ let Element = Scroll.Element;
 import { personalProjects, frontEndMentor } from "@/data/data";
 import PersonalProjectEntry from "./PersonalProjectEntry";
 import FrontEndMentorEntry from "./FrontEndMentorEntry";
+import {v4 as uuidv4} from 'uuid';
 
 const Portfolio = () => {
     return ( 
@@ -16,7 +17,7 @@ const Portfolio = () => {
                 </div>
                     <ul className="mb-5">
                        { personalProjects.map((entry) => (
-                            <li>
+                            <li key={`${uuidv4()}`}>
                                 <PersonalProjectEntry {...entry} />
                             </li>
                         ))}
@@ -30,7 +31,7 @@ const Portfolio = () => {
                     </div>
                     <ul className="mb-5">
                        { frontEndMentor.map((entry) => (
-                            <li>
+                            <li key={`${uuidv4()}`}>
                                 <FrontEndMentorEntry {...entry} />
                             </li>
                         ))}

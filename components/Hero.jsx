@@ -1,4 +1,5 @@
 import { useTrail, useTransition, animated } from "@react-spring/web";
+import {v4 as uuidv4} from 'uuid'
 
 const Hero = () => {
     const firstName = 'Jacques';
@@ -11,14 +12,14 @@ const Hero = () => {
                 <span className="name">
                     {firstName.split("").map(el => {
                         return (
-                            <span className="hero-letter animate">{el}</span>
+                            <span key={`${uuidv4()}`} className="hero-letter animate">{el}</span>
                         )
                     })}
                 </span>
                 <span className="name">
                     {lastName.split("").map(el => {
                         return (
-                            <span className="hero-letter animate">{el}</span>
+                            <span key={`${uuidv4()}`} className="hero-letter animate">{el}</span>
                         )
                     })}
                 </span>
