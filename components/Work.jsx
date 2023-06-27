@@ -1,7 +1,6 @@
 import { work } from "@/data/data";
 import WorkEntry from "./WorkEntry";
 let Scroll = require('react-scroll');
-import {v4 as uuidv4} from 'uuid';
 let Element = Scroll.Element;
 
 const Work = () => {
@@ -10,8 +9,8 @@ const Work = () => {
             <section className="py-12 mb-20  w-full flex flex-col" id="work">
                 <h2 className="section-heading font-bold text-5xl md:text-8xl mb-2 md:mb-5">Work</h2>
                 <div className="container lg:columns-2 xl:columns-3 gap-10 self-center text-blue-dark">
-                             {work.map((item) => (
-                                <WorkEntry key={`${uuidv4()}`} {...item} />
+                             {work.map((item,index) => (
+                                <WorkEntry key={`work${index}`} {...item} />
                             ))}
                 </div>
             </section>

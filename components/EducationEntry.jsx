@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {useSpring, animated} from '@react-spring/web';
-import {v4 as uuidv4} from 'uuid';
 
 const EducationEntry = ({institution, degree, subject, location, years, specialization, description, specialEvent, specialEventDescription}) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -50,8 +49,8 @@ const EducationEntry = ({institution, degree, subject, location, years, speciali
                     <animated.div style={expand}>
                         <p className="my-2 pl-5"><span className="font-bold">Specializations:</span> {specialization}</p>
                         <ul className="list-inside list-disc mb-2">
-                            {description.map((entry) => (
-                                <li className="mb-1 pl-5" key={`${uuidv4()}`}>{entry}</li>
+                            {description.map((entry,index) => (
+                                <li className="mb-1 pl-5" key={`${institution}Desc${index}`}>{entry}</li>
                             ))}
                         </ul>
                         {specialEvent &&
@@ -59,8 +58,8 @@ const EducationEntry = ({institution, degree, subject, location, years, speciali
                         }
                         {specialEventDescription && 
                             <ul className="list-inside list-disc">
-                            {specialEventDescription.map((entry) => (
-                                <li className="mb-1 pl-5" key={`${uuidv4()}`}>{entry}</li>
+                            {specialEventDescription.map((entry,index) => (
+                                <li className="mb-1 pl-5" key={`${institution}Spec${index}`}>{entry}</li>
                             ))}
                         </ul>
                         }

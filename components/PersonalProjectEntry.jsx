@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import {v4 as uuidv4} from 'uuid';
 
 const PersonalProjectEntry = ({name, screenshot,repo,liveSite,description, tools}) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -45,7 +44,7 @@ const PersonalProjectEntry = ({name, screenshot,repo,liveSite,description, tools
                     <p className="font-bold text-blue-dark">Tools:</p>
                     <div className="flex flex-wrap justify-end w-full gap-5 box-border pl-3">
                         {tools.map((entry) => (
-                        <p key={`${uuidv4()}`}>{entry}</p>
+                        <p key={`${name}${entry}`}>{entry}</p>
                         ))}
                     </div>
                </div>
@@ -63,8 +62,8 @@ const PersonalProjectEntry = ({name, screenshot,repo,liveSite,description, tools
 
                     <animated.div style={expand}>
                         <ul className="list-inside list-disc mt-2" key="personalProject">
-                            {description.map((entry) => (
-                                <li className="mb-1 pl-5" key={`${uuidv4()}`}>{entry}</li>
+                            {description.map((entry, index) => (
+                                <li className="mb-1 pl-5" key={`${name}Desc${index}`}>{entry}</li>
                             ))}
                         </ul>
                     </animated.div>
