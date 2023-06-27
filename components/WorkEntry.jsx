@@ -1,5 +1,3 @@
-import {v4 as uuidv4} from 'uuid';
-
 const WorkEntry = ({place, location, title, date, description}) => {
     return (
         <div className="rounded-3xl h-fit flex flex-col justify-between shadow-lg box-border p-6 mb-5 break-inside-avoid" >
@@ -14,8 +12,8 @@ const WorkEntry = ({place, location, title, date, description}) => {
             <div className="w-full bg-orange-dark box-border rounded-xl text-white transition-all p-2">
                 <div className="flex justify-between items-center">
                     <ul className="list-inside list-disc mt-2">
-                        {description.map((entry) => (
-                            <li className="mb-1 pl-5" key={`${uuidv4()}`}>{entry}</li>
+                        {description.map((entry, index) => (
+                            <li className="mb-1 pl-5" key={`${place}Desc${index}`}>{entry}</li>
                         ))}
                     </ul>
                 </div>
