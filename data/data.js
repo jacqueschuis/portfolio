@@ -98,6 +98,20 @@ module.exports.work = [
 
 module.exports.personalProjects = [
   {
+    name: "Yahtzee Scorer",
+    repo: "https://github.com/jacqueschuis/yahtzee-scorer",
+    screenshot: "/images/yahtzee-scorer.png",
+    liveSite: "https://yahtzee-scorer.vercel.app",
+    description: [
+      "Dynamic Yahtzee Scorecard generator",
+      "React Router for handling routes",
+      "useEffect route validation for disallowing games without players",
+      "React Spring animations on all routes",
+      "Light/Dark support on client preference"
+    ],
+    tools: ["React", "Vite", "React Spring"]
+  },
+  {
     name: "museo",
     screenshot: "/images/museo.png",
     repo: "https://github.com/jacqueschuis/museo",
