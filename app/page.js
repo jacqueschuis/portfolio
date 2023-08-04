@@ -2,10 +2,10 @@
 
 import Hero from "@/app/components/Hero";
 import About from "@/app/components/About";
-import Nav from "@/app/components/Nav";
+import Nav from "./components/pieces/Nav";
 import Education from "@/app/components/Education";
 import Work from "@/app/components/Work";
-import ScrollToTop from "@/app/components/ScrollToTop";
+import ScrollToTop from "@/app/components/pieces/ScrollToTop";
 import Contact from "@/app/components/Contact";
 import { useWindowScroll } from "react-use";
 import Portfolio from "@/app/components/Portfolio";

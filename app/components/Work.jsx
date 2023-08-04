@@ -1,5 +1,5 @@
 import { work } from "@/data/data";
-import Section from "./Section";
+import Section from "./pieces/Section";
 let Scroll = require("react-scroll");
 let Element = Scroll.Element;
 

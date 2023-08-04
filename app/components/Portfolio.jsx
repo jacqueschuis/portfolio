@@ -3,7 +3,7 @@ let Element = Scroll.Element;
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { personalProjects, frontEndMentor } from "@/data/data";
-import Section from "./Section";
+import Section from "./pieces/Section";
 
 const PersonalProjectEntry = ({
   name,
