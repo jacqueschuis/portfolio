@@ -7,10 +7,10 @@ import Work from "@/components/Work";
 import ScrollToTop from "@/components/ScrollToTop";
 import Contact from "@/components/Contact";
 import { useWindowScroll } from "react-use";
-import Portfolio from "@/components/NewPortfolio";
+import Portfolio from "@/components/Portfolio";
 
 const Home = () => {
-  const {x, y} = useWindowScroll();
+  const { x, y } = useWindowScroll();
 
   return (
     <>
