@@ -11,8 +11,16 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en">
-      <body className="font-sans bg-white">{children}</body>
-    </html>
+    <>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+      </head>
+      <html lang="en" className="overflow-x-hidden">
+        <body className="font-sans bg-white font-normal">{children}</body>
+      </html>
+    </>
   );
 }

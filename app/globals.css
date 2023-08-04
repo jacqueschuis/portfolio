@@ -8,20 +8,11 @@
   @apply box-border;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 html,
 body {
   min-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  @apply bg-white;
-}
-
-.nav-link {
-  @apply text-lg;
 }
 
 .nav-link:hover,
@@ -33,11 +24,6 @@ body {
 .hamburger:hover {
   filter: drop-shadow(0 0 5px rgba(242, 242, 242, 0.3));
   cursor: pointer;
-}
-
-.name {
-  display: block;
-  overflow: hidden;
 }
 
 #top-section,
@@ -109,15 +95,3 @@ body {
 .tech:hover p {
   display: inline-block;
 }
-
-/* .hero-letter {
-  display: inline-block;
-  transition: opacity 0.2s, transform 0.5s;
-  opacity: 0;
-  transform: rotate(100deg) translateX(0.5em);
-}
-
-.animate {
-  transform: rotate(0) translateX(0);
-  opacity: 1;
-} */

@@ -2,6 +2,17 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
+const Stack = ({ name, icon, index }) => {
+  return (
+    <div className="tech flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
+      <i className={`${icon} text-5xl`}></i>
+      <p className="hidden text-light absolute bottom-0 text-sm text-center text-blue-light">
+        {name}
+      </p>
+    </div>
+  );
+};
+
 const StackCarousel = () => {
   const techStack = [
     { name: "react", icon: "devicon-react-original" },
@@ -28,17 +39,6 @@ const StackCarousel = () => {
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
-
-  const Stack = ({ name, icon, index }) => {
-    return (
-      <div className="tech flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
-        <i className={`${icon} text-5xl`}></i>
-        <p className="hidden text-light absolute bottom-0 text-sm text-center text-blue-light">
-          {name}
-        </p>
-      </div>
-    );
-  };
 
   return (
     <div className="stack mt-5 w-full relative ps-10 pe-10">
