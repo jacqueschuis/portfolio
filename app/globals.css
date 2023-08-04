@@ -1,23 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 * {
   @apply box-border;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 html,
@@ -67,9 +59,9 @@ body {
 
 .hero {
   background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
-  color: rgba(255,255,255,0);
+  color: rgba(255, 255, 255, 0);
   background-clip: text;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .subheading {
