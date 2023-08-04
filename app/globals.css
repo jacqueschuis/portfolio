@@ -1,20 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 * {
   @apply box-border;
@@ -25,11 +13,6 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  @apply bg-white;
-}
-
-.nav-link {
-  @apply text-lg;
 }
 
 .nav-link:hover,
@@ -41,11 +24,6 @@ body {
 .hamburger:hover {
   filter: drop-shadow(0 0 5px rgba(242, 242, 242, 0.3));
   cursor: pointer;
-}
-
-.name {
-  display: block;
-  overflow: hidden;
 }
 
 #top-section,
@@ -67,9 +45,9 @@ body {
 
 .hero {
   background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
-  color: rgba(255,255,255,0);
+  color: rgba(255, 255, 255, 0);
   background-clip: text;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .subheading {
@@ -117,15 +95,3 @@ body {
 .tech:hover p {
   display: inline-block;
 }
-
-/* .hero-letter {
-  display: inline-block;
-  transition: opacity 0.2s, transform 0.5s;
-  opacity: 0;
-  transform: rotate(100deg) translateX(0.5em);
-}
-
-.animate {
-  transform: rotate(0) translateX(0);
-  opacity: 1;
-} */

@@ -1,5 +1,5 @@
-import Footer from "./Footer";
-import Section from "./Section";
+import Footer from "./pieces/Footer";
+import Section from "./pieces/Section";
 
 let Scroll = require("react-scroll");
 let Element = Scroll.Element;

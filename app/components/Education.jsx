@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { education } from "@/data/data";
-import Section from "./Section";
+import Section from "./pieces/Section";
 let Scroll = require("react-scroll");
 let Element = Scroll.Element;
 

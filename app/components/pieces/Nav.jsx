@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
@@ -70,7 +72,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="my-6 md:my-12 bg-gradient-to-r from-blue-light via-orange-light to-orange-dark p-4 rounded-3xl flex flex-col justify-between items-center shadow-xl">
+    <nav className="my-6 text-lg md:my-12 bg-gradient-to-r from-blue-light via-orange-light to-orange-dark p-4 rounded-3xl flex flex-col justify-between items-center shadow-xl">
       <div className="flex items-center justify-between w-full">
         <Link href="/">
           <p className="font-bold text-3xl pl-8 text-white logo">JP</p>
