@@ -1,3 +1,5 @@
+"use client";
+
 import Section from "./pieces/Section";
 import SectionHeading from "./pieces/SectionHeading";
 import StackCarousel from "./pieces/StackCarousel";

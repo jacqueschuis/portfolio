@@ -1,6 +1,6 @@
 import { animated, useSpring } from "@react-spring/web";
 
-let Scroll = require("react-scroll");
+import * as Scroll from "react-scroll";
 let scroll = Scroll.animateScroll;
 
 const ScrollToTop = ({ y }) => {

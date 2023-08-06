@@ -1,6 +1,6 @@
 import { work } from "@/data/data";
 import Section from "./pieces/Section";
-let Scroll = require("react-scroll");
+import * as Scroll from "react-scroll";
 let Element = Scroll.Element;
 
 const WorkEntry = ({ place, location, title, date, description }) => {

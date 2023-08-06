@@ -1,4 +1,4 @@
-let Scroll = require("react-scroll");
+import * as Scroll from "react-scroll";
 let Element = Scroll.Element;
 import { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";

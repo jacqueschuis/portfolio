@@ -1,7 +1,6 @@
 import Footer from "./pieces/Footer";
 import Section from "./pieces/Section";
-
-let Scroll = require("react-scroll");
+import * as Scroll from "react-scroll";
 let Element = Scroll.Element;
 
 const Contact = () => {
