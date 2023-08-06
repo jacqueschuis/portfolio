@@ -13,17 +13,17 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        black: "#262626",
-        grey: "#c4c4c4",
-        white: "#fafafa",
+        black: "hsl(0,0%,15%)",
+        grey: "hsl(0,0%,77%)",
+        white: "hsl(0,0%,98%)",
         blue: {
-          light: "#2a9d8f",
-          dark: "#264653",
+          light: "hsl(173, 58%, 39%)",
+          dark: "hsl(197, 37%, 24%)",
         },
         orange: {
-          light: "#e9c46a",
-          DEFAULT: "#f4a261",
-          dark: "#e76f51",
+          light: "hsl(43, 74%, 66%)",
+          DEFAULT: "hsl(27, 87%, 67%)",
+          dark: "hsl(12, 76%, 61%)",
         },
       },
       fontFamily: {
@@ -38,7 +38,7 @@ module.exports = {
           },
         ],
         "hero-sm": [
-          "calc(30px + (75 - 30) * ((100vw - 200px) / (1440 - 200)))",
+          "calc(25px + (75 - 25) * ((100vw - 200px) / (1440 - 200)))",
           {
             lineHeight: "1",
           },

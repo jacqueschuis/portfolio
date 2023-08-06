@@ -6,18 +6,17 @@ import { useTrail, animated } from "@react-spring/web";
 const NameTrail = ({ children }) => {
   const name = React.Children.toArray(children);
   const trail = useTrail(name.length, {
-    config: { mass: 15, tension: 2000, friction: 200 },
+    config: { mass: 5, tension: 2000, friction: 200 },
     from: {
       opacity: 0,
-      x: -80,
-      y: -20,
-      rotate: "20deg",
+      x: -20,
+      scale: 0.8,
     },
     opacity: 1,
     x: 0,
     y: 0,
     display: "inline-block",
-    rotate: "0deg",
+    scale: 1,
   });
 
   return (

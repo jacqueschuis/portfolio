@@ -1,8 +1,10 @@
+"use client";
+
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-const Stack = ({ name, icon, index }) => {
+const Stack = ({ name, icon }) => {
   return (
     <div className="tech flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
       <i className={`${icon} text-5xl`}></i>
