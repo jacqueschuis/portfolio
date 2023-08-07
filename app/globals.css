@@ -43,6 +43,10 @@ body {
   z-index: 2;
 }
 
+.home {
+  background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
+}
+
 .hero {
   background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
   color: rgba(255, 255, 255, 0);

@@ -9,11 +9,10 @@ const NameTrail = ({ children }) => {
     config: { mass: 5, tension: 2000, friction: 200 },
     from: {
       opacity: 0,
-      x: -20,
+      y: -20,
       scale: 0.8,
     },
     opacity: 1,
-    x: 0,
     y: 0,
     display: "inline-block",
     scale: 1,

@@ -7,7 +7,7 @@ const Trail = ({ children, from, to, delay }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
     config: { mass: 15, tension: 2000, friction: 200 },
-    from: { y: 20, opacity: 0 },
+    from: { y: -20, opacity: 0 },
     to: { y: 0, opacity: 1 },
     delay: 2000,
   });
