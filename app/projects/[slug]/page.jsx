@@ -4,14 +4,29 @@ import Layout from "@/app/components/Layout";
 import { useParams } from "next/navigation";
 import { projects } from "@/data/data";
 
-const ProjectDetails = () => {
+export const getStaticProps = () => {
   const params = useParams();
   const { slug } = params;
-  console.log(projects);
   const project = projects.find((proj) => proj.slug === slug);
+  return { props: { project } };
+};
+
+const ProjectDetails = ({ project }) => {
   return (
     <Layout dark={true} active={"projects"} breadCrumb={project.name}>
-      <h1>{project.name}</h1>
+      <div className="w-full h-full grid grid-cols-2 gap-8 p-10">
+        <div className="flex flex-col w-full justify-stretch">
+          <h1 className="font-bold text-8xl">{project.name}</h1>
+          <img
+            src={project.screenshot}
+            alt={project.summary}
+            className="rounded-xl shadow-xl"
+          />
+        </div>
+        <div className="flex flex-col w-full p-10 bg-orange-dark rounded-xl shadow-xl">
+          <h2 className="text-5xl font-bold text-white">Description</h2>
+        </div>
+      </div>
     </Layout>
   );
 };
