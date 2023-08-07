@@ -6,6 +6,7 @@ import NameTrail from "./components/NameTrail";
 import { useSpring, animated } from "@react-spring/web";
 import Trail from "./components/Trail";
 import TypewriterComponent from "typewriter-effect";
+import Nav from "./components/Nav";
 
 const Home = () => {
   const first = "Jacques";
@@ -27,24 +28,9 @@ const Home = () => {
   }));
 
   return (
-    <main className="h-screen md:p-10 p-4 w-full flex items-center bg-gradient-to-b md:bg-gradient-to-r to-blue-light via-orange-light from-orange-dark text-white">
+    <main className="h-screen md:p-10 p-4 w-full flex items-center home text-white">
       <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
-        <div className="flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4">
-          <span className="font-bold text-2xl nav-link">JP</span>
-          <div className="flex md:gap-16 gap-8">
-            <Trail>
-              <Link href="/home" className="hover-underline-animation nav-link">
-                Projects
-              </Link>
-              <Link href="/home" className="hover-underline-animation nav-link">
-                Blog
-              </Link>
-              <Link href="/home" className="hover-underline-animation nav-link">
-                CV
-              </Link>
-            </Trail>
-          </div>
-        </div>
+        <Nav />
         <Section className="flex flex-col items-center text-center w-full mb-32 h-fit py-36 text-white">
           <div className="w-fit">
             <h1 className="font-bold text-hero-lg flex flex-col md:my-12 my-6">
@@ -64,10 +50,7 @@ const Home = () => {
               </span>
             </h1>
           </div>
-          <animated.div
-            style={rise}
-            className="flex flex-col items-center text-white"
-          >
+          <animated.div style={rise} className="flex flex-col items-center">
             <div className="font-thin text-hero-sm">
               <TypewriterComponent
                 options={{

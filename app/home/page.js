@@ -9,12 +9,13 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/pieces/ScrollToTop";
 import Trail from "../components/Trail";
+import Layout from "../components/Layout";
 
 const Home = () => {
   const { x, y } = useWindowScroll();
 
   return (
-    <main className="min-h-screen w-full">
+    <Layout>
       <div
         id="top-section"
         className="md:px-16 px-5 flex flex-col bg-white relative shadow-xl"
@@ -30,7 +31,7 @@ const Home = () => {
         <Contact />
       </div>
       <ScrollToTop y={y} />
-    </main>
+    </Layout>
   );
 };
 
