@@ -17,7 +17,7 @@ const ProjectIndex = () => {
   return (
     <Layout dark={true} active={"projects"}>
       <div className="w-full h-full flex items-center justify-center">
-        <div className="md:w-1/3 hidden md:flex flex-col items-center justify-center gap-8">
+        <div className="md:w-1/2 hidden md:flex flex-col items-center justify-center gap-8">
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>
               <img
@@ -52,7 +52,7 @@ const ProjectIndex = () => {
           )}
         </div>
 
-        <ul className="md:w-2/3 w-full font-bold 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl text-center md:text-right">
+        <ul className="md:w-1/2 w-full font-bold 2xl:text-6xl xl:text-5xl lg:text-4xl text-3xl text-center md:text-right">
           <HorizontalTrail>
             {projects.map((project, index) => {
               return (
