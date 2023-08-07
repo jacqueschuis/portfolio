@@ -27,14 +27,14 @@ const Home = () => {
   }));
 
   return (
-    <main className="h-screen md:p-10 p-2 w-full flex items-center bg-gradient-to-r to-blue-light via-orange-light from-orange-dark text-white">
-      <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
+    <main className="h-screen md:p-10 p-4 w-full flex items-center bg-gradient-to-b md:bg-gradient-to-r to-blue-light via-orange-light from-orange-dark text-white">
+      <div className="w-full h-full border-2 border-white rounded-2xl shadow-2xl flex flex-col items-center justify-center relative">
         <div className="flex w-full md:px-10 px-5 md:text-3xl text-xl justify-between items-baseline absolute md:top-6 top-4">
           <span className="font-bold text-2xl md:text-5xl nav-link">JP</span>
           <div className="flex gap-8">
             <Trail>
               <Link href="/home" className="hover-underline-animation nav-link">
-                Portfolio
+                Projects
               </Link>
               <Link href="/home" className="hover-underline-animation nav-link">
                 Blog
@@ -47,7 +47,7 @@ const Home = () => {
         </div>
         <Section className="flex flex-col items-center text-center w-full mb-32 h-fit py-36 text-white">
           <div className="w-fit">
-            <h1 className="font-bold text-hero-lg flex flex-col my-12">
+            <h1 className="font-bold text-hero-lg flex flex-col md:my-12 my-6">
               <span className="block">
                 <NameTrail>
                   {firstArray.map((el) => {

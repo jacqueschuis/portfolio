@@ -38,7 +38,7 @@ module.exports = {
           },
         ],
         "hero-sm": [
-          "calc(25px + (75 - 25) * ((100vw - 200px) / (1440 - 200)))",
+          "calc(22px + (75 - 22) * ((100vw - 200px) / (1440 - 200)))",
           {
             lineHeight: "1",
           },
