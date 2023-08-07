@@ -30,7 +30,27 @@ const Home = () => {
   return (
     <main className="h-screen md:p-10 p-4 w-full flex items-center home text-white">
       <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
-        <Nav />
+        <div className="flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4 text-white">
+          <Link href="/" className="font-bold text-2xl logo">
+            JP
+          </Link>
+          <div className="flex md:gap-16 gap-8">
+            <Trail>
+              <Link
+                href="/projects"
+                className="hover-underline-animation nav-link"
+              >
+                Projects
+              </Link>
+              <Link href="/home" className="hover-underline-animation nav-link">
+                Blog
+              </Link>
+              <Link href="/home" className="hover-underline-animation nav-link">
+                CV
+              </Link>
+            </Trail>
+          </div>
+        </div>
         <Section className="flex flex-col items-center text-center w-full mb-32 h-fit py-36 text-white">
           <div className="w-fit">
             <h1 className="font-bold text-hero-lg flex flex-col md:my-12 my-6">

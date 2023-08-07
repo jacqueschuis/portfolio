@@ -5,7 +5,7 @@ import styles from "./Nav.module.css";
 const Nav = ({ dark, active }) => {
   return (
     <div
-      className={`flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4 ${
+      className={`flex w-full md:text-lg text-xl justify-between items-baseline md:pt-6 pt-4 ${
         dark ? "text-black" : "text-white"
       }`}
     >

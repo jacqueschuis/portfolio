@@ -199,6 +199,7 @@ module.exports.projects = [
   {
     slug: "yahtzee",
     name: "Yahtzee Scorer",
+    summary: "Dynamic Yahtzee scorecard generator built with React",
     repo: "https://github.com/jacqueschuis/yahtzee-scorer",
     screenshot: "/images/yahtzee-scorer.png",
     liveSite: "https://yahtzee-scorer.vercel.app",
@@ -214,6 +215,7 @@ module.exports.projects = [
   {
     slug: "museo",
     name: "museo",
+    summary: "Full-stack Node application to find inspiration",
     screenshot: "/images/museo.png",
     repo: "https://github.com/jacqueschuis/museo",
     liveSite: "https://museo.onrender.com",
@@ -233,6 +235,7 @@ module.exports.projects = [
   {
     slug: "portfolio",
     name: "Portfolio",
+    summary: "Personal website for Jacques Pariseau",
     screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
     liveSite: "https://j-par.com/",
@@ -246,6 +249,7 @@ module.exports.projects = [
   {
     slug: "color-gen",
     name: "Color Generator",
+    summary: "Random monochromatic color-scheme generator",
     screenshot: "/images/random-color.png",
     repo: "https://github.com/jacqueschuis/simple-color-generator",
     liveSite: "https://simple-color-generator.vercel.app/",
@@ -260,6 +264,7 @@ module.exports.projects = [
   {
     slug: "tip-calc",
     name: "Tip Calculator",
+    summary: "Dynamic tip calculator widget",
     screenshot: "/images/tip-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
     liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
@@ -274,6 +279,7 @@ module.exports.projects = [
   {
     slug: "css-landing",
     name: "CSS Landing Page",
+    summary: "Illustrated landing page with only CSS",
     screenshot: "/images/css-landing.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
     liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
@@ -287,6 +293,7 @@ module.exports.projects = [
   {
     slug: "age-calc",
     name: "Age Calculator",
+    summary: "Dynamic age calculator widget",
     screenshot: "/images/age-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
     liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
