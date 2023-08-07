@@ -4,14 +4,16 @@ import Layout from "@/app/components/Layout";
 import { useParams } from "next/navigation";
 import { projects } from "@/data/data";
 
-export const getStaticProps = () => {
+export function generateStaticParams() {
+  return projects.map((proj) => ({
+    slug: proj.slug,
+  }));
+}
+
+const ProjectDetails = () => {
   const params = useParams();
   const { slug } = params;
   const project = projects.find((proj) => proj.slug === slug);
-  return { props: { project } };
-};
-
-const ProjectDetails = ({ project }) => {
   return (
     <Layout dark={true} active={"projects"} breadCrumb={project.name}>
       <div className="w-full h-full grid grid-cols-2 gap-8 p-10">

@@ -6,7 +6,6 @@ import NameTrail from "./components/NameTrail";
 import { useSpring, animated } from "@react-spring/web";
 import Trail from "./components/Trail";
 import TypewriterComponent from "typewriter-effect";
-import Nav from "./components/Nav";
 
 const Home = () => {
   const first = "Jacques";
