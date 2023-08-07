@@ -16,7 +16,7 @@ module.exports.education = [
       "Conceptualized topic for the MRS and secured the keynote speaker from Nova Scotia College of Art and Design and panelists from Amherst College, Smith College, and University of Massachusetts Amherst",
       "Maximized MRS awareness by designing and launching targeted marketing campaigns; created digital and print promotional advertisements, brochures, posters, and flyers",
       "Exceeded fundraising goal for the MRS, generating $4,600 from two grants, six academic departments, and three university organizations",
-    ]
+    ],
   },
   {
     institution: "Furman University",
@@ -30,7 +30,7 @@ module.exports.education = [
       "Traveled with 15 other students to China for a fully-funded cultural-exchange trip in 2014",
     ],
     specialEvent: null,
-    specialEventDescription: null
+    specialEventDescription: null,
   },
 ];
 
@@ -107,9 +107,9 @@ module.exports.personalProjects = [
       "React Router for handling routes",
       "useEffect route validation for disallowing games without players",
       "React Spring animations on all routes",
-      "Light/Dark support on client preference"
+      "Light/Dark support on client preference",
     ],
-    tools: ["React", "Vite", "React Spring"]
+    tools: ["React", "Vite", "React Spring"],
   },
   {
     name: "museo",
@@ -183,6 +183,109 @@ module.exports.frontEndMentor = [
     tools: ["HTML", "CSS", "JS"],
   },
   {
+    name: "Age Calculator",
+    screenshot: "/images/age-calculator.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
+    liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
+    description: [
+      "Responsive design with custom CSS",
+      "Custom data validation and error handling through conditionals",
+    ],
+    tools: ["HTML", "CSS", "JS"],
+  },
+];
+
+module.exports.projects = [
+  {
+    slug: "yahtzee",
+    name: "Yahtzee Scorer",
+    repo: "https://github.com/jacqueschuis/yahtzee-scorer",
+    screenshot: "/images/yahtzee-scorer.png",
+    liveSite: "https://yahtzee-scorer.vercel.app",
+    description: [
+      "Dynamic Yahtzee Scorecard generator",
+      "React Router for handling routes",
+      "useEffect route validation for disallowing games without players",
+      "React Spring animations on all routes",
+      "Light/Dark support on client preference",
+    ],
+    tools: ["React", "Vite", "React Spring"],
+  },
+  {
+    slug: "museo",
+    name: "museo",
+    screenshot: "/images/museo.png",
+    repo: "https://github.com/jacqueschuis/museo",
+    liveSite: "https://museo.onrender.com",
+    description: [
+      "Full-stack Node application with an Express backend and MongoDB",
+      "4 interconnected MongoDB data models",
+      "MasonryJS, Flickity, VanillaTilt, ImagesLoaded library integration",
+      "User authentication through Passport JS",
+      "Extensive use of EJS templating with conditionals",
+      "Robust JOI data validation",
+      "Atlas Search for filtering each type of data and searching app-wide",
+      "Responsive design through Bootstrap",
+      "Custom CSS for cohesive design",
+    ],
+    tools: ["MongoDB", "Express", "Node.js"],
+  },
+  {
+    slug: "portfolio",
+    name: "Portfolio",
+    screenshot: "/images/portfolio.png",
+    repo: "https://github.com/jacqueschuis/portfolio",
+    liveSite: "https://j-par.com/",
+    description: [
+      "React Spring for animations and transitions",
+      "Responsive layout through Tailwind CSS",
+      "Custom Tailwind theme for style consistency across app",
+    ],
+    tools: ["NextJS", "Tailwind", "React Spring"],
+  },
+  {
+    slug: "color-gen",
+    name: "Color Generator",
+    screenshot: "/images/random-color.png",
+    repo: "https://github.com/jacqueschuis/simple-color-generator",
+    liveSite: "https://simple-color-generator.vercel.app/",
+    description: [
+      "DOM manipulation for dynamic page styling based on results",
+      "Translation between HEX and RGB systems",
+      "Javascript constructor function for handling color generation",
+      "Clipboard API integration",
+    ],
+    tools: ["HTML", "JS", "Bootstrap"],
+  },
+  {
+    slug: "tip-calc",
+    name: "Tip Calculator",
+    screenshot: "/images/tip-calculator.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
+    liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
+    description: [
+      "Custom validation and error handling through regular expressions",
+      "Vanilla CSS only",
+      "Responsive design through CSS flexbox and grid",
+      "Live-updating results through custom event handlers",
+    ],
+    tools: ["HTML", "CSS", "JS"],
+  },
+  {
+    slug: "css-landing",
+    name: "CSS Landing Page",
+    screenshot: "/images/css-landing.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
+    liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
+    description: [
+      "Exclusively built with vanilla CSS",
+      "Brief provided only 4 images; everything else is CSS",
+      "Extensive usage of 'calc( )' and CSS flexbox for responsive sizing",
+    ],
+    tools: ["HTML", "CSS", "JS"],
+  },
+  {
+    slug: "age-calc",
     name: "Age Calculator",
     screenshot: "/images/age-calculator.png",
     repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",

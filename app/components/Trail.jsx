@@ -9,7 +9,7 @@ const Trail = ({ children, from, to, delay }) => {
     config: { mass: 15, tension: 2000, friction: 200 },
     from: { y: -20, opacity: 0 },
     to: { y: 0, opacity: 1 },
-    delay: 2000,
+    delay: 1000,
   });
 
   return (

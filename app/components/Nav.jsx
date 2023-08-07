@@ -4,19 +4,21 @@ import styles from "./Nav.module.css";
 
 const Nav = ({ dark, active }) => {
   return (
-    <div className="flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4">
+    <div
+      className={`flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4 ${
+        dark ? "text-black" : "text-white"
+      }`}
+    >
       <Link
         href="/"
-        className={`font-bold text-2xl ${
-          dark ? "logo-dark text-black" : "logo text-white"
-        }`}
+        className={`font-bold text-2xl ${dark ? "logo-dark" : "logo"}`}
       >
         JP
       </Link>
       <div className="flex md:gap-16 gap-8">
         <Trail>
           <Link
-            href="/home"
+            href="/projects"
             className={`${
               dark
                 ? "hover-underline-animation-dark nav-link-dark"
