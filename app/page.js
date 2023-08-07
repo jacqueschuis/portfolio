@@ -28,10 +28,10 @@ const Home = () => {
 
   return (
     <main className="h-screen md:p-10 p-4 w-full flex items-center bg-gradient-to-b md:bg-gradient-to-r to-blue-light via-orange-light from-orange-dark text-white">
-      <div className="w-full h-full border-2 border-white rounded-2xl shadow-2xl flex flex-col items-center justify-center relative">
-        <div className="flex w-full md:px-10 px-5 md:text-3xl text-xl justify-between items-baseline absolute md:top-6 top-4">
-          <span className="font-bold text-2xl md:text-5xl nav-link">JP</span>
-          <div className="flex gap-8">
+      <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
+        <div className="flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4">
+          <span className="font-bold text-2xl nav-link">JP</span>
+          <div className="flex md:gap-16 gap-8">
             <Trail>
               <Link href="/home" className="hover-underline-animation nav-link">
                 Projects
