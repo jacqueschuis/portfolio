@@ -94,7 +94,7 @@ const ProfileComponent = ({ setActiveIndex }) => {
         I'm Jacques Pariseau, a self taught{" "}
         <Link
           href={"/projects"}
-          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          className="cursor-pointer font-bold transition-all hover:text-blue-600"
         >
           web-developer
         </Link>{" "}
@@ -105,7 +105,7 @@ const ProfileComponent = ({ setActiveIndex }) => {
         UIs as a{" "}
         <Link
           href={"/projects"}
-          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          className="cursor-pointer font-bold transition-all hover:text-blue-600"
         >
           front-end developer.
         </Link>
@@ -113,14 +113,14 @@ const ProfileComponent = ({ setActiveIndex }) => {
       <p>
         I'm a{" "}
         <span
-          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          className="cursor-pointer font-bold transition-all hover:text-blue-600"
           onClick={() => setActiveIndex(3)}
         >
           marketing professional
         </span>
         ,
         <span
-          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          className="cursor-pointer font-bold transition-all hover:text-blue-600"
           onClick={() => setActiveIndex(3)}
         >
           {" "}
@@ -128,7 +128,7 @@ const ProfileComponent = ({ setActiveIndex }) => {
         </span>
         , and academically-trained{" "}
         <span
-          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          className="cursor-pointer font-bold transition-all hover:text-blue-600"
           onClick={() => setActiveIndex(2)}
         >
           art historian
@@ -206,7 +206,7 @@ const CVPage = () => {
 
   return (
     <Layout dark={true} active={"cv"}>
-      <div className="w-full h-full flex flex-col gap-8 xl:grid xl:grid-cols-6 text-blue-dark">
+      <div className="w-full h-full flex flex-col gap-8 xl:grid xl:grid-cols-6">
         <div className="xl:h-full flex xl:flex-col xl:items-end justify-around mt-3 xl:mt-0">
           <button
             className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${

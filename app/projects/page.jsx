@@ -16,7 +16,7 @@ const ProjectIndex = () => {
 
   return (
     <Layout dark={true} active={"projects"}>
-      <div className="w-full h-full flex items-center justify-center text-blue-dark">
+      <div className="w-full h-full flex items-center justify-center">
         <div className="md:w-1/2 hidden md:flex flex-col items-center justify-center gap-8">
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>
@@ -36,20 +36,20 @@ const ProjectIndex = () => {
                 <a
                   href={liveSiteUrl}
                   target="_blank"
-                  className="hover:text-blue-light transition-all inline-block hover:-translate-y-[.1rem]"
+                  className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
                 >
                   Live Site
                 </a>
                 <a
                   href={repoUrl}
                   target="_blank"
-                  className="hover:text-blue-light transition-all inline-block hover:-translate-y-[.1rem]"
+                  className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
                 >
                   Repo
                 </a>
                 <Link
                   href={showUrl}
-                  className="hover:text-blue-light transition-all inline-block hover:-translate-y-[.1rem]"
+                  className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
                 >
                   More Information
                 </Link>
@@ -80,7 +80,7 @@ const ProjectIndex = () => {
                   key={project.slug}
                 >
                   <li>
-                    <span className="font-normal text-sm md:text-lg">
+                    <span className="font-normal text-sm md:text-lg text-blue-600">
                       {`${index + 1}. `}
                     </span>
                     {project.name}

@@ -7,25 +7,38 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      black: "hsl(0,0%,15%)",
+      grey: "hsl(0,0%,77%)",
+      white: "hsl(0,0%,98%)",
+      blue: {
+        100: "hsl(173, 85%, 90%)",
+        200: "hsl(173, 78%, 80%)",
+        300: "hsl(173, 73%, 70%)",
+        400: "hsl(173, 65%, 60%)",
+        500: "hsl(173, 63%, 50%)",
+        600: "hsl(173, 58%, 39%)",
+        700: "hsl(182, 64%, 24%)",
+        800: "hsl(190, 78%, 15%)",
+        900: "hsl(197, 85%, 10%)",
+      },
+      orange: {
+        100: "hsl(50, 94%, 90%)",
+        200: "hsl(46, 84%, 80%)",
+        300: "hsl(40, 79%, 72%)",
+        400: "hsl(32, 74%, 70%)",
+        500: "hsl(27, 87%, 67%)",
+        600: "hsl(20, 76%, 61%)",
+        700: "hsl(15, 76%, 43%)",
+        800: "hsl(13, 85%, 30%)",
+        900: "hsl(13, 90%, 16%)",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      colors: {
-        black: "hsl(0,0%,15%)",
-        grey: "hsl(0,0%,77%)",
-        white: "hsl(0,0%,98%)",
-        blue: {
-          light: "hsl(173, 58%, 39%)",
-          dark: "hsl(197, 37%, 24%)",
-        },
-        orange: {
-          light: "hsl(43, 74%, 66%)",
-          DEFAULT: "hsl(27, 87%, 67%)",
-          dark: "hsl(12, 76%, 61%)",
-        },
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],

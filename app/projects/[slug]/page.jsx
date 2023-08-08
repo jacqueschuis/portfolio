@@ -20,7 +20,7 @@ const ProjectDetails = () => {
   if (!project) return router.push("/404");
   return (
     <Layout dark={true} active={"projects"}>
-      <div className="w-full h-full xl:grid xl:grid-cols-2 flex flex-col gap-8 md:p-10 text-blue-dark">
+      <div className="w-full h-full xl:grid xl:grid-cols-2 flex flex-col gap-8 md:p-10">
         <div className="flex flex-col w-full h-fit xl:h-full justify-center mt-5 md:mt-0 gap-3 md:gap-6">
           <HorizontalTrail>
             <h1 className="font-bold 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-center">

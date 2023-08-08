@@ -113,13 +113,13 @@ body {
 }
 
 .hover-underline-animation-dark {
-  @apply text-blue-dark;
+  @apply text-blue-700;
   position: relative;
   text-decoration: none;
 }
 
 .hover-underline-animation-dark::after {
-  @apply bg-blue-dark;
+  @apply bg-blue-700;
   content: "";
   position: absolute;
   width: 100%;
