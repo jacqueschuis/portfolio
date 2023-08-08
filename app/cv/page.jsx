@@ -5,6 +5,8 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Layout from "../components/Layout";
+import Link from "next/link";
+import HorizontalTrail from "../components/HorizontalTrail";
 
 const Stack = ({ name, icon }) => {
   return (
@@ -45,7 +47,7 @@ const StackCarousel = () => {
   }, [emblaApi]);
 
   return (
-    <div className="stack mt-5 w-1/2 relative ps-10 pe-10">
+    <div className="stack mt-5 w-full xl:w-2/3 relative ps-10 pe-10">
       <div className="stack-carousel w-full overflow-hidden" ref={emblaRef}>
         <div className="stack-carousel-container flex select-none -ml-2.5">
           {techStack.map((skill) => (
@@ -84,26 +86,54 @@ const StackCarousel = () => {
   );
 };
 
-const ProfileComponent = () => {
+const ProfileComponent = ({ setActiveIndex }) => {
   return (
     <>
-      <div className="w-full h-full flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         <p>
           I'm Jacques Pariseau, a self taught{" "}
-          <span className="font-bold">web-developer</span> based in New England.
+          <Link
+            href={"/projects"}
+            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          >
+            web-developer
+          </Link>{" "}
+          based in New England.
         </p>
         <p>
-          I've worked <span className="font-bold">full-stack</span>, but my goal
-          is to design and create beautiful UIs as a{" "}
-          <span className="font-bold">front-end developer.</span>
+          I've worked full-stack, but my goal is to design and create beautiful
+          UIs as a{" "}
+          <Link
+            href={"/projects"}
+            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          >
+            front-end developer.
+          </Link>
         </p>
         <p>
           I'm a{" "}
-          <span className="font-bold">
-            marketing professional, graphic designer,
-          </span>{" "}
-          and academically-trained{" "}
-          <span className="font-bold">art historian</span>.
+          <span
+            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+            onClick={() => setActiveIndex(3)}
+          >
+            marketing professional
+          </span>
+          ,
+          <span
+            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+            onClick={() => setActiveIndex(3)}
+          >
+            {" "}
+            graphic designer
+          </span>
+          , and academically-trained{" "}
+          <span
+            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+            onClick={() => setActiveIndex(2)}
+          >
+            art historian
+          </span>
+          .
         </p>
         <p>
           I love learning new things—languages, musical instruments, cooking—but
@@ -115,19 +145,64 @@ const ProfileComponent = () => {
   );
 };
 
+const EducationComponent = () => {};
+
+const WorkComponent = () => {};
+
 const CVPage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   return (
     <Layout dark={true} active={"cv"}>
-      <div className="w-full h-full flex">
-        <div className="w-1/6 h-full flex flex-col justify-around">
-          <button>Profile</button>
-          <button>Education</button>
-          <button>Work</button>
+      <div className="w-full h-full flex flex-col gap-8 xl:grid xl:grid-cols-6 text-blue-dark">
+        <div className="xl:h-full flex xl:flex-col xl:items-end justify-around mt-3 xl:mt-0">
+          <button
+            className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
+              activeIndex === 1
+                ? "xl:-translate-x-3 text-blue-light"
+                : "xl:hover:-translate-x-3 hover:text-blue-light"
+            }`}
+            onClick={() => setActiveIndex(1)}
+          >
+            Profile
+          </button>
+          <button
+            className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
+              activeIndex === 2
+                ? "xl:-translate-x-3 text-blue-light"
+                : "xl:hover:-translate-x-3 hover:text-blue-light"
+            }`}
+            onClick={() => setActiveIndex(2)}
+          >
+            Education
+          </button>
+          <button
+            className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
+              activeIndex === 3
+                ? "xl:-translate-x-3 text-blue-light"
+                : "xl:hover:-translate-x-3 hover:text-blue-light"
+            }`}
+            onClick={() => setActiveIndex(3)}
+          >
+            Work
+          </button>
         </div>
-        <div className="w-5/6 h-full flex flex-col justify-center text-blue-dark">
-          <ProfileComponent />
+        <div className="xl:col-span-5 h-full flex flex-col lg:justify-center text-blue-dark">
+          {activeIndex === 1 && (
+            <HorizontalTrail>
+              <ProfileComponent setActiveIndex={setActiveIndex} />
+            </HorizontalTrail>
+          )}
+          {activeIndex === 2 && (
+            <HorizontalTrail>
+              <EducationComponent />
+            </HorizontalTrail>
+          )}
+          {activeIndex === 3 && (
+            <HorizontalTrail>
+              <WorkComponent />
+            </HorizontalTrail>
+          )}
         </div>
       </div>
     </Layout>

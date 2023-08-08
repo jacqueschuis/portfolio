@@ -61,15 +61,15 @@ const Home = () => {
             <h1 className="font-bold text-hero-lg flex flex-col md:my-12 my-6">
               <span className="block">
                 <NameTrail>
-                  {firstArray.map((el) => {
-                    return <>{el}</>;
+                  {firstArray.map((el, index) => {
+                    return <span key={`${el}${index}First`}>{el}</span>;
                   })}
                 </NameTrail>
               </span>
               <span className="block">
                 <NameTrail>
-                  {lastArray.map((el) => {
-                    return <>{el}</>;
+                  {lastArray.map((el, index) => {
+                    return <span key={`${el}${index}Last`}>{el}</span>;
                   })}
                 </NameTrail>
               </span>

@@ -20,26 +20,22 @@ const ProjectDetails = () => {
   if (!project) return router.push("/404");
   return (
     <Layout dark={true} active={"projects"}>
-      <div className="w-full md:h-full grid grid-cols-1 lg:grid-cols-2 md:gap-8 md:p-10 text-blue-dark">
-        <div className="flex flex-col w-full md:h-full h-fit md:justify-center mt-5 md:mt-0 gap-3 md:gap-10 mb-5">
+      <div className="w-full h-full xl:grid xl:grid-cols-2 flex flex-col gap-8 md:p-10 text-blue-dark">
+        <div className="flex flex-col w-full h-fit xl:h-full justify-center mt-5 md:mt-0 gap-3 md:gap-6">
           <HorizontalTrail>
-            <h1 className="font-bold 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl text-center">
+            <h1 className="font-bold 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-center">
               {project.name}
             </h1>
-            <div className="flex w-full md:gap-12 justify-evenly md:justify-center text-orange-dark">
-              {project.tools.map((tool, index) => {
-                return <span key={`${project.slug}Tools${index}`}>{tool}</span>;
-              })}
-            </div>
+
             <a
               href={project.liveSite}
-              className="cursor-pointer w-full flex justify-center"
+              className="cursor-pointer flex justify-center"
               target="_blank"
             >
               <img
                 src={project.screenshot}
                 alt={project.summary}
-                className="rounded-xl md:h-96 shadow-xl"
+                className="rounded-xl xl:max-h-96 max-h-44 w-auto object-cover shadow-xl"
               />
             </a>
           </HorizontalTrail>
@@ -62,8 +58,8 @@ const ProjectDetails = () => {
             </Trail>
           </div>
         </div>
-        <div className="flex flex-col w-full md:items-center md:justify-center md:p-10">
-          <ul className="list-disc list-outside font-bold 2xl:text-3xl xl:text-2xl lg:text-xl ">
+        <div className="flex flex-col w-full items-center justify-center md:p-10">
+          <ul className="list-disc list-outside font-bold 2xl:text-3xl xl:text-2xl w-full">
             <HorizontalTrail>
               {project.description.map((entry, index) => {
                 return (

@@ -12,7 +12,6 @@ const ProjectIndex = () => {
   const [repoUrl, setRepoUrl] = useState("");
   const [showUrl, setShowUrl] = useState("");
   const [description, setDescription] = useState("");
-  const [tools, setTools] = useState([]);
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
@@ -21,11 +20,6 @@ const ProjectIndex = () => {
         <div className="md:w-1/2 hidden md:flex flex-col items-center justify-center gap-8">
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>
-              <div className="flex w-full gap-8 justify-between text-orange-dark">
-                {tools.map((tool, index) => {
-                  return <span key={`${tool}${index}`}>{tool}</span>;
-                })}
-              </div>
               <a
                 href={liveSiteUrl}
                 className="cursor-pointer w-full flex justify-center"
@@ -34,7 +28,7 @@ const ProjectIndex = () => {
                 <img
                   src={imgUrl}
                   alt=""
-                  className="object-cover rounded-xl shadow-xl transition-all w-auto xl:h-96 md:h-64"
+                  className="object-cover rounded-xl shadow-xl transition-all w-auto xl:max-h-96 md:max-h-64"
                 />
               </a>
               <p>{description}</p>
@@ -81,7 +75,6 @@ const ProjectIndex = () => {
                     setDescription(project.summary);
                     setActiveIndex(index);
                     setRepoUrl(project.repo);
-                    setTools(project.tools);
                     setShowUrl(`/projects/${project.slug}`);
                   }}
                   key={project.slug}
