@@ -16,7 +16,7 @@ const ProjectIndex = () => {
 
   return (
     <Layout dark={true} active={"projects"}>
-      <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center text-blue-dark">
         <div className="md:w-1/2 hidden md:flex flex-col items-center justify-center gap-8">
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>

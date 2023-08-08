@@ -6,7 +6,7 @@ const Nav = ({ dark, active }) => {
   return (
     <div
       className={`flex w-full md:text-lg text-xl justify-between items-baseline md:pt-6 pt-4 ${
-        dark ? "text-black" : "text-white"
+        dark ? "text-blue-dark" : "text-white"
       }`}
     >
       <Link

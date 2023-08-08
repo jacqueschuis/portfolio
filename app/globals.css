@@ -112,18 +112,18 @@ body {
 
 .nav-link-dark:hover,
 .logo-dark:hover {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 5px hsla(197, 37%, 24%, 5%);
   cursor: pointer;
 }
 
 .hover-underline-animation-dark {
-  @apply text-black;
+  @apply text-blue-dark;
   position: relative;
   text-decoration: none;
 }
 
 .hover-underline-animation-dark::after {
-  @apply bg-black;
+  @apply bg-blue-dark;
   content: "";
   position: absolute;
   width: 100%;

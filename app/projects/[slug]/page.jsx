@@ -18,17 +18,23 @@ const ProjectDetails = () => {
   const project = projects.find((proj) => proj.slug === slug);
   if (!project) return router.push("/404");
   return (
-    <Layout dark={true} active={"projects"} breadCrumb={project.name}>
-      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:p-10">
-        <div className="flex flex-col w-full h-full md:justify-between mt-5 md:mt-0 gap-3 md:gap-0">
-          <h1 className="font-bold 2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl text-3xl text-center md:text-end">
+    <Layout dark={true} active={"projects"}>
+      <div className="w-full md:h-full grid grid-cols-1 lg:grid-cols-2 md:gap-8 md:p-10 text-blue-dark">
+        <div className="flex flex-col w-full md:h-full h-fit md:justify-center mt-5 md:mt-0 gap-3 md:gap-10 mb-5">
+          <h1 className="font-bold 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl text-center">
             {project.name}
           </h1>
-          <img
-            src={project.screenshot}
-            alt={project.summary}
-            className="rounded-xl shadow-xl"
-          />
+          <a
+            href={project.liveSite}
+            className="cursor-pointer w-full h-fit"
+            target="_blank"
+          >
+            <img
+              src={project.screenshot}
+              alt={project.summary}
+              className="rounded-xl shadow-xl"
+            />
+          </a>
           <div className="flex justify-evenly md:text-2xl">
             <Trail>
               <a
@@ -48,8 +54,8 @@ const ProjectDetails = () => {
             </Trail>
           </div>
         </div>
-        <div className="flex flex-col w-full items-center md:justify-center md:p-10">
-          <ul className="list-disc list-inside font-bold 2xl:text-3xl xl:text-2xl lg:text-xl text-center md:text-right">
+        <div className="flex flex-col w-full md:items-center md:justify-center md:p-10">
+          <ul className="list-disc  font-bold 2xl:text-3xl xl:text-2xl lg:text-xl ">
             {project.description.map((entry) => {
               return <li>{entry}</li>;
             })}
