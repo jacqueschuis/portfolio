@@ -51,7 +51,7 @@ module.exports.work = [
   {
     place: "Fleet Feet",
     location: "Longmeadow, MA",
-    title: "Marketing and Community Outreach Coordinator",
+    title: "Marketing/Community Outreach Coordinator",
     date: "2022 – 2023",
     description: [
       "Created captivating social media content and grew audience engagement through targeted campaigns",
@@ -87,7 +87,7 @@ module.exports.work = [
   {
     place: "EtonHouse International School",
     location: "Nanjing, China",
-    title: "Teacher—Art and English as an Additional Language",
+    title: "Teacher—Art and EAL",
     date: "2018 – 2020",
     description: [
       "Served as the head English teacher for two early childhood classes and the sole art teacher for the school",

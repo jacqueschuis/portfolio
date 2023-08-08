@@ -9,17 +9,6 @@ import Link from "next/link";
 import HorizontalTrail from "../components/HorizontalTrail";
 import { education, work } from "@/data/data";
 
-const Stack = ({ name, icon }) => {
-  return (
-    <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
-      <i className={`${icon} text-5xl`}></i>
-      <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
-        {name}
-      </p>
-    </div>
-  );
-};
-
 const StackCarousel = () => {
   const techStack = [
     { name: "react", icon: "devicon-react-original" },
@@ -46,6 +35,17 @@ const StackCarousel = () => {
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
+
+  const Stack = ({ name, icon }) => {
+    return (
+      <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
+        <i className={`${icon} text-5xl`}></i>
+        <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
+          {name}
+        </p>
+      </div>
+    );
+  };
 
   return (
     <div className="stack mt-5 w-full xl:w-1/2 relative ps-10 pe-10">
@@ -90,78 +90,82 @@ const StackCarousel = () => {
 const ProfileComponent = ({ setActiveIndex }) => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <HorizontalTrail>
-        <p>
-          I'm Jacques Pariseau, a self taught{" "}
-          <Link
-            href={"/projects"}
-            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
-          >
-            web-developer
-          </Link>{" "}
-          based in New England.
-        </p>
-        <p>
-          I've worked full-stack, but my goal is to design and create beautiful
-          UIs as a{" "}
-          <Link
-            href={"/projects"}
-            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
-          >
-            front-end developer.
-          </Link>
-        </p>
-        <p>
-          I'm a{" "}
-          <span
-            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
-            onClick={() => setActiveIndex(3)}
-          >
-            marketing professional
-          </span>
-          ,
-          <span
-            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
-            onClick={() => setActiveIndex(3)}
-          >
-            {" "}
-            graphic designer
-          </span>
-          , and academically-trained{" "}
-          <span
-            className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
-            onClick={() => setActiveIndex(2)}
-          >
-            art historian
-          </span>
-          .
-        </p>
-        <p>
-          I love learning new things—languages, musical instruments, cooking—but
-          recently, I've been learning:
-        </p>
-      </HorizontalTrail>
+      <p>
+        I'm Jacques Pariseau, a self taught{" "}
+        <Link
+          href={"/projects"}
+          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+        >
+          web-developer
+        </Link>{" "}
+        based in New England.
+      </p>
+      <p>
+        I've worked full-stack, but my goal is to design and create beautiful
+        UIs as a{" "}
+        <Link
+          href={"/projects"}
+          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+        >
+          front-end developer.
+        </Link>
+      </p>
+      <p>
+        I'm a{" "}
+        <span
+          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          onClick={() => setActiveIndex(3)}
+        >
+          marketing professional
+        </span>
+        ,
+        <span
+          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          onClick={() => setActiveIndex(3)}
+        >
+          {" "}
+          graphic designer
+        </span>
+        , and academically-trained{" "}
+        <span
+          className="cursor-pointer font-bold text-blue-dark transition-all hover:text-blue-light"
+          onClick={() => setActiveIndex(2)}
+        >
+          art historian
+        </span>
+        .
+      </p>
+      <p>
+        I love learning new things—languages, musical instruments, cooking—but
+        recently, I've been learning:
+      </p>
       <StackCarousel />
     </div>
   );
 };
 
-const EducationEntry = ({ institution, degree, subject, years, location }) => {
-  return (
-    <div className="w-full text-center">
-      <p>{years}</p>
-      <p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold">
-        {degree}
-      </p>
-      <p className="">in {subject}</p>
-      <p>
-        {institution}, {location}
-      </p>
-    </div>
-  );
-};
-
 const EducationComponent = () => {
+  const EducationEntry = ({
+    institution,
+    degree,
+    subject,
+    years,
+    location,
+  }) => {
+    return (
+      <div className="w-full text-center">
+        <p>{years}</p>
+        <p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold">
+          {degree}
+        </p>
+        <p className="">in {subject}</p>
+        <p>
+          {institution}, {location}
+        </p>
+      </div>
+    );
+  };
+
   return (
     <div className="w-full h-full md:grid md:grid-cols-2 gap-5 flex flex-col">
       <HorizontalTrail>
@@ -175,7 +179,27 @@ const EducationComponent = () => {
   );
 };
 
-const WorkComponent = () => {};
+const WorkComponent = () => {
+  const WorkEntry = ({ date, title, place, location }) => {
+    return (
+      <div className="w-full text-center">
+        <p>{date}</p>
+        <p className="xl:text-2xl lg:text-xl md:text-lg font-bold">{title}</p>
+        <p>{place}</p>
+        <p>{location}</p>
+      </div>
+    );
+  };
+  return (
+    <div className="w-full h-full md:grid md:grid-cols-3 gap-5 flex flex-col">
+      <HorizontalTrail>
+        {work.map((item, index) => {
+          return <WorkEntry key={`ed${item.institution}${index}`} {...item} />;
+        })}
+      </HorizontalTrail>
+    </div>
+  );
+};
 
 const CVPage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
