@@ -48,8 +48,12 @@ const ProjectDetails = () => {
             </Trail>
           </div>
         </div>
-        <div className="flex flex-col w-full p-10 bg-orange-dark rounded-xl shadow-xl">
-          <h2 className="text-5xl font-bold text-white">Description</h2>
+        <div className="flex flex-col w-full items-center md:justify-center md:p-10">
+          <ul className="list-disc list-inside font-bold 2xl:text-3xl xl:text-2xl lg:text-xl text-center md:text-right">
+            {project.description.map((entry) => {
+              return <li>{entry}</li>;
+            })}
+          </ul>
         </div>
       </div>
     </Layout>

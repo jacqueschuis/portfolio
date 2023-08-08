@@ -14,7 +14,7 @@ const HorizontalTrail = ({ children }) => {
   return (
     <>
       {trail.map(({ ...style }, index) => (
-        <animated.div key={index} style={style}>
+        <animated.div key={`Horizontal${index}`} style={style}>
           {items[index]}
         </animated.div>
       ))}
