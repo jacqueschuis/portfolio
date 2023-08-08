@@ -1,17 +1,18 @@
 import Trail from "./Trail";
 import Link from "next/link";
-import styles from "./Nav.module.css";
 
 const Nav = ({ dark, active }) => {
   return (
     <div
-      className={`flex w-full md:text-lg text-xl justify-between items-baseline md:pt-6 pt-4 ${
+      className={`flex w-full md:text-lg text-sm justify-between items-baseline md:pt-6 pt-4 ${
         dark ? "text-blue-dark" : "text-white"
       }`}
     >
       <Link
         href="/"
-        className={`font-bold text-2xl ${dark ? "logo-dark" : "logo"}`}
+        className={`font-bold md:text-2xl text-lg ${
+          dark ? "logo-dark" : "logo"
+        }`}
       >
         JP
       </Link>
@@ -46,6 +47,16 @@ const Nav = ({ dark, active }) => {
             } ${active === "cv" ? "font-bold" : ""}`}
           >
             CV
+          </Link>
+          <Link
+            href="/home"
+            className={`${
+              dark
+                ? "hover-underline-animation-dark nav-link-dark"
+                : "hover-underline-animation nav-link"
+            } ${active === "contact" ? "font-bold" : ""}`}
+          >
+            Contact
           </Link>
         </Trail>
       </div>

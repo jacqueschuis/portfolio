@@ -73,7 +73,9 @@ const ProjectIndex = () => {
                   }}
                 >
                   <li key={project.slug}>
-                    <span className="font-normal text-xl">{index + 1}. </span>
+                    <span className="font-normal text-sm md:text-lg">
+                      {`${index + 1}. `}
+                    </span>
                     {project.name}
                   </li>
                 </Link>

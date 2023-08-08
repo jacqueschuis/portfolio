@@ -29,8 +29,8 @@ const Home = () => {
   return (
     <main className="h-screen md:p-10 p-4 w-full flex items-center home text-white">
       <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
-        <div className="flex w-full md:px-10 px-5 md:text-lg text-xl justify-between items-baseline absolute md:top-6 top-4 text-white">
-          <Link href="/" className="font-bold text-2xl logo">
+        <div className="flex w-full md:px-10 px-5 text-sm md:text-lg justify-between items-baseline absolute md:top-6 top-4 text-white">
+          <Link href="/" className="font-bold md:text-2xl text-lg logo">
             JP
           </Link>
           <div className="flex md:gap-16 gap-8">
@@ -46,6 +46,12 @@ const Home = () => {
               </Link>
               <Link href="/home" className="hover-underline-animation nav-link">
                 CV
+              </Link>
+              <Link
+                href="/contact"
+                className="hover-underline-animation nav-link"
+              >
+                Contact
               </Link>
             </Trail>
           </div>
