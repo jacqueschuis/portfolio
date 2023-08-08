@@ -4,7 +4,7 @@ module.exports.education = [
     degree: "Master of Arts",
     subject: "History of Art and Architecture",
     years: "2020 – 2022",
-    location: "Amherst, MA, USA",
+    location: "Amherst, MA",
     specialization: "Ancient Roman Art, Nineteenth Century Art",
     description: [
       "Selected as one of only three students to receive a full scholarship to the Master of Arts program",
@@ -23,7 +23,7 @@ module.exports.education = [
     degree: "Bachelor of Arts",
     subject: "Studio Art, Art History",
     years: "2014 – 2018",
-    location: "Greenville, SC, USA",
+    location: "Greenville, SC",
     specialization: "Graphic Design, Painting, Photography",
     description: [
       "Served as the Keynote Speaker at Furman Engaged, delivering a presentation on moral relativism to an audience of approximately 50 attendees",
@@ -233,7 +233,7 @@ module.exports.projects = [
   {
     slug: "portfolio",
     name: "Portfolio",
-    summary: "Personal website for Jacques Pariseau",
+    summary: "Personal NextJS web app",
     screenshot: "/images/portfolio.png",
     repo: "https://github.com/jacqueschuis/portfolio",
     liveSite: "https://j-par.com/",

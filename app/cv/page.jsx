@@ -7,12 +7,13 @@ import Autoplay from "embla-carousel-autoplay";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import HorizontalTrail from "../components/HorizontalTrail";
+import { education, work } from "@/data/data";
 
 const Stack = ({ name, icon }) => {
   return (
-    <div className="tech flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
+    <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
       <i className={`${icon} text-5xl`}></i>
-      <p className="hidden text-light absolute bottom-0 text-sm text-center text-blue-light">
+      <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
         {name}
       </p>
     </div>
@@ -47,11 +48,11 @@ const StackCarousel = () => {
   }, [emblaApi]);
 
   return (
-    <div className="stack mt-5 w-full xl:w-2/3 relative ps-10 pe-10">
+    <div className="stack mt-5 w-full xl:w-1/2 relative ps-10 pe-10">
       <div className="stack-carousel w-full overflow-hidden" ref={emblaRef}>
         <div className="stack-carousel-container flex select-none -ml-2.5">
           {techStack.map((skill) => (
-            <Stack key={skill.name} name={skill.name} icon={skill.icon} />
+            <Stack key={skill.name} {...skill} />
           ))}
         </div>
       </div>
@@ -88,8 +89,8 @@ const StackCarousel = () => {
 
 const ProfileComponent = ({ setActiveIndex }) => {
   return (
-    <>
-      <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
+      <HorizontalTrail>
         <p>
           I'm Jacques Pariseau, a self taught{" "}
           <Link
@@ -139,13 +140,40 @@ const ProfileComponent = ({ setActiveIndex }) => {
           I love learning new things—languages, musical instruments, cooking—but
           recently, I've been learning:
         </p>
-        <StackCarousel />
-      </div>
-    </>
+      </HorizontalTrail>
+      <StackCarousel />
+    </div>
   );
 };
 
-const EducationComponent = () => {};
+const EducationEntry = ({ institution, degree, subject, years, location }) => {
+  return (
+    <div className="w-full text-center">
+      <p>{years}</p>
+      <p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold">
+        {degree}
+      </p>
+      <p className="">in {subject}</p>
+      <p>
+        {institution}, {location}
+      </p>
+    </div>
+  );
+};
+
+const EducationComponent = () => {
+  return (
+    <div className="w-full h-full md:grid md:grid-cols-2 gap-5 flex flex-col">
+      <HorizontalTrail>
+        {education.map((item, index) => {
+          return (
+            <EducationEntry key={`ed${item.institution}${index}`} {...item} />
+          );
+        })}
+      </HorizontalTrail>
+    </div>
+  );
+};
 
 const WorkComponent = () => {};
 

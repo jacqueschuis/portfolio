@@ -70,10 +70,6 @@ body {
   height: calc(5rem + (14 - 4) * ((100vw - 200px) / (1440 - 200)));
 }
 
-.tech:hover p {
-  display: inline-block;
-}
-
 @media screen and (max-width: 768px) {
   .home {
     background: linear-gradient(to bottom, #264653, #2a9d8f, #e9c46a, #e76f51);
