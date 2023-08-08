@@ -63,10 +63,10 @@ const ProjectIndex = () => {
             {projects.map((project, index) => {
               return (
                 <Link
-                  className={`md:hover:-translate-x-5 hover:translate-x-2 hover:text-blue-light inline-block transition-all ${
+                  className={`md:hover:-translate-x-5 hover:translate-x-2 hover:text-blue-600 inline-block transition-all ${
                     activeIndex === index
                       ? "text-blue-light md:-translate-x-5"
-                      : "md:hover:-translate-x-5 hover:translate-x-2 hover:text-blue-light"
+                      : "md:hover:-translate-x-5 hover:translate-x-2 hover:text-blue-600"
                   }`}
                   href={`/projects/${project.slug}`}
                   onMouseOver={() => {

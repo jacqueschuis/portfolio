@@ -16,7 +16,7 @@ const Nav = ({ dark, active }) => {
       >
         JP
       </Link>
-      <div className="flex md:gap-16 gap-8">
+      <div className="flex md:gap-16 gap-4">
         <Trail>
           <Link
             href="/projects"

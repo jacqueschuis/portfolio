@@ -33,7 +33,7 @@ const Home = () => {
           <Link href="/" className="font-bold md:text-2xl text-lg logo">
             JP
           </Link>
-          <div className="flex md:gap-16 gap-8">
+          <div className="flex md:gap-16 gap-4">
             <Trail>
               <Link
                 href="/projects"

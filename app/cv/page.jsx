@@ -9,87 +9,83 @@ import Link from "next/link";
 import HorizontalTrail from "../components/HorizontalTrail";
 import { education, work } from "@/data/data";
 
-const StackCarousel = () => {
-  const techStack = [
-    { name: "react", icon: "devicon-react-original" },
-    { name: "next js", icon: "devicon-nextjs-original" },
-    { name: "node js", icon: "devicon-nodejs-plain" },
-    { name: "tailwind", icon: "devicon-tailwindcss-plain" },
-    { name: "bootstrap", icon: "devicon-bootstrap-plain" },
-    { name: "javascript", icon: "devicon-javascript-plain" },
-    { name: "git", icon: "devicon-git-plain" },
-    { name: "github", icon: "devicon-github-original" },
-    { name: "mongodb", icon: "devicon-mongodb-plain" },
-    { name: "npm", icon: "devicon-npm-original-wordmark" },
-  ];
+const ProfileComponent = ({ setActiveIndex }) => {
+  const StackCarousel = () => {
+    const techStack = [
+      { name: "react", icon: "devicon-react-original" },
+      { name: "next js", icon: "devicon-nextjs-original" },
+      { name: "node js", icon: "devicon-nodejs-plain" },
+      { name: "tailwind", icon: "devicon-tailwindcss-plain" },
+      { name: "bootstrap", icon: "devicon-bootstrap-plain" },
+      { name: "javascript", icon: "devicon-javascript-plain" },
+      { name: "git", icon: "devicon-git-plain" },
+      { name: "github", icon: "devicon-github-original" },
+      { name: "mongodb", icon: "devicon-mongodb-plain" },
+      { name: "npm", icon: "devicon-npm-original-wordmark" },
+    ];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, dragFree: true, align: "start" },
-    [Autoplay({ delay: 2000 }, (emblaRoot) => emblaRoot.parentElement)]
-  );
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+      { loop: true, dragFree: true, align: "start" },
+      [Autoplay({ delay: 2000 }, (emblaRoot) => emblaRoot.parentElement)]
+    );
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+    const scrollPrev = useCallback(() => {
+      if (emblaApi) emblaApi.scrollPrev();
+    }, [emblaApi]);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+    const scrollNext = useCallback(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, [emblaApi]);
 
-  const Stack = ({ name, icon }) => {
+    const Stack = ({ name, icon }) => {
+      return (
+        <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
+          <i className={`${icon} text-5xl`}></i>
+          <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
+            {name}
+          </p>
+        </div>
+      );
+    };
+
     return (
-      <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
-        <i className={`${icon} text-5xl`}></i>
-        <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
-          {name}
-        </p>
+      <div className="stack mt-5 w-full xl:w-1/2 relative ps-10 pe-10 text-blue-700">
+        <div className="stack-carousel w-full overflow-hidden" ref={emblaRef}>
+          <div className="stack-carousel-container flex select-none -ml-2.5">
+            {techStack.map((skill) => (
+              <Stack key={skill.name} {...skill} />
+            ))}
+          </div>
+        </div>
+        <button
+          className="stack-carousel__prev cursor-pointer absolute left-0 w-fit h-fit z-2 top-1/2 -translate-y-2/4"
+          aria-label="previous"
+          onClick={scrollPrev}
+        >
+          <svg
+            className="w-4 h-4 fill-blue-600"
+            viewBox="137.718 -1.001 366.563 644"
+          >
+            <path d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z" />
+          </svg>
+        </button>
+        <button
+          className="stack-carousel__next cursor-pointer absolute right-0 w-fit h-fit z-2 top-1/2 -translate-y-2/4"
+          aria-label="next"
+          onClick={scrollNext}
+        >
+          <svg
+            className="w-4 h-4 rotate-180 fill-blue-600"
+            viewBox="137.718 -1.001 366.563 644"
+          >
+            <path d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z" />
+          </svg>
+        </button>
       </div>
     );
   };
-
   return (
-    <div className="stack mt-5 w-full xl:w-1/2 relative ps-10 pe-10">
-      <div className="stack-carousel w-full overflow-hidden" ref={emblaRef}>
-        <div className="stack-carousel-container flex select-none -ml-2.5">
-          {techStack.map((skill) => (
-            <Stack key={skill.name} {...skill} />
-          ))}
-        </div>
-      </div>
-      <button
-        className="stack-carousel__prev cursor-pointer absolute left-0 w-fit h-fit z-2 top-1/2 -translate-y-2/4"
-        aria-label="previous"
-        onClick={scrollPrev}
-      >
-        <svg className="w-8 h-8" viewBox="137.718 -1.001 366.563 644">
-          <path
-            fill="#264653"
-            d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
-          />
-        </svg>
-      </button>
-      <button
-        className="stack-carousel__next cursor-pointer absolute right-0 w-fit h-fit z-2 top-1/2 -translate-y-2/4"
-        aria-label="next"
-        onClick={scrollNext}
-      >
-        <svg
-          className="w-8 h-8 rotate-180"
-          viewBox="137.718 -1.001 366.563 644"
-        >
-          <path
-            fill="#264653"
-            d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
-          />
-        </svg>
-      </button>
-    </div>
-  );
-};
-
-const ProfileComponent = ({ setActiveIndex }) => {
-  return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center md:text-lg">
       <p>
         I'm Jacques Pariseau, a self taught{" "}
         <Link
@@ -154,13 +150,20 @@ const EducationComponent = () => {
   }) => {
     return (
       <div className="w-full text-center">
-        <p>{years}</p>
+        <p className="text-blue-600 xl:text-lg lg:text-md md:text-sm text-xs">
+          {years}
+        </p>
         <p className="xl:text-4xl lg:text-3xl md:text-2xl text-xl font-bold">
           {degree}
         </p>
-        <p className="">in {subject}</p>
-        <p>
-          {institution}, {location}
+        <p className="text-blue-700 xl:text-xl lg:text-lg md:text-md text-sm">
+          {subject}
+        </p>
+        <p className="text-blue-700 xl:text-lg lg:text-md md:text-sm text-xs">
+          {institution}
+        </p>
+        <p className="text-blue-600 xl:text-lg lg:text-md md:text-sm text-xs">
+          {location}
         </p>
       </div>
     );
@@ -183,10 +186,16 @@ const WorkComponent = () => {
   const WorkEntry = ({ date, title, place, location }) => {
     return (
       <div className="w-full text-center">
-        <p>{date}</p>
+        <p className="text-blue-600 xl:text-lg lg:text-md md:text-sm text-xs">
+          {date}
+        </p>
         <p className="xl:text-2xl lg:text-xl md:text-lg font-bold">{title}</p>
-        <p>{place}</p>
-        <p>{location}</p>
+        <p className="text-blue-700 xl:text-xl lg:text-lg md:text-md text-sm">
+          {place}
+        </p>
+        <p className="text-blue-700 xl:text-lg lg:text-md md:text-sm text-xs">
+          {location}
+        </p>
       </div>
     );
   };
@@ -211,8 +220,8 @@ const CVPage = () => {
           <button
             className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
               activeIndex === 1
-                ? "xl:-translate-x-3 text-blue-light"
-                : "xl:hover:-translate-x-3 hover:text-blue-light"
+                ? "xl:-translate-x-3 text-blue-600"
+                : "xl:hover:-translate-x-3 hover:text-blue-600"
             }`}
             onClick={() => setActiveIndex(1)}
           >
@@ -221,8 +230,8 @@ const CVPage = () => {
           <button
             className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
               activeIndex === 2
-                ? "xl:-translate-x-3 text-blue-light"
-                : "xl:hover:-translate-x-3 hover:text-blue-light"
+                ? "xl:-translate-x-3 text-blue-600"
+                : "xl:hover:-translate-x-3 hover:text-blue-600"
             }`}
             onClick={() => setActiveIndex(2)}
           >
@@ -231,8 +240,8 @@ const CVPage = () => {
           <button
             className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
               activeIndex === 3
-                ? "xl:-translate-x-3 text-blue-light"
-                : "xl:hover:-translate-x-3 hover:text-blue-light"
+                ? "xl:-translate-x-3 text-blue-600"
+                : "xl:hover:-translate-x-3 hover:text-blue-600"
             }`}
             onClick={() => setActiveIndex(3)}
           >
