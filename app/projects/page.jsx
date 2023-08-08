@@ -21,7 +21,7 @@ const ProjectIndex = () => {
         <div className="md:w-1/2 hidden md:flex flex-col items-center justify-center gap-8">
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>
-              <div className="flex w-full gap-8 justify-between  text-orange-dark">
+              <div className="flex w-full gap-8 justify-between text-orange-dark">
                 {tools.map((tool) => {
                   return <span>{tool}</span>;
                 })}
