@@ -39,7 +39,7 @@ const Nav = ({ dark, active }) => {
             Blog
           </Link> */}
           <Link
-            href="/home"
+            href="/cv"
             className={`${
               dark
                 ? "hover-underline-animation-dark nav-link-dark"
@@ -49,7 +49,7 @@ const Nav = ({ dark, active }) => {
             CV
           </Link>
           <Link
-            href="/home"
+            href="/contact"
             className={`${
               dark
                 ? "hover-underline-animation-dark nav-link-dark"

@@ -26,24 +26,24 @@ const ProjectDetails = () => {
             <h1 className="font-bold 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl text-3xl text-center">
               {project.name}
             </h1>
-            <div className="flex justify-evenly md:text-2xl">
-              {project.tools.map((tool) => {
-                return <span>{tool}</span>;
+            <div className="flex w-full md:gap-12 justify-evenly md:justify-center text-orange-dark">
+              {project.tools.map((tool, index) => {
+                return <span key={`${project.slug}Tools${index}`}>{tool}</span>;
               })}
             </div>
             <a
               href={project.liveSite}
-              className="cursor-pointer w-full h-fit"
+              className="cursor-pointer w-full flex justify-center"
               target="_blank"
             >
               <img
                 src={project.screenshot}
                 alt={project.summary}
-                className="rounded-xl shadow-xl"
+                className="rounded-xl md:h-96 shadow-xl"
               />
             </a>
           </HorizontalTrail>
-          <div className="flex justify-evenly md:text-2xl">
+          <div className="w-full flex gap-8 justify-evenly font-bold">
             <Trail>
               <a
                 href={project.liveSite}
@@ -65,8 +65,10 @@ const ProjectDetails = () => {
         <div className="flex flex-col w-full md:items-center md:justify-center md:p-10">
           <ul className="list-disc list-outside font-bold 2xl:text-3xl xl:text-2xl lg:text-xl ">
             <HorizontalTrail>
-              {project.description.map((entry) => {
-                return <li>{entry}</li>;
+              {project.description.map((entry, index) => {
+                return (
+                  <li key={`${project.slug}Description${index}`}>{entry}</li>
+                );
               })}
             </HorizontalTrail>
           </ul>

@@ -44,7 +44,7 @@ const Home = () => {
               {/* <Link href="/home" className="hover-underline-animation nav-link">
                 Blog
               </Link> */}
-              <Link href="/home" className="hover-underline-animation nav-link">
+              <Link href="/cv" className="hover-underline-animation nav-link">
                 CV
               </Link>
               <Link

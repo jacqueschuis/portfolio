@@ -22,16 +22,21 @@ const ProjectIndex = () => {
           {imgUrl && liveSiteUrl && description && (
             <HorizontalTrail>
               <div className="flex w-full gap-8 justify-between text-orange-dark">
-                {tools.map((tool) => {
-                  return <span>{tool}</span>;
+                {tools.map((tool, index) => {
+                  return <span key={`${tool}${index}`}>{tool}</span>;
                 })}
               </div>
-              {tools.map}
-              <img
-                src={imgUrl}
-                alt=""
-                className="object-cover rounded-xl shadow-xl transition-all w-auto xl:h-96 md:h-64"
-              />
+              <a
+                href={liveSiteUrl}
+                className="cursor-pointer w-full flex justify-center"
+                target="_blank"
+              >
+                <img
+                  src={imgUrl}
+                  alt=""
+                  className="object-cover rounded-xl shadow-xl transition-all w-auto xl:h-96 md:h-64"
+                />
+              </a>
               <p>{description}</p>
               <div className="w-full flex gap-8 justify-evenly font-bold">
                 <a
@@ -79,8 +84,9 @@ const ProjectIndex = () => {
                     setTools(project.tools);
                     setShowUrl(`/projects/${project.slug}`);
                   }}
+                  key={project.slug}
                 >
-                  <li key={project.slug}>
+                  <li>
                     <span className="font-normal text-sm md:text-lg">
                       {`${index + 1}. `}
                     </span>
