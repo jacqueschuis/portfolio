@@ -41,9 +41,9 @@ const Home = () => {
               >
                 Projects
               </Link>
-              <Link href="/home" className="hover-underline-animation nav-link">
+              {/* <Link href="/home" className="hover-underline-animation nav-link">
                 Blog
-              </Link>
+              </Link> */}
               <Link href="/home" className="hover-underline-animation nav-link">
                 CV
               </Link>

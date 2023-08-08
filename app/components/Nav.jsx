@@ -28,7 +28,7 @@ const Nav = ({ dark, active }) => {
           >
             Projects
           </Link>
-          <Link
+          {/* <Link
             href="/home"
             className={`${
               dark
@@ -37,7 +37,7 @@ const Nav = ({ dark, active }) => {
             } ${active === "blog" ? "font-bold" : ""}`}
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="/home"
             className={`${
