@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Section from "./home/components/pieces/Section";
 import NameTrail from "./components/NameTrail";
 import { useSpring, animated } from "@react-spring/web";
 import Trail from "./components/Trail";
@@ -56,7 +55,7 @@ const Home = () => {
             </Trail>
           </div>
         </div>
-        <Section className="flex flex-col items-center text-center w-full mb-32 h-fit py-36 text-white">
+        <section className="flex flex-col items-center text-center w-full mb-32 h-fit py-36 text-white">
           <div className="w-fit">
             <h1 className="font-bold text-hero-lg flex flex-col md:my-12 my-6">
               <span className="block">
@@ -87,7 +86,7 @@ const Home = () => {
               developer
             </div>
           </animated.div>
-        </Section>
+        </section>
       </div>
     </main>
   );

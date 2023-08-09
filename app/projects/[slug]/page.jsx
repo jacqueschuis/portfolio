@@ -40,7 +40,7 @@ const ProjectDetails = () => {
             </a>
           </HorizontalTrail>
           <div className="w-full flex gap-8 justify-evenly font-bold">
-            <Trail>
+            <Trail delay={250}>
               <a
                 href={project.liveSite}
                 target="_blank"

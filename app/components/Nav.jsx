@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Nav = ({ dark, active }) => {
   return (
-    <div
-      className={`flex w-full md:text-lg text-sm justify-between items-baseline md:pt-6 pt-4 ${
+    <nav
+      className={`flex w-full md:text-lg text-sm justify-between items-baseline mb-3 xl:mb-0 md:pt-6 pt-4 ${
         dark ? "text-blue-700" : "text-white"
       }`}
     >
@@ -60,7 +60,7 @@ const Nav = ({ dark, active }) => {
           </Link>
         </Trail>
       </div>
-    </div>
+    </nav>
   );
 };
 

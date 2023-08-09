@@ -216,7 +216,7 @@ const CVPage = () => {
   return (
     <Layout dark={true} active={"cv"}>
       <div className="w-full h-full flex flex-col gap-8 xl:grid xl:grid-cols-6">
-        <div className="xl:h-full flex xl:flex-col xl:items-end justify-around mt-3 xl:mt-0">
+        <div className="xl:h-full flex xl:flex-col xl:items-end justify-around">
           <button
             className={`xl:text-3xl lg:text-2xl md:text-1xl font-bold transition-all ${
               activeIndex === 1
