@@ -15,50 +15,9 @@ body {
   overflow-x: hidden;
 }
 
-/* .hamburger:hover {
-  filter: drop-shadow(0 0 5px rgba(242, 242, 242, 0.3));
-  cursor: pointer;
-}
-
-#top-section,
-#bottom-section {
-  transform-style: preserve-3d;
-}
-
-#top-section {
-  z-index: 1;
-}
-
-#bottom-section {
-  z-index: 0;
-}
-
-#scroll-to-top {
-  z-index: 2;
-} */
-
 .home {
   background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
 }
-/* 
-.hero {
-  background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
-  color: rgba(255, 255, 255, 0);
-  background-clip: text;
-  transition: 0.5s;
-}
-
-.subheading {
-  background: -webkit-linear-gradient(left, #264653, #2a9d8f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section-heading {
-  background: -webkit-linear-gradient(right, #e9c46a, #e76f51);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
 
 .Typewriter {
   display: inline-block;
