@@ -44,14 +44,14 @@ const ProjectDetails = () => {
               <a
                 href={project.liveSite}
                 target="_blank"
-                className="hover:text-blue-light transition-all inline-block hover:-translate-y-[.1rem]"
+                className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
               >
                 Live Site
               </a>
               <a
                 href={project.repo}
                 target="_blank"
-                className="hover:text-blue-light transition-all inline-block hover:-translate-y-[.1rem]"
+                className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
               >
                 GitHub
               </a>
