@@ -1,30 +1,44 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      black: "hsl(0,0%,15%)",
+      grey: "hsl(0,0%,77%)",
+      white: "hsl(0,0%,98%)",
+      blue: {
+        100: "hsl(173, 85%, 90%)",
+        200: "hsl(173, 78%, 80%)",
+        300: "hsl(173, 73%, 70%)",
+        400: "hsl(173, 65%, 60%)",
+        500: "hsl(173, 63%, 50%)",
+        600: "hsl(173, 58%, 39%)",
+        700: "hsl(182, 64%, 24%)",
+        800: "hsl(190, 78%, 15%)",
+        900: "hsl(197, 85%, 10%)",
+      },
+      orange: {
+        100: "hsl(50, 94%, 90%)",
+        200: "hsl(46, 84%, 80%)",
+        300: "hsl(40, 79%, 72%)",
+        400: "hsl(32, 74%, 70%)",
+        500: "hsl(27, 87%, 67%)",
+        600: "hsl(20, 76%, 61%)",
+        700: "hsl(15, 76%, 43%)",
+        800: "hsl(13, 85%, 30%)",
+        900: "hsl(13, 90%, 16%)",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      colors: {
-        black: "#262626",
-        grey: "#c4c4c4",
-        white: "#fafafa",
-        blue: {
-          light: "#2a9d8f",
-          dark: "#264653",
-        },
-        orange: {
-          light: "#e9c46a",
-          DEFAULT: "#f4a261",
-          dark: "#e76f51",
-        },
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
@@ -38,7 +52,7 @@ module.exports = {
           },
         ],
         "hero-sm": [
-          "calc(30px + (75 - 30) * ((100vw - 200px) / (1440 - 200)))",
+          "calc(22px + (75 - 22) * ((100vw - 200px) / (1440 - 200)))",
           {
             lineHeight: "1",
           },

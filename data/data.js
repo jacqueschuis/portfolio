@@ -4,7 +4,7 @@ module.exports.education = [
     degree: "Master of Arts",
     subject: "History of Art and Architecture",
     years: "2020 – 2022",
-    location: "Amherst, MA, USA",
+    location: "Amherst, MA",
     specialization: "Ancient Roman Art, Nineteenth Century Art",
     description: [
       "Selected as one of only three students to receive a full scholarship to the Master of Arts program",
@@ -16,21 +16,21 @@ module.exports.education = [
       "Conceptualized topic for the MRS and secured the keynote speaker from Nova Scotia College of Art and Design and panelists from Amherst College, Smith College, and University of Massachusetts Amherst",
       "Maximized MRS awareness by designing and launching targeted marketing campaigns; created digital and print promotional advertisements, brochures, posters, and flyers",
       "Exceeded fundraising goal for the MRS, generating $4,600 from two grants, six academic departments, and three university organizations",
-    ]
+    ],
   },
   {
     institution: "Furman University",
     degree: "Bachelor of Arts",
     subject: "Studio Art, Art History",
     years: "2014 – 2018",
-    location: "Greenville, SC, USA",
+    location: "Greenville, SC",
     specialization: "Graphic Design, Painting, Photography",
     description: [
       "Served as the Keynote Speaker at Furman Engaged, delivering a presentation on moral relativism to an audience of approximately 50 attendees",
       "Traveled with 15 other students to China for a fully-funded cultural-exchange trip in 2014",
     ],
     specialEvent: null,
-    specialEventDescription: null
+    specialEventDescription: null,
   },
 ];
 
@@ -51,7 +51,7 @@ module.exports.work = [
   {
     place: "Fleet Feet",
     location: "Longmeadow, MA",
-    title: "Marketing and Community Outreach Coordinator",
+    title: "Marketing/Community Outreach Coordinator",
     date: "2022 – 2023",
     description: [
       "Created captivating social media content and grew audience engagement through targeted campaigns",
@@ -87,7 +87,7 @@ module.exports.work = [
   {
     place: "EtonHouse International School",
     location: "Nanjing, China",
-    title: "Teacher—Art and English as an Additional Language",
+    title: "Teacher—Art and EAL",
     date: "2018 – 2020",
     description: [
       "Served as the head English teacher for two early childhood classes and the sole art teacher for the school",
@@ -107,9 +107,9 @@ module.exports.personalProjects = [
       "React Router for handling routes",
       "useEffect route validation for disallowing games without players",
       "React Spring animations on all routes",
-      "Light/Dark support on client preference"
+      "Light/Dark support on client preference",
     ],
-    tools: ["React", "Vite", "React Spring"]
+    tools: ["React", "Vite", "React Spring"],
   },
   {
     name: "museo",
@@ -190,6 +190,109 @@ module.exports.frontEndMentor = [
     description: [
       "Responsive design with custom CSS",
       "Custom data validation and error handling through conditionals",
+    ],
+    tools: ["HTML", "CSS", "JS"],
+  },
+];
+
+module.exports.projects = [
+  {
+    slug: "yahtzee",
+    name: "Yahtzee Scorer",
+    summary: "Dynamic Yahtzee scorecard generator built with React",
+    repo: "https://github.com/jacqueschuis/yahtzee-scorer",
+    screenshot: "/images/yahtzee-scorer.png",
+    liveSite: "https://yahtzee-scorer.vercel.app",
+    description: [
+      "Dynamic Yahtzee Scorecard generator",
+      "React Router",
+      "useEffect route validation",
+      "React Spring animations",
+      "Light/Dark support",
+    ],
+    tools: ["React", "Vite", "React Spring"],
+  },
+  {
+    slug: "museo",
+    name: "museo",
+    summary: "Full-stack Node application to find inspiration",
+    screenshot: "/images/museo.png",
+    repo: "https://github.com/jacqueschuis/museo",
+    liveSite: "https://museo.onrender.com",
+    description: [
+      "Full-stack Node, Express, MongoDB app",
+      "MasonryJS, Flickity, VanillaTilt, ImagesLoaded integration",
+      "Passport JS authentication",
+      "EJS templating",
+      "JOI data validation",
+      "Atlas Search",
+      "Bootstrap Responsive design",
+    ],
+    tools: ["MongoDB", "Express", "Node.js"],
+  },
+  {
+    slug: "portfolio",
+    name: "Portfolio",
+    summary: "Personal NextJS web app",
+    screenshot: "/images/portfolio.png",
+    repo: "https://github.com/jacqueschuis/portfolio",
+    liveSite: "https://j-par.com/",
+    description: [
+      "React Spring animations/transitions",
+      "Tailwind CSS styles",
+      "NextJS app router",
+    ],
+    tools: ["NextJS", "Tailwind", "React Spring"],
+  },
+  {
+    slug: "color-gen",
+    name: "Color Generator",
+    summary: "Random monochromatic color-scheme generator",
+    screenshot: "/images/random-color.png",
+    repo: "https://github.com/jacqueschuis/simple-color-generator",
+    liveSite: "https://simple-color-generator.vercel.app/",
+    description: [
+      "DOM manipulation",
+      "Custom color class",
+      "Clipboard API integration",
+    ],
+    tools: ["HTML", "JS", "Bootstrap"],
+  },
+  {
+    slug: "tip-calc",
+    name: "Tip Calculator",
+    summary: "Dynamic tip calculator widget",
+    screenshot: "/images/tip-calculator.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/tip-calculator",
+    liveSite: "https://frontend-mentor-tip-calculator-omega.vercel.app/",
+    description: [
+      "Custom RegEx validation and error handling",
+      "Vanilla CSS styles",
+      "Flexbox/grid responsive design",
+    ],
+    tools: ["HTML", "CSS", "JS"],
+  },
+  {
+    slug: "css-landing",
+    name: "CSS Landing Page",
+    summary: "Illustrated landing page with only CSS",
+    screenshot: "/images/css-landing.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/css-illustration",
+    liveSite: "https://frontend-mentor-css-illustration.vercel.app/",
+    description: ["Vanilla CSS styles", "calc() and flexbox responsive design"],
+    tools: ["HTML", "CSS", "JS"],
+  },
+  {
+    slug: "age-calc",
+    name: "Age Calculator",
+    summary: "Dynamic age calculator widget",
+    screenshot: "/images/age-calculator.png",
+    repo: "https://github.com/jacqueschuis/frontend-mentor/tree/main/age-calculator",
+    liveSite: "https://frontend-mentor-age-calculator-khaki.vercel.app/",
+    description: [
+      "Vanilla CSS styles",
+      "Flexbox responsive design",
+      "Custom conditional validation and error handling",
     ],
     tools: ["HTML", "CSS", "JS"],
   },

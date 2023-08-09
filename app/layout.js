@@ -5,11 +5,7 @@ export const metadata = {
   description: "Personal website of Jacques Pariseau, front-end developer",
 };
 
-export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}) {
+export default function RootLayout({ children }) {
   return (
     <>
       <head>
@@ -17,6 +13,11 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
         />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="theme-color" content="#264653" />
       </head>
       <html lang="en" className="overflow-x-hidden">
         <body className="font-sans bg-white font-normal">{children}</body>
