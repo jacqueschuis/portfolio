@@ -28,8 +28,8 @@ const Nav = ({ dark, active }) => {
           >
             Projects
           </Link>
-          {/* <Link
-            href="/home"
+          <Link
+            href="/blog"
             className={`${
               dark
                 ? "hover-underline-animation-dark nav-link-dark"
@@ -37,7 +37,7 @@ const Nav = ({ dark, active }) => {
             } ${active === "blog" ? "font-bold" : ""}`}
           >
             Blog
-          </Link> */}
+          </Link>
           <Link
             href="/cv"
             className={`${
