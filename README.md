@@ -261,7 +261,7 @@ _updated 9 August 2023_
 
 I have gotten a lot faster with Tailwind, and it allowed me to do some pretty complex layout changes to keep my design totally responsive. After finishing the Tailwind team's [Refactoring UI](https://www.refactoringui.com/), I've changed over to a more systematic design approach. This included changing my color scheme from a simple light/default/dark to a more full system for my primary (blue) and secondary (orange):
 
-```json
+```js
 theme: {
     colors: {
       blue: {
