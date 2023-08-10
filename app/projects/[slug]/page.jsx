@@ -2,6 +2,7 @@ import Layout from "@/app/components/Layout";
 import { projects } from "@/data/data";
 import Trail from "@/app/components/Trail";
 import HorizontalTrail from "@/app/components/HorizontalTrail";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const paths = projects.map((proj) => ({
@@ -21,6 +22,9 @@ export async function generateMetadata({ params }) {
 
 const ProjectDetails = ({ params }) => {
   const project = projects.find((proj) => proj.slug === params.slug);
+  if (!project) {
+    notFound();
+  }
   return (
     <Layout dark={true} active={"projects"}>
       <div className="w-full md:h-full h-fit xl:grid xl:grid-cols-2 flex flex-col gap-8 ">
