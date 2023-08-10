@@ -51,7 +51,7 @@ const ProjectIndex = () => {
                   href={showUrl}
                   className="hover:text-blue-600 transition-all inline-block hover:-translate-y-[.1rem]"
                 >
-                  More Information
+                  Details
                 </Link>
               </div>
             </HorizontalTrail>

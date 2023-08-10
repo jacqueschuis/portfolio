@@ -32,7 +32,8 @@ export const getBlogFromSlug = (slug) => {
         ...data,
       },
     };
-  } catch {
+  } catch (err) {
+    console.log(err);
     return notFound();
   }
 };
