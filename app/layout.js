@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#264653" />
       </head>
       <html lang="en" className="overflow-x-hidden">
-        <body className="font-sans bg-white font-normal">{children}</body>
+        <body className="font-sans font-normal">{children}</body>
       </html>
     </>
   );

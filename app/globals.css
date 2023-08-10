@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --app-height: 100%;
+}
+
 * {
   @apply box-border;
 }
@@ -13,6 +17,12 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.single--page {
+  min-height: 100vh;
+  min-height: var(--app-height);
+  min-height: -webkit-fill-available;
 }
 
 .home {

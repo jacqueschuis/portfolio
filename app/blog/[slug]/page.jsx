@@ -1,4 +1,4 @@
-import Layout from "@/app/components/Layout";
+import Layout from "@/app/components/LongLayout";
 import fs from "fs";
 import path from "path";
 
