@@ -1,26 +1,29 @@
-"use client";
-
 import Layout from "@/app/components/Layout";
-import { useParams, useRouter } from "next/navigation";
 import { projects } from "@/data/data";
 import Trail from "@/app/components/Trail";
 import HorizontalTrail from "@/app/components/HorizontalTrail";
 
-export function generateStaticParams() {
-  return projects.map((proj) => ({
+export async function generateStaticParams() {
+  const paths = projects.map((proj) => ({
     slug: proj.slug,
   }));
+
+  return paths;
 }
 
-const ProjectDetails = () => {
-  const router = useRouter();
-  const params = useParams();
-  const { slug } = params;
-  const project = projects.find((proj) => proj.slug === slug);
-  if (!project) return router.push("/404");
+export async function generateMetadata({ params }) {
+  const project = projects.find((proj) => proj.slug === params.slug);
+  return {
+    title: "Jacques Pariseau | " + project.name,
+    description: project.summary,
+  };
+}
+
+const ProjectDetails = ({ params }) => {
+  const project = projects.find((proj) => proj.slug === params.slug);
   return (
     <Layout dark={true} active={"projects"}>
-      <div className="w-full h-fit xl:grid xl:grid-cols-2 flex flex-col gap-8 ">
+      <div className="w-full md:h-full h-fit xl:grid xl:grid-cols-2 flex flex-col gap-8 ">
         <div className="flex flex-col w-full h-fit xl:h-full justify-center mt-5 md:mt-0 gap-3 md:gap-6">
           <HorizontalTrail>
             <h1 className="font-bold 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-center">
