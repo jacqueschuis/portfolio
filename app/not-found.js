@@ -2,6 +2,11 @@ import Layout from "@/app/components/Layout";
 import Link from "next/link";
 import HorizontalTrail from "./components/HorizontalTrail";
 
+export const metadata = {
+  title: "Jacques Pariseau | 404",
+  description: "That page could not be located",
+};
+
 const NotFound = () => {
   return (
     <Layout dark={true}>

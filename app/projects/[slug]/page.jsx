@@ -14,14 +14,18 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const project = projects.find((proj) => proj.slug === params.slug);
-  return {
-    title: "Jacques Pariseau | " + project.name,
-    description: project.summary,
-  };
+
+  if (project) {
+    return {
+      title: "Jacques Pariseau | " + project.name,
+      description: project.summary,
+    };
+  }
 }
 
 const ProjectDetails = ({ params }) => {
   const project = projects.find((proj) => proj.slug === params.slug);
+
   if (!project) {
     notFound();
   }
