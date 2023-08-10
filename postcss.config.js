@@ -3,6 +3,5 @@ module.exports = {
     "tailwindcss/nesting": {},
     tailwindcss: {},
     autoprefixer: {},
-    require('postcss-100vh-fix'),
   },
 };
