@@ -15,17 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-.single-page {
-  height: 100vh;
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
-}
-
 .home {
   background: linear-gradient(to left, #264653, #2a9d8f, #e9c46a, #e76f51);
 }
@@ -108,4 +97,10 @@ html {
 
 .content--background {
   background: hsla(0, 0%, 98%, 75%);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
 }
