@@ -15,6 +15,7 @@ import rehypeHighlight from "rehype-highlight/lib";
 import "@/styles/highlight-js/github-dark.css";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("blogs"));
@@ -55,13 +56,23 @@ const SingleBlog = ({ params }) => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:transition-all mt-5">
+      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:font-bold prose-a:transition-all mt-5 prose-h1:text-blue-800 prose-h2:text-blue-700 prose-h3:text-blue-600">
         <div className="w-full flex flex-col text-center">
-          <h1 className="text-blue-800 mb-0">{frontmatter.title}</h1>
-          {frontmatter.subtitle && (
-            <h2 className="font-normal m-0 text-sm">{frontmatter.subtitle}</h2>
-          )}
-          <div className="w-full flex md:flex-row flex-col justify-between text-xs md:text-sm text-blue-600">
+          <div className="w-full flex md:flex-row flex-col text-xs md:text-sm lg:text-base justify-between text-blue-600">
+            <Link
+              href={"/blog/all"}
+              className="flex items-center justify-center font-bold transition-all text-blue-700"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                className="w-4 h-4"
+              >
+                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+              </svg>
+              All Blogs
+            </Link>
             <p className="m-0">
               Published {dayjs(frontmatter.publishedAt).format("D MMMM, YYYY")}
             </p>
@@ -71,6 +82,10 @@ const SingleBlog = ({ params }) => {
               </p>
             )}
           </div>
+          <h1 className="mt-5 mb-2">{frontmatter.title}</h1>
+          {frontmatter.subtitle && (
+            <h2 className="font-normal m-0">{frontmatter.subtitle}</h2>
+          )}
         </div>
 
         <MDXRemote

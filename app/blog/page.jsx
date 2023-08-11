@@ -22,7 +22,7 @@ const BlogCard = ({
     <div
       className={`${
         isFeatured ? "w-full" : "xl:w-1/5"
-      } h-full min-w-[200px] max-w-[300px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5`}
+      } h-full min-w-[200px] max-w-[400px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5`}
     >
       <div className="flex flex-col">
         <div className="w-full flex justify-end text-xs text-blue-600">
@@ -73,29 +73,43 @@ const BlogIndex = () => {
 
   const randomFeatureIndex = Math.floor(Math.random() * featuredBlogs.length);
 
+  const featuredBlog = featuredBlogs[randomFeatureIndex];
+
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col items-start gap-5">
+      <div className="w-full h-full flex flex-col items-start gap-10 ">
         <div className="w-full xl:justify-center items-center xl:flex-row flex-col flex h-full gap-5">
-          <div className="w-full">
-            <h1 className="text-5xl font-bold xl:text-end text-center">Blog</h1>
-            <p></p>
+          <div className="w-full h-full">
+            <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2 text-center">
+              Blog
+            </h1>
+            <p>
+              I'm a self-taught developer who is always growing my skill set. I
+              want to document my growth as an engineer for my own sake, but
+              hopefully other developers can learn along with me.
+            </p>
+            <p>
+              Check out my featured blog, one of my most recent, or see all of
+              my blogs <a href="/blogs/all">here</a>
+            </p>
+            {/* <Link href={"/blog/all"}>
+              <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
+                Read More
+              </button>
+            </Link> */}
           </div>
           <div
             className="w-full flex flex-col xl:items-start items-center"
             id="featured-blog"
           >
-            <h2 className="font-bold text-orange-600 md:text-3xl text-2xl">
+            <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
               Featured Blog
             </h2>
-            <BlogCard
-              isFeatured={true}
-              {...featuredBlogs[randomFeatureIndex]}
-            />
+            <BlogCard isFeatured={true} {...featuredBlog} />
           </div>
         </div>
-        <div className="w-full h-full flex flex-col xl:items-start items-center">
-          <h2 className="font-bold text-orange-600 md:text-3xl text-2xl">
+        <div className="w-full h-max xl:pb-0 pb-9 flex flex-col xl:items-start items-center">
+          <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
             Most Recent Blogs
           </h2>
           <div className="flex xl:flex-row flex-col xl:justify-center items-center w-full gap-5 h-full">

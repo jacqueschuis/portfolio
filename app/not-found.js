@@ -11,7 +11,7 @@ const NotFound = () => {
   return (
     <Layout dark={true}>
       <div className="w-full h-full flex flex-col items-center justify-center gap-16">
-        <div className="flex flex-col items-center justify-center text-blue-800">
+        <div className="flex flex-col items-center text-center justify-center text-blue-800">
           <HorizontalTrail>
             <h1 className="font-bold text-9xl">404</h1>
             <h2 className="text-4xl">not found</h2>

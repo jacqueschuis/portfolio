@@ -17,7 +17,7 @@ module.exports = {
         300: "hsl(173, 73%, 70%)",
         400: "hsl(173, 65%, 60%)",
         500: "hsl(173, 63%, 50%)",
-        600: "hsl(173, 58%, 39%)",
+        600: "hsl(173, 58%, 35%)",
         700: "hsl(182, 64%, 24%)",
         800: "hsl(190, 78%, 15%)",
         900: "hsl(197, 85%, 10%)",
@@ -65,9 +65,9 @@ module.exports = {
         jp: {
           css: {
             "--tw-prose-body": theme("colors.blue[900]"),
-            "--tw-prose-headings": theme("colors.blue[700]"),
+            "--tw-prose-headings": theme("colors.blue[600]"),
             "--tw-prose-lead": theme("colors.blue[700]"),
-            "--tw-prose-links": theme("colors.orange[800]"),
+            "--tw-prose-links": theme("colors.blue[800]"),
             "--tw-prose-bold": theme("colors.blue[700]"),
             "--tw-prose-counters": theme("colors.blue[600]"),
             "--tw-prose-bullets": theme("colors.orange[700]"),
