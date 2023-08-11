@@ -99,8 +99,10 @@ body {
   background: hsla(0, 0%, 98%, 75%);
 }
 
-.single-page {
-  height: -webkit-fill-available;
+@supports (height: 100svh) {
+  .single-page {
+    min-height: calc(100svh);
+  }
 }
 
 /* 
