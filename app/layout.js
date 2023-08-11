@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
         />
         <meta name="theme-color" content="#264653" />
       </head>
-      <html lang="en" className="overflow-x-hidden">
-        <body className="font-sans font-normal">{children}</body>
+      <html lang="en" className="overflow-x-hidden h-screen">
+        <body className="font-sans font-normal h-full">{children}</body>
       </html>
     </>
   );
