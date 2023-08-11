@@ -101,7 +101,7 @@ body {
 
 @supports (height: 100svh) {
   .single-page {
-    min-height: calc(100svh);
+    min-height: 100svh !important;
   }
 }
 

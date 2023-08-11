@@ -27,7 +27,7 @@ const Home = () => {
   }));
 
   return (
-    <main className="h-screen md:p-10 p-4 w-full flex items-center home text-white relative">
+    <main className="h-screen single-page md:p-10 p-4 w-full flex items-center home text-white relative">
       <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
         <div className="flex w-full md:px-10 px-5 text-sm md:text-lg justify-between items-baseline absolute md:top-6 top-4 text-white">
           <Link href="/" className="font-bold md:text-2xl text-lg logo">
