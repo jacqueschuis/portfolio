@@ -31,7 +31,7 @@ const ProjectIndex = () => {
                   className="object-cover rounded-xl shadow-xl transition-all w-auto xl:max-h-96 md:max-h-64"
                 />
               </a>
-              <p>{description}</p>
+              <p className="text-center">{description}</p>
               <div className="w-full flex gap-8 justify-evenly font-bold">
                 <a
                   href={liveSiteUrl}

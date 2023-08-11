@@ -31,7 +31,7 @@ const Layout = ({ children, dark, active }) => {
           {children}
         </animated.div>
       </div>
-      <Footer />
+      <Footer absolute={true} />
     </main>
   );
 };

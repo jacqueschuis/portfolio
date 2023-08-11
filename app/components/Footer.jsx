@@ -1,7 +1,9 @@
-const Footer = ({ home }) => {
+const Footer = ({ home, absolute }) => {
   return (
     <footer
-      className={`absolute bottom-0 md:h-10 h-4 w-full flex justify-center items-center text-[.5rem] md:text-xs ${
+      className={`${
+        absolute && "absolute bottom-0"
+      } md:h-10 h-4 w-full flex justify-center items-center text-[.5rem] md:text-xs ${
         home ? "text-white" : "text-blue-700"
       }`}
     >

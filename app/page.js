@@ -89,7 +89,7 @@ const Home = () => {
           </animated.div>
         </section>
       </div>
-      <Footer home={true} />
+      <Footer home={true} absolute={true} />
     </main>
   );
 };

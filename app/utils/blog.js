@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { sync } from "glob";
 import { notFound } from "next/navigation";
+import dayjs from "dayjs";
 
 const blogsPath = path.join(process.cwd(), "blogs");
 
@@ -58,13 +59,30 @@ export const getBlogs = () => {
   }, []);
 };
 
+export const getMostRecentPublishedBlogs = (num) => {
+  const allBlogs = getBlogs();
+
+  const publishedBlogs = allBlogs.filter((blog) => !blog.isDraft);
+
+  publishedBlogs.sort((a, b) => {
+    return (
+      new dayjs(b.lastEdited ? b.lastEdited : b.publishedAt) -
+      new dayjs(a.lastEdited ? a.lastEdited : a.publishedAt)
+    );
+  });
+
+  const blogs = publishedBlogs.slice(0, num);
+
+  return blogs;
+};
+
 export const getSortedBlogs = () => {
   const articles = getBlogs();
 
   const blogs = articles.map((article) => article);
 
   blogs.sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
+    return new Date(b.lastEdited) - new Date(a.lastEdited);
   });
 
   return blogs;
@@ -80,6 +98,16 @@ export const getMostRecentBlogs = (num) => {
   });
 
   const blogs = allBlogs.slice(0, num);
+
+  return blogs;
+};
+
+export const getFeaturedBlogs = () => {
+  const allBlogs = getBlogs();
+
+  const publishedBlogs = allBlogs.filter((blog) => !blog.isDraft);
+
+  const blogs = publishedBlogs.filter((blog) => blog.isFeaturable);
 
   return blogs;
 };

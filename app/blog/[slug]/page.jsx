@@ -3,6 +3,8 @@ import fs from "fs";
 import path from "path";
 
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import CustomLink from "@/app/components/mdx/CustomLink";
@@ -29,14 +31,17 @@ export async function generateMetadata({ params }) {
 
   if (frontmatter) {
     return {
-      title: frontmatter.title,
+      title: "Jacques Pariseau | " + frontmatter.title,
       description: frontmatter.description,
+      keywords: frontmatter.tags,
     };
   }
 }
 
 const SingleBlog = ({ params }) => {
   const { content, frontmatter } = getBlogFromSlug(params.slug);
+
+  dayjs.extend(relativeTime);
 
   const options = {
     mdxOptions: {
@@ -50,9 +55,23 @@ const SingleBlog = ({ params }) => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:transition-all">
-        <h1>{frontmatter.title}</h1>
-        {dayjs(frontmatter.date).format("MMMM D, YYYY")}
+      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:transition-all mt-5">
+        <div className="w-full flex flex-col text-center">
+          <h1 className="text-blue-800 mb-0">{frontmatter.title}</h1>
+          {frontmatter.subtitle && (
+            <h2 className="font-normal m-0 text-sm">{frontmatter.subtitle}</h2>
+          )}
+          <div className="w-full flex md:flex-row flex-col justify-between text-xs md:text-sm text-blue-600">
+            <p className="m-0">
+              Published {dayjs(frontmatter.publishedAt).format("D MMMM, YYYY")}
+            </p>
+            {frontmatter.lastEdited && (
+              <p className="m-0">
+                Last Updated {dayjs(frontmatter.lastEdited).fromNow()}
+              </p>
+            )}
+          </div>
+        </div>
 
         <MDXRemote
           source={content}
