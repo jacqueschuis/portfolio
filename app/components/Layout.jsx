@@ -16,13 +16,6 @@ const Layout = ({ children, dark, active }) => {
     },
   }));
 
-  // const appHeight = () => {
-  //   const doc = document.documentElement;
-  //   doc.style.setProperty("--app-height", `${window.innerHeight}px`);
-  // };
-  // window.addEventListener("resize", appHeight);
-  // appHeight();
-
   return (
     <main className="h-screen md:p-10 p-4 w-full flex items-center home relative">
       <div className="w-full h-full content--background md:px-10 px-5 md:pb-10 pb-5 rounded-3xl shadow-2xl flex flex-col items-center relative overflow-y-auto text-blue-800">

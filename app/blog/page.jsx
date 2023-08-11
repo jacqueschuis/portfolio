@@ -21,29 +21,31 @@ const BlogCard = ({
   return (
     <div
       className={`${
-        isFeatured ? "w-full" : "w-1/5"
-      } h-full rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all hover:rotate-1 hover:-translate-y-2 gap-5`}
+        isFeatured ? "w-full" : "xl:w-1/5"
+      } h-full min-w-[200px] max-w-[300px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5`}
     >
-      <div className="w-full flex justify-end text-xs text-blue-600">
-        <p>
-          {lastEdited ? (
-            <>{dayjs(lastEdited).format("DD MMM YY")}</>
-          ) : (
-            <>{dayjs(publishedAt).format("DD MMM YY")}</>
-          )}
-        </p>
-      </div>
       <div className="flex flex-col">
-        <h2 className="font-bold text-3xl text-blue-800">{title}</h2>
-        <h3 className="italic text-blue-600 text-sm ">
+        <div className="w-full flex justify-end text-xs text-blue-600">
+          <p>
+            {lastEdited ? (
+              <>{dayjs(lastEdited).format("DD MMM YY")}</>
+            ) : (
+              <>{dayjs(publishedAt).format("DD MMM YY")}</>
+            )}
+          </p>
+        </div>
+        <h2 className="font-bold xl:text-2xl lg:text-xl md:text-lg text-base text-blue-800">
+          {title}
+        </h2>
+        <h3 className="italic text-blue-600 md:text-sm">
           {subtitle ? subtitle : ""}
         </h3>
       </div>
-      <p>{description}</p>
+      <p className="md:text-base text-sm ">{description}</p>
 
       <div className="w-full flex flex-col">
         <Link href={"/blog/" + slug}>
-          <button className="w-full transition-all bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
+          <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
             Read More
           </button>
         </Link>
@@ -73,42 +75,33 @@ const BlogIndex = () => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col gap-5">
-        <div className="w-full justify-center flex h-1/2">
+      <div className="w-full h-full flex flex-col items-start gap-5">
+        <div className="w-full xl:justify-center items-center xl:flex-row flex-col flex h-full gap-5">
           <div className="w-full">
-            <h1>Blog</h1>
+            <h1 className="text-5xl font-bold xl:text-end text-center">Blog</h1>
+            <p></p>
           </div>
-          <div id="featured-blog">
+          <div
+            className="w-full flex flex-col xl:items-start items-center"
+            id="featured-blog"
+          >
+            <h2 className="font-bold text-orange-600 md:text-3xl text-2xl">
+              Featured Blog
+            </h2>
             <BlogCard
               isFeatured={true}
               {...featuredBlogs[randomFeatureIndex]}
             />
           </div>
         </div>
-        <div className="flex w-full gap-5 h-1/2">
-          {blogs.map((blog) => (
-            <BlogCard key={blog.slug} {...blog} />
-          ))}
-          <div className={"h-full  flex flex-col items-center justify-center"}>
-            <div
-              id="all-blogs"
-              className="flex flex-col items-center justify-center"
-            >
-              <Link
-                href={"/blog/all"}
-                className="flex flex-col items-center justify-center transition-all hover:text-blue-600"
-              >
-                <p className="text-xl font-bold">All Blogs</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                  className="w-10 h-10"
-                >
-                  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                </svg>
-              </Link>
-            </div>
+        <div className="w-full h-full flex flex-col xl:items-start items-center">
+          <h2 className="font-bold text-orange-600 md:text-3xl text-2xl">
+            Most Recent Blogs
+          </h2>
+          <div className="flex xl:flex-row flex-col xl:justify-center items-center w-full gap-5 h-full">
+            {blogs.map((blog) => (
+              <BlogCard key={blog.slug} {...blog} />
+            ))}
           </div>
         </div>
       </div>

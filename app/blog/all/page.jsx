@@ -16,7 +16,7 @@ const BlogEntry = ({
   isFeatured,
 }) => {
   return (
-    <div className={"w-full h-full mx-5 py-8 flex flex-col justify-evenly"}>
+    <div className={"w-full h-full px-5 py-8 flex flex-col justify-evenly"}>
       <div className="flex flex-col">
         <p className="font-bold text-blue-600">
           {lastEdited ? (
