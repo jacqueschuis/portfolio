@@ -21,7 +21,7 @@ const LongLayout = ({ children, dark, active }) => {
         <Nav dark={dark} active={active} />
         <animated.div
           style={slide}
-          className="w-full h-fit md:px-10 px-4 flex justify-center"
+          className="w-full h-fit md:px-10 px-2 flex justify-center"
         >
           {children}
         </animated.div>

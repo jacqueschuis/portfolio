@@ -65,7 +65,7 @@ const SingleBlog = ({ params }) => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <article className="prose prose-sm md:prose-base lg:prose-lg prose-jp">
+      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp">
         <h1>{frontmatter.title}</h1>
         {dayjs(frontmatter.date).format("MMMM D, YYYY")}
 
