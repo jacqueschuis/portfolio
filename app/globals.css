@@ -98,3 +98,26 @@ body {
 .content--background {
   background: hsla(0, 0%, 98%, 75%);
 }
+
+/* 
+blog styles
+*/
+
+.contains-task-list {
+  list-style-type: none;
+}
+
+summary {
+  @apply transition-all text-orange-800 hover:text-orange-600 cursor-pointer;
+}
+
+#overview {
+  margin-bottom: 0;
+}
+
+#overview + ul,
+#overview + ul a,
+#overview + ul li,
+#overview + ul li ul {
+  margin: 0;
+}

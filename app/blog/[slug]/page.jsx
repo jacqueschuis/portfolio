@@ -13,7 +13,6 @@ import rehypeHighlight from "rehype-highlight/lib";
 import "@/styles/highlight-js/github-dark.css";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("blogs"));
@@ -45,27 +44,13 @@ const SingleBlog = ({ params }) => {
         remarkGfm,
         [remarkToc, { tight: true, heading: "Overview" }],
       ],
-      rehypePlugins: [
-        rehypeHighlight,
-        rehypeSlug,
-        [
-          rehypeAutolinkHeadings,
-          {
-            behaviour: "append",
-            properties: {
-              ariaHidden: true,
-              tabIndex: -1,
-              className: "hash-link",
-            },
-          },
-        ],
-      ],
+      rehypePlugins: [rehypeHighlight, rehypeSlug],
     },
   };
 
   return (
     <Layout dark={true} active={"blog"}>
-      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp">
+      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:transition-all">
         <h1>{frontmatter.title}</h1>
         {dayjs(frontmatter.date).format("MMMM D, YYYY")}
 

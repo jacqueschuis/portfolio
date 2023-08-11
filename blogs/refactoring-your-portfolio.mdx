@@ -146,22 +146,6 @@ For example, my CV page has some nested layouts, with the parent switching from 
 
 ```jsx
 const WorkComponent = () => {
-  const WorkEntry = ({ date, title, place, location }) => {
-    return (
-      <div className="w-full text-center">
-        <p className="text-blue-600 xl:text-lg lg:text-md md:text-sm text-xs">
-          {date}
-        </p>
-        <p className="xl:text-2xl lg:text-xl md:text-lg font-bold">{title}</p>
-        <p className="text-blue-700 xl:text-xl lg:text-lg md:text-md text-sm">
-          {place}
-        </p>
-        <p className="text-blue-700 xl:text-lg lg:text-md md:text-sm text-xs">
-          {location}
-        </p>
-      </div>
-    );
-  };
   return (
     <div className="w-full h-full md:grid md:grid-cols-3 gap-5 flex flex-col">
       <HorizontalTrail>
