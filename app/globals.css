@@ -98,9 +98,3 @@ body {
 .content--background {
   background: hsla(0, 0%, 98%, 75%);
 }
-
-@supports (-webkit-touch-callout: none) {
-  .h-screen {
-    height: -webkit-fill-available !important;
-  }
-}
