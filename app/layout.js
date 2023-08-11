@@ -3,6 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Jacques Pariseau",
   description: "Personal website of Jacques Pariseau, front-end developer",
+  keywords: "Developer, portfolio, blog, front end, UI, UX",
 };
 
 export default function RootLayout({ children }) {
