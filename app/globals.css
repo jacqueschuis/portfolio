@@ -99,6 +99,10 @@ body {
   background: hsla(0, 0%, 98%, 75%);
 }
 
+.single-page {
+  height: -webkit-fill-available;
+}
+
 /* 
 blog styles
 */
