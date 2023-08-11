@@ -65,14 +65,16 @@ const SingleBlog = ({ params }) => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <h1>{frontmatter.title}</h1>
-      {dayjs(frontmatter.date).format("MMMM D, YYYY")}
+      <article className="prose prose-sm md:prose-base lg:prose-lg prose-jp">
+        <h1>{frontmatter.title}</h1>
+        {dayjs(frontmatter.date).format("MMMM D, YYYY")}
 
-      <MDXRemote
-        source={content}
-        components={{ a: CustomLink }}
-        options={options}
-      />
+        <MDXRemote
+          source={content}
+          components={{ a: CustomLink }}
+          options={options}
+        />
+      </article>
     </Layout>
   );
 };
