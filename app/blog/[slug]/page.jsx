@@ -1,4 +1,4 @@
-import Layout from "@/app/components/LongLayout";
+import Layout from "@/app/components/Layout";
 import fs from "fs";
 import path from "path";
 
@@ -61,7 +61,7 @@ const SingleBlog = ({ params }) => {
           <div className="w-full flex md:flex-row flex-col text-xs md:text-sm lg:text-base justify-between text-blue-600">
             <Link
               href={"/blog/all"}
-              className="flex items-center justify-center font-bold transition-all text-blue-700"
+              className="flex items-center justify-center font-bold transition-all text-blue-700 md:order-first order-last"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,12 +75,10 @@ const SingleBlog = ({ params }) => {
             </Link>
             <p className="m-0">
               Published {dayjs(frontmatter.publishedAt).format("D MMMM, YYYY")}
+              {frontmatter.lastEdited && (
+                <> | Updated {dayjs(frontmatter.lastEdited).fromNow()}</>
+              )}
             </p>
-            {frontmatter.lastEdited && (
-              <p className="m-0">
-                Last Updated {dayjs(frontmatter.lastEdited).fromNow()}
-              </p>
-            )}
           </div>
           <h1 className="mt-5 mb-2">{frontmatter.title}</h1>
           {frontmatter.subtitle && (

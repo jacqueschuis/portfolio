@@ -77,9 +77,9 @@ const BlogIndex = () => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col items-start gap-10 ">
-        <div className="w-full xl:justify-center items-center xl:flex-row flex-col flex h-full gap-5">
-          <div className="w-full h-full">
+      <div className="w-full h-full flex flex-col items-start justify-center gap-10 ">
+        <div className="w-full justify-center items-center xl:flex-row flex-col flex h-full gap-5">
+          <div className="w-1/2 h-full flex flex-col items-center justify-center">
             <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2 text-center">
               Blog
             </h1>
@@ -90,7 +90,7 @@ const BlogIndex = () => {
             </p>
             <p>
               Check out my featured blog, one of my most recent, or see all of
-              my blogs <a href="/blogs/all">here</a>
+              my blogs <a href="/blog/all">here</a>
             </p>
             {/* <Link href={"/blog/all"}>
               <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
@@ -99,7 +99,7 @@ const BlogIndex = () => {
             </Link> */}
           </div>
           <div
-            className="w-full flex flex-col xl:items-start items-center"
+            className="w-1/2 h-full flex flex-col justify-center xl:items-start items-center"
             id="featured-blog"
           >
             <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
@@ -108,7 +108,7 @@ const BlogIndex = () => {
             <BlogCard isFeatured={true} {...featuredBlog} />
           </div>
         </div>
-        <div className="w-full h-max xl:pb-0 pb-9 flex flex-col xl:items-start items-center">
+        <div className="w-full h-full xl:pb-0 pb-9 flex flex-col xl:items-start items-center">
           <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
             Most Recent Blogs
           </h2>

@@ -8,13 +8,11 @@ const ContactPage = () => {
   return (
     <Layout dark={true} active={"contact"}>
       <div className="w-full h-full flex flex-col md:justify-center gap-12 items-center">
-        <HorizontalTrail>
-          <p className="md:w-[500px] text-xl">
-            I am open to all work opportunities and happy to respond to any
-            questions/comment. Feel free to email me, or get in touch on GitHub
-            or LinkedIn:
-          </p>
-        </HorizontalTrail>
+        <p className="md:w-[500px] text-xl">
+          I am open to all work opportunities and happy to respond to any
+          questions/comment. Feel free to email me, or get in touch on GitHub or
+          LinkedIn:
+        </p>
         <div className="max-w-[500px] flex md:gap-12 gap-8 items-center justify-center">
           <Trail delay={500}>
             <a

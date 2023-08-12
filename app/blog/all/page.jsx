@@ -1,4 +1,4 @@
-import Layout from "@/app/components/LongLayout";
+import Layout from "@/app/components/Layout";
 import { getMostRecentPublishedBlogs } from "@/app/utils/blog";
 
 import Link from "next/link";

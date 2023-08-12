@@ -17,10 +17,13 @@ const Layout = ({ children, dark, active }) => {
   }));
 
   return (
-    <main className="h-screen overflow-y-hidden md:p-10 p-4 w-full flex items-center home relative">
+    <main className="h-screen overflow-y-hidden overflow-x-hidden md:p-10 p-4 w-full flex items-center home relative">
       <div className="w-full h-full content--background md:px-10 px-5 md:pb-10 pb-5 rounded-3xl shadow-2xl flex flex-col items-center relative overflow-y-auto text-blue-800">
         <Nav dark={dark} active={active} />
-        <animated.div style={slide} className="w-full h-full md:px-10 px-4">
+        <animated.div
+          style={slide}
+          className="w-full h-full min-h-fit md:px-10 px-4 flex justify-center items-start"
+        >
           {children}
         </animated.div>
       </div>
