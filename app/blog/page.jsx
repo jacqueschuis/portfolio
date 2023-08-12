@@ -3,6 +3,13 @@ import { getFeaturedBlogs, getMostRecentPublishedBlogs } from "../utils/blog";
 import Link from "next/link";
 import dayjs from "dayjs";
 
+export const metadata = {
+  title: "Jacques Pariseau | Blog",
+  description: "Developer blog for Jacques Pariseau, front-end web developer",
+  keywords:
+    "blog, article, how to, diy, help, web development, front end, front-end, engineering, UI, UX, programming, coding, developer, software engineer, react, nextjs, mongodb",
+};
+
 const BlogCard = ({
   title,
   description,
@@ -10,7 +17,6 @@ const BlogCard = ({
   publishedAt,
   slug,
   subtitle,
-  isFeatured,
   featuredTags,
 }) => {
   let tags;
@@ -19,11 +25,7 @@ const BlogCard = ({
   }
 
   return (
-    <div
-      className={`${
-        isFeatured ? "w-full" : "xl:w-1/5"
-      } h-full min-w-[200px] max-w-[400px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5`}
-    >
+    <div className="xl:w-1/5 h-full w-full min-w-[200px] max-w-[400px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5">
       <div className="flex flex-col">
         <div className="w-full flex justify-end text-xs text-blue-600">
           <p>
@@ -60,11 +62,56 @@ const BlogCard = ({
   );
 };
 
-export const metadata = {
-  title: "Jacques Pariseau | Blog",
-  description: "Developer blog for Jacques Pariseau, front-end web developer",
-  keywords:
-    "blog, article, how to, diy, help, web development, front end, front-end, engineering, UI, UX, programming, coding, developer, software engineer, react, nextjs, mongodb",
+const FeaturedBlogCard = ({
+  title,
+  description,
+  lastEdited,
+  publishedAt,
+  slug,
+  subtitle,
+  featuredTags,
+}) => {
+  let tags;
+  if (featuredTags) {
+    tags = featuredTags.split(",");
+  }
+  return (
+    <div className="w-full h-full rounded-xl max-w-[400px] min-w-[200px] lg:max-w-none bg-white lg:bg-transparent shadow-xl lg:shadow-none p-5 flex flex-col justify-between lg:justify-center">
+      <div className="flex flex-col">
+        <div className="w-full flex justify-between md:text-xl text-xs text-blue-600">
+          <p className="font-bold">Featured Article</p>
+          <p>
+            {lastEdited ? (
+              <>{dayjs(lastEdited).format("DD MMM YY")}</>
+            ) : (
+              <>{dayjs(publishedAt).format("DD MMM YY")}</>
+            )}
+          </p>
+        </div>
+        <h2 className="font-bold xl:text-6xl lg:text-4xl md:text-2xl text-base text-blue-800">
+          {title}
+        </h2>
+        <h3 className="italic text-blue-600 md:text-xl xl:text-2xl">
+          {subtitle ? subtitle : ""}
+        </h3>
+      </div>
+      <p className="2xl:text-4xl lg:text-2xl">{description}</p>
+
+      <div className="w-full flex flex-col items-center">
+        <Link href={"/blog/" + slug} className="lg:w-1/2 w-full">
+          <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
+            Read More
+          </button>
+        </Link>
+        <div className="w-full flex justify-evenly text-blue-600 md:text-lg text-xs p-2">
+          {featuredTags &&
+            tags.map((tag) => {
+              return <p>{tag}</p>;
+            })}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const BlogIndex = () => {
@@ -72,43 +119,56 @@ const BlogIndex = () => {
   const featuredBlogs = getFeaturedBlogs();
 
   const randomFeatureIndex = Math.floor(Math.random() * featuredBlogs.length);
+  const randomRecentIndex = Math.floor(Math.random() * blogs.length);
 
   const featuredBlog = featuredBlogs[randomFeatureIndex];
+  const randomRecentBlog = blogs[randomRecentIndex];
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col items-start justify-center gap-10 ">
-        <div className="w-full justify-center items-center xl:flex-row flex-col flex h-full gap-5">
-          <div className="w-1/2 h-full flex flex-col items-center justify-center">
+      <div className="w-full h-full flex flex-col items-start justify-start gap-10">
+        <div className="w-full min-h-fit justify-center items-center lg:flex-row flex-col flex h-full gap-5">
+          <div className="w-full h-full min-h-fit flex flex-col items-center justify-center gap-8 text-2xl">
             <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2 text-center">
               Blog
             </h1>
             <p>
               I'm a self-taught developer who is always growing my skill set. I
-              want to document my growth as an engineer for my own sake, but
-              hopefully other developers can learn along with me.
+              want to document my growth as a front-end engineer for my own
+              sake, but hopefully other developers can learn along with me.
             </p>
-            <p>
-              Check out my featured blog, one of my most recent, or see all of
-              my blogs <a href="/blog/all">here</a>
+            <p className="w-full">
+              Check out my{" "}
+              <Link
+                className="font-bold transition-all text-blue-700 hover:text-blue-600"
+                href={"/blog/" + featuredBlog.slug}
+              >
+                featured article
+              </Link>
+              , one of my{" "}
+              <Link
+                className="font-bold transition-all text-blue-700 hover:text-blue-600"
+                href={"/blog/" + randomRecentBlog.slug}
+              >
+                most recent posts
+              </Link>
+              , or see all articles{" "}
+              <Link
+                className="font-bold transition-all text-blue-700 hover:text-blue-600"
+                href="/blog/all"
+              >
+                here.
+              </Link>
             </p>
-            {/* <Link href={"/blog/all"}>
-              <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
-                Read More
-              </button>
-            </Link> */}
           </div>
           <div
-            className="w-1/2 h-full flex flex-col justify-center xl:items-start items-center"
+            className="w-full h-full min-h-fit flex flex-col justify-center lg:items-start items-center"
             id="featured-blog"
           >
-            <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
-              Featured Blog
-            </h2>
-            <BlogCard isFeatured={true} {...featuredBlog} />
+            <FeaturedBlogCard {...featuredBlog} />
           </div>
         </div>
-        <div className="w-full h-full xl:pb-0 pb-9 flex flex-col xl:items-start items-center">
+        <div className="w-full min-h-fit h-full xl:pb-0 flex flex-col lg:items-start items-center">
           <h2 className="font-bold text-blue-600 md:text-3xl text-2xl">
             Most Recent Blogs
           </h2>
