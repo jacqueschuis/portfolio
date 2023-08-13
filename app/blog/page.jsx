@@ -126,7 +126,7 @@ const BlogIndex = () => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col items-start justify-start gap-10">
+      <div className="w-full h-full flex flex-col pb-96 items-start justify-start gap-10">
         <div className="w-full lg:h-full md:justify-center items-center lg:flex-row flex-col flex gap-5">
           <div className="w-full h-full flex flex-col md:justify-center gap-8 text-base md:text-xl">
             <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2 text-center">
@@ -168,11 +168,11 @@ const BlogIndex = () => {
             <FeaturedBlogCard {...featuredBlog} />
           </div>
         </div>
-        <div className="w-full flex-auto flex flex-col xl:items-start items-center">
+        <div className="w-full flex-auto min-h-screen flex flex-col xl:items-start items-center">
           <h2 className="font-bold text-blue-600 md:text-3xl text-2xl mb-3 lg:mb-8">
             Most Recent Blogs
           </h2>
-          <div className="flex lg:flex-wrap lg:flex-row flex-col flex-1 justify-center items-center w-full gap-5">
+          <div className="flex flex-wrap min-h-screen flex-1 justify-center items-center w-full gap-5">
             {blogs.map((blog) => (
               <BlogCard key={blog.slug} {...blog} />
             ))}
