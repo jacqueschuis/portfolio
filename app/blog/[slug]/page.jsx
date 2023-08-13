@@ -1,6 +1,7 @@
 import Layout from "@/app/components/Layout";
 import fs from "fs";
 import path from "path";
+import HeaderImage from "@/app/components/mdx/HeaderImage";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -54,6 +55,8 @@ const SingleBlog = ({ params }) => {
     },
   };
 
+  console.log(frontmatter);
+
   return (
     <Layout dark={true} active={"blog"}>
       <article className="w-full pb-12 min-h-fit prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:font-bold prose-a:transition-all mt-5 prose-h1:text-blue-800 prose-h2:text-blue-700 prose-h3:text-blue-600">
@@ -88,7 +91,7 @@ const SingleBlog = ({ params }) => {
 
         <MDXRemote
           source={content}
-          components={{ a: CustomLink }}
+          components={({ a: CustomLink }, { HeaderImage })}
           options={options}
         />
       </article>

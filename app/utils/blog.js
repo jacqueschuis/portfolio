@@ -27,9 +27,6 @@ export const getBlogFromSlug = (slug) => {
     return {
       content,
       frontmatter: {
-        slug,
-        title: data.title,
-        publishedAt: data.date,
         ...data,
       },
     };
