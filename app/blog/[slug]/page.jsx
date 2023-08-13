@@ -56,7 +56,7 @@ const SingleBlog = ({ params }) => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <article className="w-full prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:font-bold prose-a:transition-all mt-5 prose-h1:text-blue-800 prose-h2:text-blue-700 prose-h3:text-blue-600">
+      <article className="w-full pb-12 min-h-fit prose prose-sm md:prose-base lg:prose-lg xl:prose-xl prose-jp hover:prose-a:text-orange-600 prose-a:no-underline prose-a:font-bold prose-a:transition-all mt-5 prose-h1:text-blue-800 prose-h2:text-blue-700 prose-h3:text-blue-600">
         <div className="w-full flex flex-col text-center">
           <div className="w-full flex md:flex-row flex-col text-xs md:text-sm lg:text-base justify-between text-blue-600">
             <Link
