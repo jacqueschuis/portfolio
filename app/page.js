@@ -23,7 +23,7 @@ const Home = () => {
       y: 0,
       overflow: "hidden",
     },
-    delay: 1500,
+    delay: 700,
   }));
 
   return (

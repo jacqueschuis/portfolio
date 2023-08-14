@@ -13,7 +13,6 @@ const BlogEntry = ({
   publishedAt,
   slug,
   subtitle,
-  isFeatured,
 }) => {
   return (
     <div className={"w-full h-full px-5 py-8 flex flex-col justify-evenly"}>
@@ -34,7 +33,7 @@ const BlogEntry = ({
 
       <Link href={"/blog/" + slug} className="self-center">
         <button className="w-48 transition-all bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
-          Read More
+          Read Article
         </button>
       </Link>
     </div>

@@ -1,14 +1,16 @@
 import Layout from "@/app/components/Layout";
 import fs from "fs";
 import path from "path";
+
 import HeaderImage from "@/app/components/mdx/HeaderImage";
+import CustomLink from "@/app/components/mdx/CustomLink";
+import Author from "@/app/components/mdx/Author";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import CustomLink from "@/app/components/mdx/CustomLink";
 import { getBlogFromSlug } from "@/app/utils/blog";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight/lib";
@@ -89,7 +91,7 @@ const SingleBlog = ({ params }) => {
 
         <MDXRemote
           source={content}
-          components={({ a: CustomLink }, { HeaderImage })}
+          components={{ a: CustomLink, HeaderImage, Author }}
           options={options}
         />
       </article>

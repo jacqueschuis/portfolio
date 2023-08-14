@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { getFeaturedBlogs, getMostRecentPublishedBlogs } from "../utils/blog";
 import Link from "next/link";
 import dayjs from "dayjs";
+import HorizontalTrail from "../components/HorizontalTrail";
 
 export const metadata = {
   title: "Jacques Pariseau | Blog",
@@ -114,6 +115,46 @@ const FeaturedBlogCard = ({
   );
 };
 
+const BlogEntry = ({
+  title,
+  lastEdited,
+  publishedAt,
+  slug,
+  featuredTags,
+  featureImage,
+}) => {
+  let tags;
+  if (featuredTags) {
+    tags = featuredTags.split(",");
+  }
+
+  return (
+    <div className="w-full min-h-fit flex justify-center gap-2">
+      <div className="justify-center items-center hidden lg:flex h-full w-full">
+        <img
+          src={featureImage}
+          alt=""
+          className="h-28 w-28 aspect-square rounded-lg object-cover"
+        />
+      </div>
+      <div className="flex w-full flex-initial flex-col">
+        <p className="text-blue-600 text-xs">
+          {lastEdited ? (
+            <>{dayjs(lastEdited).format("DD MMM YY")}</>
+          ) : (
+            <>{dayjs(publishedAt).format("DD MMM YY")}</>
+          )}
+        </p>
+        <Link href={"/blog/" + slug}>
+          <h3 className="font-bold text-3xl hover:text-blue-600 transition-all text-blue-800">
+            {title}
+          </h3>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const BlogIndex = () => {
   const blogs = getMostRecentPublishedBlogs(5);
   const featuredBlogs = getFeaturedBlogs();
@@ -126,61 +167,90 @@ const BlogIndex = () => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col pb-96 items-start justify-start gap-10">
-        <div className="w-full lg:h-full md:justify-center items-center lg:flex-row flex-col flex gap-5">
-          <div className="w-full h-full flex flex-col md:justify-center gap-8 text-base md:text-xl">
-            <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2 text-center">
-              Blog
-            </h1>
-            <p>
-              I'm a self-taught developer who is always growing my skill set. I
-              want to document my growth as a front-end engineer for my own
-              sake, but hopefully other developers can learn along with me.
-            </p>
-            <p className="w-full">
-              Check out my{" "}
-              <Link
-                className="font-bold transition-all text-blue-700 hover:text-blue-600"
-                href={"/blog/" + featuredBlog.slug}
-              >
-                featured article
-              </Link>
-              , one of my{" "}
-              <Link
-                className="font-bold transition-all text-blue-700 hover:text-blue-600"
-                href={"/blog/" + randomRecentBlog.slug}
-              >
-                most recent posts
-              </Link>
-              , or see all articles{" "}
-              <Link
-                className="font-bold transition-all text-blue-700 hover:text-blue-600"
-                href="/blog/all"
-              >
-                here.
-              </Link>
-            </p>
-          </div>
+      <div className="w-full h-full flex md:flex-row flex-col gap-5">
+        <div className="w-full h-full flex flex-col gap-10">
           <div
-            className="w-full h-full flex flex-col justify-center lg:items-start items-center"
-            id="featured-blog"
-          >
-            <FeaturedBlogCard {...featuredBlog} />
-          </div>
+            id="blog-info"
+            className="bg-blue-700 basis-1/4 w-full h-full"
+          ></div>
+          <div
+            id="featured-post"
+            className="bg-orange-700 basis-3/4 w-full h-full"
+          ></div>
         </div>
-        <div className="w-full flex-auto min-h-screen flex flex-col xl:items-start items-center">
-          <h2 className="font-bold text-blue-600 md:text-3xl text-2xl mb-3 lg:mb-8">
-            Most Recent Blogs
-          </h2>
-          <div className="flex flex-wrap min-h-screen flex-1 justify-center items-center w-full gap-5">
-            {blogs.map((blog) => (
-              <BlogCard key={blog.slug} {...blog} />
-            ))}
+        <div className="w-full lg:max-w-[400px] h-full flex flex-col justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-5">
+          <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center uppercase mb-2">
+            Recently Posted
+          </h3>
+          <div className="w-full h-full flex flex-col justify-between">
+            <HorizontalTrail>
+              {blogs.map((blog) => {
+                return <BlogEntry {...blog} />;
+              })}
+            </HorizontalTrail>
           </div>
         </div>
       </div>
     </Layout>
   );
+
+  // return (
+  //   <Layout dark={true} active={"blog"}>
+  //     <div className="w-full h-full flex flex-col pb-96 items-start justify-start gap-10">
+  //       <div className="w-full lg:h-full md:justify-center items-center lg:flex-row flex-col flex gap-5">
+  //         <div className="w-full h-full flex flex-col md:justify-center gap-8 text-base md:text-xl">
+  //           <h1 className="lg:text-6xl md:text-3xl text-3xl font-bold lg:mb-10 mb-2 text-center">
+  //             Blog
+  //           </h1>
+  //           <p>
+  //             I'm a self-taught developer who is always growing my skill set. I
+  //             want to document my growth as a front-end engineer for my own
+  //             sake, but hopefully other developers can learn along with me.
+  //           </p>
+  //           <p className="w-full">
+  //             Check out my{" "}
+  //             <Link
+  //               className="font-bold transition-all text-blue-700 hover:text-blue-600"
+  //               href={"/blog/" + featuredBlog.slug}
+  //             >
+  //               featured article
+  //             </Link>
+  //             , one of my{" "}
+  //             <Link
+  //               className="font-bold transition-all text-blue-700 hover:text-blue-600"
+  //               href={"/blog/" + randomRecentBlog.slug}
+  //             >
+  //               most recent posts
+  //             </Link>
+  //             , or see all articles{" "}
+  //             <Link
+  //               className="font-bold transition-all text-blue-700 hover:text-blue-600"
+  //               href="/blog/all"
+  //             >
+  //               here.
+  //             </Link>
+  //           </p>
+  //         </div>
+  //         <div
+  //           className="w-full h-full flex flex-col justify-center lg:items-start items-center"
+  //           id="featured-blog"
+  //         >
+  //           <FeaturedBlogCard {...featuredBlog} />
+  //         </div>
+  //       </div>
+  //       <div className="w-full flex-auto min-h-screen flex flex-col xl:items-start items-center">
+  //         <h2 className="font-bold text-blue-600 md:text-3xl text-2xl mb-3 lg:mb-8">
+  //           Most Recent Blogs
+  //         </h2>
+  //         <div className="flex flex-wrap min-h-screen flex-1 justify-center items-center w-full gap-5">
+  //           {blogs.map((blog) => (
+  //             <BlogCard key={blog.slug} {...blog} />
+  //           ))}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </Layout>
+  // );
 };
 
 export default BlogIndex;
