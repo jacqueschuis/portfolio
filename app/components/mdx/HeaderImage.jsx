@@ -1,7 +1,5 @@
-const HeaderImage = ({ headerImage }) => {
-  if (headerImage) {
-    return <img src={frontmatter.header} alt="" />;
-  }
+const HeaderImage = ({ src, alt }) => {
+  return <img src={src} alt={alt} />;
 };
 
 export default HeaderImage;
