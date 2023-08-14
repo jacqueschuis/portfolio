@@ -81,7 +81,7 @@ const SingleBlog = ({ params }) => {
               )}
             </p>
           </div>
-          <h1 className="mt-5 mb-2">{frontmatter.title}</h1>
+          <h1 className="mt-5 mb-0">{frontmatter.title}</h1>
           {frontmatter.subtitle && (
             <h2 className="font-normal m-0">{frontmatter.subtitle}</h2>
           )}
