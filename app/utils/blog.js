@@ -8,18 +8,6 @@ import { error } from "console";
 
 const blogsPath = path.join(process.cwd(), "blogs");
 
-export const getSlug = () => {
-  const paths = sync(`${blogsPath}/*.mdx`);
-
-  return paths.map((path) => {
-    const pathContent = path.split("/");
-    const fileName = pathContent[pathContent.length - 1];
-    const [slug] = fileName.split(".");
-
-    return slug;
-  });
-};
-
 export const getBlogFromSlug = (slug) => {
   try {
     const blogDir = path.join(blogsPath, `${slug}.mdx`);
@@ -76,47 +64,32 @@ export const getMostRecentPublishedBlogs = (num) => {
   return blogs;
 };
 
-export const getSortedBlogs = () => {
+export const getRandomFeaturedBlogs = (num) => {
   const articles = getBlogs();
 
-  const blogs = articles.map((article) => article);
+  const publishedBlogs = articles.filter((blog) => !blog.isDraft);
 
-  blogs.sort((a, b) => {
-    return new Date(b.lastEdited) - new Date(a.lastEdited);
-  });
+  const featuredBlogs = publishedBlogs.filter((blog) => blog.isFeaturable);
+
+  const randomFeaturedBlogs = featuredBlogs
+    .map((val) => ({ val, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ val }) => val);
+
+  const blogs = randomFeaturedBlogs.slice(0, num);
 
   return blogs;
 };
 
-export const getMostRecentBlogs = (num) => {
+export const getRandomPublishedArticle = () => {
   const articles = getBlogs();
 
-  const allBlogs = articles.map((article) => article);
+  const publishedBlogs = articles.filter((blog) => !blog.isDraft);
 
-  allBlogs.sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  });
+  const shuffledPublishedBlogs = publishedBlogs
+    .map((val) => ({ val, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ val }) => val);
 
-  const blogs = allBlogs.slice(0, num);
-
-  return blogs;
-};
-
-export const getMostRecentFeaturedBlogs = (num) => {
-  const allBlogs = getBlogs();
-
-  const publishedBlogs = allBlogs.filter((blog) => !blog.isDraft);
-
-  const featurableBlogs = publishedBlogs.filter((blog) => blog.isFeaturable);
-
-  featurableBlogs.sort((a, b) => {
-    return (
-      new dayjs(b.lastEdited ? b.lastEdited : b.publishedAt) -
-      new dayjs(a.lastEdited ? a.lastEdited : a.publishedAt)
-    );
-  });
-
-  const blogs = featurableBlogs.slice(0, num);
-
-  return blogs;
+  return shuffledPublishedBlogs[0];
 };

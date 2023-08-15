@@ -55,7 +55,7 @@ const AllBlogs = () => {
     <Layout dark={true} active={"blog"}>
       <div className="w-full h-full flex flex-col items-center">
         <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2">
-          All Blogs
+          All Articles
         </h1>
         <div className="2xl:w-1/3 md:w-1/2 h-fit flex flex-col items-center lg:gap-10 divide-y-2 divide-grey">
           <HorizontalTrail>

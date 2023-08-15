@@ -69,7 +69,7 @@ const ProjectDetails = ({ params }) => {
             </Trail>
           </div>
         </div>
-        <div className="flex flex-col w-full items-center justify-center md:p-10">
+        <div className="flex flex-col w-full items-center justify-center md:p-10 px-5">
           <ul className="list-disc list-outside font-bold 2xl:text-3xl xl:text-2xl w-full">
             <HorizontalTrail>
               {project.description.map((entry, index) => {
