@@ -4,7 +4,7 @@ import Link from "next/link";
 const Nav = ({ dark, active }) => {
   return (
     <nav
-      className={`flex w-full md:text-lg text-sm justify-between items-baseline mb-3 xl:mb-0 md:pt-6 pt-4 ${
+      className={`flex w-full md:text-lg text-sm justify-between items-baseline mb-3  md:pt-6 pt-4 ${
         dark ? "text-blue-700" : "text-white"
       }`}
     >
@@ -28,8 +28,8 @@ const Nav = ({ dark, active }) => {
           >
             Projects
           </Link>
-          {/* <Link
-            href="/home"
+          <Link
+            href="/blog"
             className={`${
               dark
                 ? "hover-underline-animation-dark nav-link-dark"
@@ -37,7 +37,7 @@ const Nav = ({ dark, active }) => {
             } ${active === "blog" ? "font-bold" : ""}`}
           >
             Blog
-          </Link> */}
+          </Link>
           <Link
             href="/cv"
             className={`${

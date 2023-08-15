@@ -23,11 +23,11 @@ const Home = () => {
       y: 0,
       overflow: "hidden",
     },
-    delay: 1500,
+    delay: 700,
   }));
 
   return (
-    <main className="h-screen md:p-10 p-4 w-full flex items-center home text-white relative">
+    <main className="h-screen overflow-hidden md:p-10 p-4 w-full flex items-center home text-white relative">
       <div className="w-full h-full border-2 border-white rounded-3xl shadow-2xl flex flex-col items-center justify-center relative">
         <div className="flex w-full md:px-10 px-5 text-sm md:text-lg justify-between items-baseline absolute md:top-6 top-4 text-white">
           <Link href="/" className="font-bold md:text-2xl text-lg logo">
@@ -41,9 +41,9 @@ const Home = () => {
               >
                 Projects
               </Link>
-              {/* <Link href="/home" className="hover-underline-animation nav-link">
+              <Link href="/blog" className="hover-underline-animation nav-link">
                 Blog
-              </Link> */}
+              </Link>
               <Link href="/cv" className="hover-underline-animation nav-link">
                 CV
               </Link>
@@ -89,7 +89,7 @@ const Home = () => {
           </animated.div>
         </section>
       </div>
-      <Footer home={true} />
+      <Footer home={true} absolute={true} />
     </main>
   );
 };

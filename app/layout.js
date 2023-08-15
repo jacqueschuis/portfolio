@@ -3,6 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Jacques Pariseau",
   description: "Personal website of Jacques Pariseau, front-end developer",
+  keywords: "Developer, portfolio, blog, front end, UI, UX",
 };
 
 export default function RootLayout({ children }) {
@@ -19,8 +20,10 @@ export default function RootLayout({ children }) {
         />
         <meta name="theme-color" content="#264653" />
       </head>
-      <html lang="en" className="overflow-x-hidden">
-        <body className="font-sans bg-white font-normal">{children}</body>
+      <html lang="en" className="overflow-hidden w-full h-screen">
+        <body className="font-sans font-normal h-screen overflow-hidden w-full">
+          {children}
+        </body>
       </html>
     </>
   );
