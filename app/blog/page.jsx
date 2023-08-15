@@ -6,6 +6,7 @@ import {
 import Link from "next/link";
 import dayjs from "dayjs";
 import HorizontalTrail from "../components/HorizontalTrail";
+import Trail from "../components/Trail";
 
 export const metadata = {
   title: "Jacques Pariseau | Blog",
@@ -80,9 +81,9 @@ const FeaturedBlogCard = ({
     tags = featuredTags.split(",");
   }
   return (
-    <div className="w-full h-full bg-gradient-to-b from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
+    <div className="w-full lg:h-full bg-gradient-to-b m-2 from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
       <div id="top" className="basis-1/2 flex flex-col">
-        <div className="w-full flex justify-between md:text-xl text-xs text-blue-600 mb-5">
+        <div className="w-full flex justify-between 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs text-blue-600 mb-5">
           <p className="font-bold text-orange-600">Featured Article</p>
           <p>
             {lastEdited ? (
@@ -99,7 +100,7 @@ const FeaturedBlogCard = ({
         />
       </div>
       <div id="bottom" className="basis-1/2 mt-5 flex flex-col">
-        <h2 className="font-bold xl:text-6xl lg:text-4xl md:text-2xl text-base text-blue-800">
+        <h2 className="font-bold 2xl:text-6xl lg:text-4xl md:text-2xl text-base text-blue-800">
           {title}
         </h2>
         <p className="2xl:text-2xl lg:text-lg my-4">{description}</p>
@@ -139,7 +140,7 @@ const BlogEntry = ({
           )}
         </p>
         <Link href={"/blog/" + slug}>
-          <h3 className="font-bold text-3xl hover:text-blue-600 transition-all text-blue-800">
+          <h3 className="font-bold 2xl:text-2xl md:text-xl hover:text-blue-600 transition-all text-blue-800">
             {title}
           </h3>
         </Link>
@@ -149,7 +150,7 @@ const BlogEntry = ({
 };
 
 const BlogIndex = () => {
-  const blogs = getMostRecentPublishedBlogs(6);
+  const blogs = getMostRecentPublishedBlogs(5);
   const featuredBlogs = getMostRecentFeaturedBlogs(2);
 
   const randomFeatureIndex = Math.floor(Math.random() * featuredBlogs.length);
@@ -160,26 +161,27 @@ const BlogIndex = () => {
 
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex md:flex-row flex-col gap-5">
-        <div className="w-full h-full flex flex-col gap-10">
-          <div
-            id="blog-info"
-            className="bg-blue-700 basis-1/4 w-full h-full"
-          ></div>
+      <div className="w-full lg:h-full flex lg:flex-row flex-col justify-start xl:gap-5 gap-3 lg:pb-0 pb-8">
+        <div className="w-full lg:h-full flex flex-col items-center gap-10">
+          <div id="blog-info" className="bg-blue-700 w-full h-full">
+            <p className="text-xl">Jacques Pariseau</p>
+          </div>
           <div
             id="featured-post"
-            className="md:basis-3/4 h-fullw-full flex flex-col md:flex-row xl:gap-10 gap-3 justify-evenly"
+            className="lg:h-full w-full flex flex-col lg:flex-row xl:gap-5 gap-3 justify-center items-center lg:justify-evenly"
           >
-            {featuredBlogs.map((blog) => {
-              return <FeaturedBlogCard {...blog} />;
-            })}
+            <Trail>
+              {featuredBlogs.map((blog) => {
+                return <FeaturedBlogCard {...blog} />;
+              })}
+            </Trail>
           </div>
         </div>
-        <div className="w-full lg:max-w-[400px] sm:min-w-[400px] h-full flex flex-col items-center justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
+        <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
           <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
             Recently Posted
           </h3>
-          <div className="w-full h-full flex flex-col justify-around">
+          <div className="w-full lg:h-full flex flex-col lg:justify-around">
             <HorizontalTrail>
               {blogs.map((blog) => {
                 return <BlogEntry {...blog} />;
