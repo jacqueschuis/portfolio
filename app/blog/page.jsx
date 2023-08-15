@@ -133,7 +133,7 @@ const BlogIndex = () => {
           >
             <Trail>
               {featuredBlogs.map((blog) => {
-                return <FeaturedBlogCard {...blog} />;
+                return <FeaturedBlogCard key={"feat" + blog.slug} {...blog} />;
               })}
             </Trail>
           </div>

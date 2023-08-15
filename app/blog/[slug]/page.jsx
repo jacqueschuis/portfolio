@@ -5,6 +5,7 @@ import path from "path";
 import HeaderImage from "@/app/components/mdx/HeaderImage";
 import CustomLink from "@/app/components/mdx/CustomLink";
 import Author from "@/app/components/mdx/Author";
+import InArticleImage from "@/app/components/mdx/InArticleImage";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -91,7 +92,7 @@ const SingleBlog = ({ params }) => {
 
         <MDXRemote
           source={content}
-          components={{ a: CustomLink, HeaderImage, Author }}
+          components={{ a: CustomLink, HeaderImage, InArticleImage, Author }}
           options={options}
         />
       </article>
