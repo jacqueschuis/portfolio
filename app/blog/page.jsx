@@ -5,6 +5,7 @@ import {
   getRandomPublishedArticle,
 } from "../utils/blog";
 import Link from "next/link";
+import Image from "next/image";
 import dayjs from "dayjs";
 import HorizontalTrail from "../components/HorizontalTrail";
 import Trail from "../components/Trail";
@@ -30,8 +31,8 @@ const FeaturedBlogCard = ({
     tags = featuredTags.split(",");
   }
   return (
-    <div className="w-full lg:h-full bg-gradient-to-b m-2 from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
-      <div id="top" className="basis-1/2 flex flex-col">
+    <div className="w-full h-fit lg:h-full bg-gradient-to-b m-2 from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
+      <div id="top" className="h-full flex flex-col">
         <div className="w-full flex justify-between 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs text-blue-600 mb-5">
           <p className="font-bold text-orange-600">Featured Article</p>
           <p>
@@ -42,11 +43,14 @@ const FeaturedBlogCard = ({
             )}
           </p>
         </div>
-        <img
-          src={featureImage}
-          alt=""
-          className="w-full object-cover object-center rounded-t-3xl max-h-[250px]"
-        />
+        <div className="overflow-hidden rounded-t-3xl w-full lg:h-full relative min-h-[100px]">
+          <Image
+            fill
+            src={featureImage}
+            alt={title + " image"}
+            className="object-cover object-center"
+          />
+        </div>
       </div>
       <div id="bottom" className="h-full mt-5 flex flex-col">
         <Link href={"/blog/" + slug}>
@@ -76,11 +80,15 @@ const BlogEntry = ({
   return (
     <div className="w-full min-h-fit flex justify-center ">
       <div className="justify-center lg:basis-1/2 items-center hidden lg:flex h-full w-full">
-        <Link href={"/blog/" + slug}>
-          <img
+        <Link
+          href={"/blog/" + slug}
+          className="h-28 w-28 aspect-square rounded-lg overflow-hidden relative"
+        >
+          <Image
+            fill
             src={featureImage}
-            alt=""
-            className="h-28 w-28 aspect-square rounded-lg object-cover"
+            alt={title + " image"}
+            className="object-cover"
           />
         </Link>
       </div>
