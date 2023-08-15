@@ -10,6 +10,8 @@ import dayjs from "dayjs";
 import HorizontalTrail from "../components/HorizontalTrail";
 import Trail from "../components/Trail";
 
+const blurDataURLPath = "/utils/blur.png";
+
 export const metadata = {
   title: "Jacques Pariseau | Blog",
   description: "Developer blog for Jacques Pariseau, front-end web developer",
@@ -43,11 +45,13 @@ const FeaturedBlogCard = ({
             )}
           </p>
         </div>
-        <div className="overflow-hidden rounded-t-3xl w-full lg:h-full relative min-h-[100px]">
+        <div className="overflow-hidden rounded-t-3xl w-full lg:h-full relative md:min-h-[250px] min-h-[100px]">
           <Image
             fill
             src={featureImage}
             alt={title + " image"}
+            placeholder="blur"
+            blurDataURL={blurDataURLPath}
             className="object-cover object-center"
           />
         </div>
@@ -88,6 +92,8 @@ const BlogEntry = ({
             fill
             src={featureImage}
             alt={title + " image"}
+            placeholder="blur"
+            blurDataURL={blurDataURLPath}
             className="object-cover"
           />
         </Link>
