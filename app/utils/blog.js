@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { sync } from "glob";
 import { notFound } from "next/navigation";
 import dayjs from "dayjs";
+import { error } from "console";
 
 const blogsPath = path.join(process.cwd(), "blogs");
 
@@ -24,6 +25,9 @@ export const getBlogFromSlug = (slug) => {
     const blogDir = path.join(blogsPath, `${slug}.mdx`);
     const source = fs.readFileSync(blogDir);
     const { content, data } = matter(source);
+    if (data.isDraft) {
+      throw new error();
+    }
     return {
       content,
       frontmatter: {
