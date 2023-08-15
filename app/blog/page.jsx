@@ -1,5 +1,8 @@
 import Layout from "../components/Layout";
-import { getFeaturedBlogs, getMostRecentPublishedBlogs } from "../utils/blog";
+import {
+  getMostRecentFeaturedBlogs,
+  getMostRecentPublishedBlogs,
+} from "../utils/blog";
 import Link from "next/link";
 import dayjs from "dayjs";
 import HorizontalTrail from "../components/HorizontalTrail";
@@ -28,7 +31,7 @@ const BlogCard = ({
   return (
     <div className=" h-full w-full pb-6 min-w-[225px] md:max-w-[400px] max-h-[350px] rounded-xl bg-white shadow-xl p-5 flex flex-col justify-between transition-all md:hover:rotate-1 md:hover:-translate-y-2 gap-5">
       <div className="flex flex-col">
-        <div className="w-full flex justify-end text-xs text-blue-600">
+        <div className="w-full text-xs text-blue-600">
           <p>
             {lastEdited ? (
               <>{dayjs(lastEdited).format("DD MMM YY")}</>
@@ -69,7 +72,7 @@ const FeaturedBlogCard = ({
   lastEdited,
   publishedAt,
   slug,
-  subtitle,
+  featureImage,
   featuredTags,
 }) => {
   let tags;
@@ -77,9 +80,9 @@ const FeaturedBlogCard = ({
     tags = featuredTags.split(",");
   }
   return (
-    <div className="w-full h-full 2xl:gap-12 xl:gap-8 lg:gap-4 rounded-xl min-h-[350px] md:max-w-[400px] min-w-[200px] lg:max-w-none bg-white lg:bg-transparent shadow-xl lg:shadow-none p-5 flex flex-col justify-between lg:justify-center">
-      <div className="flex flex-col">
-        <div className="w-full flex justify-between md:text-xl text-xs text-blue-600">
+    <div className="w-full h-full bg-gradient-to-b from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
+      <div id="top" className="basis-1/2 flex flex-col">
+        <div className="w-full flex justify-between md:text-xl text-xs text-blue-600 mb-5">
           <p className="font-bold text-orange-600">Featured Article</p>
           <p>
             {lastEdited ? (
@@ -89,27 +92,17 @@ const FeaturedBlogCard = ({
             )}
           </p>
         </div>
+        <img
+          src={featureImage}
+          alt=""
+          className="h-full object-cover rounded-t-3xl"
+        />
+      </div>
+      <div id="bottom" className="basis-1/2 mt-5 flex flex-col">
         <h2 className="font-bold xl:text-6xl lg:text-4xl md:text-2xl text-base text-blue-800">
           {title}
         </h2>
-        <h3 className="italic text-blue-600 md:text-xl xl:text-2xl">
-          {subtitle ? subtitle : ""}
-        </h3>
-      </div>
-      <p className="2xl:text-4xl lg:text-2xl">{description}</p>
-
-      <div className="w-full flex flex-col items-center">
-        <Link href={"/blog/" + slug} className="lg:w-1/2 w-full">
-          <button className="w-full transition-all lg:text-base md:text-sm text-xs bg-transparent hover:bg-orange-600 mix-blend-multiply border-2 border-orange-600 text-orange-600 hover:text-white rounded-lg py-2">
-            Read Article
-          </button>
-        </Link>
-        <div className="w-full flex justify-evenly text-blue-600 md:text-lg text-xs p-2">
-          {featuredTags &&
-            tags.map((tag) => {
-              return <p>{tag}</p>;
-            })}
-        </div>
+        <p className="2xl:text-2xl lg:text-lg my-4">{description}</p>
       </div>
     </div>
   );
@@ -129,15 +122,15 @@ const BlogEntry = ({
   }
 
   return (
-    <div className="w-full min-h-fit flex justify-center gap-2">
-      <div className="justify-center items-center hidden lg:flex h-full w-full">
+    <div className="w-full min-h-fit flex justify-center ">
+      <div className="justify-center lg:basis-1/2 items-center hidden lg:flex h-full w-full">
         <img
           src={featureImage}
           alt=""
           className="h-28 w-28 aspect-square rounded-lg object-cover"
         />
       </div>
-      <div className="flex w-full flex-initial flex-col">
+      <div className="flex w-full justify-center lg:basis-1/2 flex-initial flex-col">
         <p className="text-blue-600 text-xs">
           {lastEdited ? (
             <>{dayjs(lastEdited).format("DD MMM YY")}</>
@@ -156,8 +149,8 @@ const BlogEntry = ({
 };
 
 const BlogIndex = () => {
-  const blogs = getMostRecentPublishedBlogs(5);
-  const featuredBlogs = getFeaturedBlogs();
+  const blogs = getMostRecentPublishedBlogs(6);
+  const featuredBlogs = getMostRecentFeaturedBlogs(2);
 
   const randomFeatureIndex = Math.floor(Math.random() * featuredBlogs.length);
   const randomRecentIndex = Math.floor(Math.random() * blogs.length);
@@ -175,14 +168,18 @@ const BlogIndex = () => {
           ></div>
           <div
             id="featured-post"
-            className="bg-orange-700 basis-3/4 w-full h-full"
-          ></div>
+            className="md:basis-3/4 h-fullw-full flex flex-col md:flex-row xl:gap-10 gap-3 justify-evenly"
+          >
+            {featuredBlogs.map((blog) => {
+              return <FeaturedBlogCard {...blog} />;
+            })}
+          </div>
         </div>
-        <div className="w-full lg:max-w-[400px] h-full flex flex-col justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-5">
-          <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center uppercase mb-2">
+        <div className="w-full lg:max-w-[400px] sm:min-w-[400px] h-full flex flex-col items-center justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
+          <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
             Recently Posted
           </h3>
-          <div className="w-full h-full flex flex-col justify-between">
+          <div className="w-full h-full flex flex-col justify-around">
             <HorizontalTrail>
               {blogs.map((blog) => {
                 return <BlogEntry {...blog} />;

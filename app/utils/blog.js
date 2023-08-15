@@ -98,12 +98,21 @@ export const getMostRecentBlogs = (num) => {
   return blogs;
 };
 
-export const getFeaturedBlogs = () => {
+export const getMostRecentFeaturedBlogs = (num) => {
   const allBlogs = getBlogs();
 
   const publishedBlogs = allBlogs.filter((blog) => !blog.isDraft);
 
-  const blogs = publishedBlogs.filter((blog) => blog.isFeaturable);
+  const featurableBlogs = publishedBlogs.filter((blog) => blog.isFeaturable);
+
+  featurableBlogs.sort((a, b) => {
+    return (
+      new dayjs(b.lastEdited ? b.lastEdited : b.publishedAt) -
+      new dayjs(a.lastEdited ? a.lastEdited : a.publishedAt)
+    );
+  });
+
+  const blogs = featurableBlogs.slice(0, num);
 
   return blogs;
 };
