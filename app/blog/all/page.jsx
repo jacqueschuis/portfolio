@@ -51,19 +51,28 @@ export const metadata = {
 const AllBlogs = () => {
   const blogs = getMostRecentPublishedBlogs();
 
+  if (blogs.length) {
+    return (
+      <Layout dark={true} active={"blog"}>
+        <div className="w-full h-full flex flex-col items-center">
+          <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2">
+            All Articles
+          </h1>
+          <div className="2xl:w-1/3 md:w-1/2 h-fit flex flex-col items-center lg:gap-10 divide-y-2 divide-grey">
+            <HorizontalTrail>
+              {blogs.map((blog) => (
+                <BlogEntry key={blog.slug} {...blog} />
+              ))}
+            </HorizontalTrail>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full h-full flex flex-col items-center">
-        <h1 className="lg:text-6xl md:text-5xl text-3xl font-bold lg:mb-10 mb-2">
-          All Articles
-        </h1>
-        <div className="2xl:w-1/3 md:w-1/2 h-fit flex flex-col items-center lg:gap-10 divide-y-2 divide-grey">
-          <HorizontalTrail>
-            {blogs.map((blog) => (
-              <BlogEntry key={blog.slug} {...blog} />
-            ))}
-          </HorizontalTrail>
-        </div>
+      <div className="w-full h-full flex items-center justify-center">
+        <h1>Coming soon</h1>
       </div>
     </Layout>
   );

@@ -121,49 +121,60 @@ const BlogIndex = () => {
   const featuredBlogs = getRandomFeaturedBlogs(2);
   const randomBlog = getRandomPublishedArticle();
 
+  if (recentBlogs && featuredBlogs && randomBlog) {
+    return (
+      <Layout dark={true} active={"blog"}>
+        <div className="w-full lg:h-full flex lg:flex-row flex-col xl:gap-5 gap-3 lg:pb-0 pb-2">
+          <div className="w-full lg:h-full flex flex-col justify-between items-center xl:gap-5 gap-3">
+            <h1 className="hidden">Blog</h1>
+            <div
+              id="blog-info"
+              className="w-full h-fit flex justify-around md:text-base text-xs font-bold"
+            >
+              <Link className="" href={"/blog/all"}>
+                <button className="w-fit transition-all bg-transparent hover:bg-blue-600 mix-blend-multiply border-2 border-blue-600 text-blue-600 hover:text-white rounded-lg p-2">
+                  All Articles
+                </button>
+              </Link>
+              <Link href={"/blog/" + randomBlog.slug}>
+                <button className="w-fit transition-all bg-transparent hover:bg-blue-600 mix-blend-multiply border-2 border-blue-600 text-blue-600 hover:text-white rounded-lg p-2">
+                  Random Article
+                </button>
+              </Link>
+            </div>
+            <div
+              id="featured-post"
+              className="lg:h-full w-full flex flex-col lg:flex-row xl:gap-5 justify-center items-center lg:order-first lg:justify-evenly"
+            >
+              <Trail>
+                {featuredBlogs.map((blog) => {
+                  return (
+                    <FeaturedBlogCard key={"feat" + blog.slug} {...blog} />
+                  );
+                })}
+              </Trail>
+            </div>
+          </div>
+          <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
+            <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
+              Recently Posted
+            </h3>
+            <div className="w-full lg:h-full gap-3 lg:gap-0 flex flex-col lg:justify-around">
+              <HorizontalTrail>
+                {recentBlogs.map((blog) => {
+                  return <BlogEntry {...blog} />;
+                })}
+              </HorizontalTrail>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
   return (
     <Layout dark={true} active={"blog"}>
-      <div className="w-full lg:h-full flex lg:flex-row flex-col xl:gap-5 gap-3 lg:pb-0 pb-2">
-        <div className="w-full lg:h-full flex flex-col justify-between items-center xl:gap-5 gap-3">
-          <h1 className="hidden">Blog</h1>
-          <div
-            id="blog-info"
-            className="w-full h-fit flex justify-around md:text-base text-xs font-bold"
-          >
-            <Link className="" href={"/blog/all"}>
-              <button className="w-fit transition-all bg-transparent hover:bg-blue-600 mix-blend-multiply border-2 border-blue-600 text-blue-600 hover:text-white rounded-lg p-2">
-                All Articles
-              </button>
-            </Link>
-            <Link href={"/blog/" + randomBlog.slug}>
-              <button className="w-fit transition-all bg-transparent hover:bg-blue-600 mix-blend-multiply border-2 border-blue-600 text-blue-600 hover:text-white rounded-lg p-2">
-                Random Article
-              </button>
-            </Link>
-          </div>
-          <div
-            id="featured-post"
-            className="lg:h-full w-full flex flex-col lg:flex-row xl:gap-5 justify-center items-center lg:order-first lg:justify-evenly"
-          >
-            <Trail>
-              {featuredBlogs.map((blog) => {
-                return <FeaturedBlogCard key={"feat" + blog.slug} {...blog} />;
-              })}
-            </Trail>
-          </div>
-        </div>
-        <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
-          <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
-            Recently Posted
-          </h3>
-          <div className="w-full lg:h-full gap-3 lg:gap-0 flex flex-col lg:justify-around">
-            <HorizontalTrail>
-              {recentBlogs.map((blog) => {
-                return <BlogEntry {...blog} />;
-              })}
-            </HorizontalTrail>
-          </div>
-        </div>
+      <div className="w-full h-full flex items-center justify-center">
+        <h1>Coming soon</h1>
       </div>
     </Layout>
   );
