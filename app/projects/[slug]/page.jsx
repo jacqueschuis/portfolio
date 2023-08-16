@@ -3,6 +3,7 @@ import { projects } from "@/data/data";
 import Trail from "@/app/components/Trail";
 import HorizontalTrail from "@/app/components/HorizontalTrail";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   const paths = projects.map((proj) => ({
@@ -32,7 +33,7 @@ const ProjectDetails = ({ params }) => {
   return (
     <Layout dark={true} active={"projects"}>
       <div className="w-full md:h-full h-fit xl:grid xl:grid-cols-2 flex flex-col gap-8 ">
-        <div className="flex flex-col w-full h-fit xl:h-full justify-center mt-5 md:mt-0 gap-3 md:gap-6">
+        <div className="flex flex-col w-full h-fit xl:h-full items-center justify-center mt-5 md:mt-0 gap-3 md:gap-6">
           <HorizontalTrail>
             <h1 className="font-bold 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-center">
               {project.name}
@@ -40,14 +41,20 @@ const ProjectDetails = ({ params }) => {
 
             <a
               href={project.liveSite}
-              className="cursor-pointer flex justify-center"
+              className="flex items-center justify-center"
               target="_blank"
             >
-              <img
-                src={project.screenshot}
-                alt={project.summary}
-                className="rounded-xl xl:max-h-96 max-h-44 w-auto object-cover shadow-xl"
-              />
+              <div className="overflow-hidden rounded-xl shadow-xl relative ">
+                <Image
+                  width={500}
+                  height={400}
+                  placeholder="blur"
+                  blurDataURL="/utils/blur.png"
+                  src={project.screenshot}
+                  alt={project.summary}
+                  className="object-cover w-auto object-center shadow-xl xl:max-h-96 max-h-44"
+                />
+              </div>
             </a>
           </HorizontalTrail>
           <div className="w-full flex gap-8 justify-evenly font-bold">

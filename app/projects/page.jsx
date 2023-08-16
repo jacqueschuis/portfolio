@@ -22,12 +22,12 @@ const ProjectIndex = () => {
             <HorizontalTrail>
               <a
                 href={liveSiteUrl}
-                className="cursor-pointer w-full flex justify-center"
+                className="w-full flex justify-center"
                 target="_blank"
               >
                 <img
                   src={imgUrl}
-                  alt=""
+                  alt={description}
                   className="object-cover rounded-xl shadow-xl transition-all w-auto xl:max-h-96 md:max-h-64"
                 />
               </a>
