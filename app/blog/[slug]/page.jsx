@@ -1,25 +1,28 @@
 import Layout from "@/app/components/Layout";
+
 import fs from "fs";
 import path from "path";
-
-import HeaderImage from "@/app/components/mdx/HeaderImage";
-import CustomLink from "@/app/components/mdx/CustomLink";
-import Author from "@/app/components/mdx/Author";
-import ArticleImage from "@/app/components/mdx/ArticleImage";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-import { MDXRemote } from "next-mdx-remote/rsc";
+import CustomLink from "@/app/components/mdx/CustomLink";
+import Author from "@/app/components/mdx/Author";
+import ArticleImage from "@/app/components/mdx/ArticleImage";
 
 import { getBlogFromSlug } from "@/app/utils/blog";
+
+import { MDXRemote } from "next-mdx-remote/rsc";
+
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight/lib";
-
-import "@/styles/highlight-js/github-dark.css";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
+
+import "@/styles/highlight-js/github-dark.css";
+
 import Link from "next/link";
+import Image from "next/image";
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join("blogs"));
@@ -84,6 +87,21 @@ const SingleBlog = ({ params }) => {
               )}
             </p>
           </div>
+          {frontmatter.featureImage && (
+            <div className="w-full h-full flex items-center justify-center not-prose my-2">
+              <div className="relative overflow-hidden rounded-xl shadow-xl bg-gradient-to-b to-transparent">
+                <Image
+                  src={frontmatter.featureImage}
+                  alt={frontmatter.title + " image"}
+                  placeholder="blur"
+                  blurDataURL="/utils/blur.png"
+                  width={1000}
+                  height={800}
+                  className="object-cover max-h-[300px] object-center"
+                />
+              </div>
+            </div>
+          )}
           <h1 className="mt-5 mb-0">{frontmatter.title}</h1>
           {frontmatter.subtitle && (
             <h2 className="font-normal m-0">{frontmatter.subtitle}</h2>
@@ -92,7 +110,7 @@ const SingleBlog = ({ params }) => {
 
         <MDXRemote
           source={content}
-          components={{ a: CustomLink, HeaderImage, ArticleImage, Author }}
+          components={{ a: CustomLink, ArticleImage, Author }}
           options={options}
         />
       </article>

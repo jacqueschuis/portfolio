@@ -156,10 +156,10 @@ const BlogIndex = () => {
             </div>
           </div>
           <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
-            <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
+            <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2 lg:mb-6">
               Recently Posted
             </h3>
-            <div className="w-full lg:h-full gap-3 lg:gap-0 flex flex-col lg:justify-around">
+            <div className="w-full lg:h-full gap-3 flex flex-col ">
               <HorizontalTrail>
                 {recentBlogs.map((blog) => {
                   return <BlogEntry key={"blog" + blog.slug} {...blog} />;
