@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const ArticleImage = ({ src, alt, imageClass, parentClass }) => {
+const ArticleImage = ({ src, alt, imageClass, parentClass, caption }) => {
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <div
         className={`relative not-prose overflow-hidden rounded-xl shadow-xl ${parentClass}`}
       >
@@ -16,6 +16,7 @@ const ArticleImage = ({ src, alt, imageClass, parentClass }) => {
           className={`object-cover object-center ${imageClass}`}
         />
       </div>
+      {caption && <p className="text-blue-600 italic text-sm">{caption}</p>}
     </div>
   );
 };
