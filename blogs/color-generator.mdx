@@ -21,11 +21,47 @@ Read on for more information on how I took a class exercise into a fully functio
 
 ## The assignment
 
-If you are also a student of Colt's, then this assignment is first introduced in Section 25 ('The Missing Piece: DOM Events'), leson 263. It is then expanded upon in Section 29 ('Prototypes, Clases, & OOP')
+If you are also a student of Colt's, then this assignment is first introduced in Section 25 ('The Missing Piece: DOM Events'), leson 263. It is then expanded upon in Section 29 ('Prototypes, Clases, & OOP').
+
+Initially, this lesson is about event handlers. You make a simple button that runs a function to generate a random RGB color and set the button's background color upon being clicked. Later on, you expand this into a constructor function as a brief introduction to object-oriented programming.
+
+That's where Colt stops, though. I remember getting to this lesson, copying over the code and seeing the app respond to my click and just being mesmerized. I knew I wanted to go deeper, and I felt ready to make an app out of a snippet of code:
+
+```js
+const button = document.querySelector("button");
+const h1 = document.querySelector("h1");
+
+button.addEventListener("click", function () {
+  const newColor = makeRandColor();
+  document.body.style.backgroundColor = newColor;
+  h1.innerText = newColor;
+});
+
+const makeRandColor = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+};
+```
 
 ## Expanding/V1
 
-## Redesign/V2
+Dealing with an RGB color was easy enough, but I decided to set myself a personal challenge of allowing for random HEX color generation and translation between HEX and RGB.
+
+_Note: at the time, I was very into HEX, although I now favor HSL—expect a blog post about this soon._
+
+It turned out that HEX was a lot more complex to generate randomly, and I ended up writing extremely long functions to handle generation and translation. I would add the original snippets in here, but they are so long that it would take up too much space. If you want to see the V1 functions, click [here](https://github.com/jacqueschuis/simple-color-generator/blob/ef0394400cd6d564f087bc1f6124a969af78355f/app.js).
+
+I remember being so incredibly proud of my solution. It was my first programming problem that I had solved completely on my own, and it played a large part in keeping my momentum up as I moved through Colt's course.
+
+## Constructor/V2
+
+After watching Colt's lessons on OOP and constructor functions, which he explicitly tied back to the random color exercise, I decided I should refactor my code to use a constructor as well, which allowed me to simplify things greatly. Where my initial version had seperate functions for making a new HEX color vs. making a new RGB vs. making light variations and so-on and so-forth, this one had one neatly packaged object `Color`, which would contain all the necessary functions.
+
+This made the code easier to read and understand, and I had cut my `app.js` lines of code almost completely in half!
+
+## Redesign/V3
 
 ## Next steps
 
