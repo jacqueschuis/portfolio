@@ -11,6 +11,17 @@ import { education, work } from "@/data/data";
 
 const ProfileComponent = ({ setActiveIndex }) => {
   const StackCarousel = () => {
+    const Stack = ({ name, icon }) => {
+      return (
+        <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
+          <i className={`${icon} text-5xl`}></i>
+          <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
+            {name}
+          </p>
+        </div>
+      );
+    };
+
     const techStack = [
       { name: "react", icon: "devicon-react-original" },
       { name: "next js", icon: "devicon-nextjs-original" },
@@ -36,17 +47,6 @@ const ProfileComponent = ({ setActiveIndex }) => {
     const scrollNext = useCallback(() => {
       if (emblaApi) emblaApi.scrollNext();
     }, [emblaApi]);
-
-    const Stack = ({ name, icon }) => {
-      return (
-        <div className="tech group flex flex-col items-center justify-center carousel-item mr-4 relative gap-2 px-3 py-2">
-          <i className={`${icon} text-5xl`}></i>
-          <p className="text-light hidden group-hover:inline absolute bottom-0 text-sm text-center">
-            {name}
-          </p>
-        </div>
-      );
-    };
 
     return (
       <div className="stack mt-5 w-full xl:w-1/2 relative ps-10 pe-10 text-blue-700">
@@ -84,6 +84,7 @@ const ProfileComponent = ({ setActiveIndex }) => {
       </div>
     );
   };
+
   return (
     <div className="flex flex-col justify-center items-center md:text-lg">
       <p>
@@ -200,7 +201,7 @@ const WorkComponent = () => {
     );
   };
   return (
-    <div className="w-full h-full md:grid md:grid-cols-3 gap-5 flex flex-col">
+    <div className="w-full h-full md:grid xl:grid-cols-3 md:grid-cols-2 gap-5 flex flex-col">
       <HorizontalTrail>
         {work.map((item, index) => {
           return <WorkEntry key={`ed${item.institution}${index}`} {...item} />;
