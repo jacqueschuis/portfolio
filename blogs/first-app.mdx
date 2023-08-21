@@ -1,0 +1,115 @@
+---
+title: My First App
+subtitle: Growing a simple exercise into a portfolio piece
+description: How I took my first ever application—an exercise on DOM manipulation—and fleshed it out to be a useful widget application
+publishedAt: "2023-08-21"
+lastEdited: "2023-08-21 10:57"
+isDraft: false
+tags: "css, html, js, javascript, dom manipulation, dom, refactoring, learning, programming, front end"
+featuredTags: "#DOM Manipulation, #JS"
+isFeaturable: true
+featureImage: "/blog/posts/first-app/header.png"
+---
+
+I have not shied away from the fact that I am a self-taught developer. I followed Colt Steele's famous Udemy course, and in the end, I had a [full stack application to show for it](/blog/from-yelpcamp-to-museo).
+
+Museo was, of course, the end result of my course. Along the way, I built countless little exercises demonstrating fundamental ideas of web development. The exercise that made everything click for me, though, was a simple random color generator, which was the project that made me fall in love with development.
+
+Read on to find out how I went from class exercise to [fully functional app](https://simple-color-generator.vercel.app/).
+
+## Overview
+
+## The assignment
+
+If you are also a student of Colt's, then this assignment is first introduced in Section 25 ('The Missing Piece: DOM Events'), leson 263. It is then expanded upon in Section 29 ('Prototypes, Clases, & OOP').
+
+Initially, this lesson is about event handlers. You make a simple button that runs a function to generate a random RGB color and set the button's background color upon being clicked. Later on, you expand this into a constructor function as a brief introduction to object-oriented programming.
+
+That's where Colt stops, though. I remember getting to this lesson, copying over the code and seeing the app respond to my click and just being mesmerized. I knew I wanted to go deeper, and I felt ready to make an app out of a snippet of code:
+
+```js
+const button = document.querySelector("button");
+const h1 = document.querySelector("h1");
+
+button.addEventListener("click", function () {
+  const newColor = makeRandColor();
+  document.body.style.backgroundColor = newColor;
+  h1.innerText = newColor;
+});
+
+const makeRandColor = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+};
+```
+
+## Expanding/V1
+
+Dealing with an RGB color was easy enough, but I decided to set myself a personal challenge of allowing for random HEX color generation and translation between HEX and RGB.
+
+_Note: at the time, I was very into HEX, although I now favor HSL—expect a blog post about this soon._
+
+It turned out that HEX was a lot more complex to generate randomly, and I ended up writing extremely long functions to handle generation and translation. I would add the original snippets in here, but they are so long that it would take up too much space. If you want to see the V1 functions, click [here](https://github.com/jacqueschuis/simple-color-generator/blob/ef0394400cd6d564f087bc1f6124a969af78355f/app.js).
+
+I remember being so incredibly proud of my solution. It was my first programming problem that I had solved completely on my own, and it played a large part in keeping my momentum up as I moved through Colt's course.
+
+## Constructor/V2
+
+<ArticleImage
+  src="/blog/posts/first-app/v2.png"
+  alt="Screenshot of version two of the color generator app"
+  caption="After adding in the constructor function, the simple color generator had a very basic Bootstrap UI"
+  imageClass="w-full h-auto max-h-[400px] max-w-[500px]"
+  parentClass="flex items-center"
+/>
+
+After watching Colt's lessons on OOP and constructor functions, which he explicitly tied back to the random color exercise, I decided I should refactor my code to use a constructor as well, which allowed me to simplify things greatly. Where my initial version had seperate functions for making a new HEX color vs. making a new RGB vs. making light variations and so-on and so-forth, this one had one neatly packaged object `Color`, which would contain all the necessary functions.
+
+This made the code easier to read and understand, and I had cut my `app.js` lines of code almost completely in half! I was happy enough with this version of the app to let things sit for a few months.
+
+## Redesign/V3
+
+<ArticleImage
+  src="/blog/posts/first-app/v3.png"
+  alt="Screenshot of version three (current) of the color generator app"
+  imageClass="w-full h-auto max-h-[400px] max-w-[500px]"
+  parentClass="flex items-center"
+/>
+
+The impetus to overhaul the UI actually came when I was building my portfolio (a process which you can read more about [here](/blogs/refactoring-your-portfolio)). I didn't have very many personal projects that were solely of my creation, and this one was the odd-one-out.
+
+I realized that it was not very usable, still functioning like a fleshed-out exercise rather than an app in its own right, and it also was very boring in appearance. The biggest red flag, ironically, was when I realized that I had used Montserrat (a great font!) for all of my personal projects in my portfolio.
+
+I started looking for a new font, one with character, and I stumbled upon [Bagel Fat One](https://fonts.google.com/specimen/Bagel+Fat+One). I loved the bubbly, playful shapes, and I decided to let it inform some of my further design decisions.
+
+Besides make things look better, I wanted to make things more functional.
+
+My code was already generating a simple monochromatic scheme to style the UI dynamically, so why not present it as such? I added a palette card to one side of the app, complete with rounded corners and pills filled with the scheme, complementing the font's design.
+
+I added some simple CSS animations to liven up a very plain, framework-less application. I also decided to remove the ability to generate a HEX color to simplify the UI: there are now just two buttons: one to generate a color (defaulting to RGB) and one to translate to HEX.
+
+The biggest thing for me is that this had to be usable somehow. Displaying a color or even a scheme wasn't enough, even if it was now doing so in a much more visually impactful way. I ended up integrating clipboard API and event handlers that allowed you to auto-copy singular colors or the whole scheme to bring outside of the app. I also added small quality of life details: the ability to show/hide color names, confirmation messages of copying to clipboard, validation of copy success, etc.
+
+## Future
+
+There's a lot of room for my simple color generator to grow, and I see 2 likely paths moving forward:
+
+1. Migrate to React
+
+Since this is just a vanilla HTML, CSS, JS app at the moment, the possibilities for templating are low. I've done a lot of research on templating (to generate different palettes), but it is very complex without a framework.
+
+Something with components would seem to make a lot of sense here. I can set up a Palette component with different props to control the number of colors/type of scheme/layout/etc, all while keeping the basis of my original constructor function intact.
+
+2. Add features
+
+This app is very simple. You make a 3-stop monochromatic scheme with the click of a button, which definitely serves its purpose, but it is not the comprehensive tool which I would like it to be. I would like to add:
+
+- Different color schemes (i.e., complementary, tertiary, triadic, etc.)
+- History of schemes generated
+- Saving of individual colors while randomizing the remainder
+- Downloading scheme (either an image file, PDF, AI/PSD, or Figma)
+- Scheme previewer for ideas of implementing the scheme
+
+<Author />

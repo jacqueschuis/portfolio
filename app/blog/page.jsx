@@ -35,7 +35,7 @@ const FeaturedBlogCard = ({
   return (
     <div className="w-full h-fit lg:h-full bg-gradient-to-b m-2 from-white rounded-3xl shadow-xl 2xl:p-12 lg:p-8 p-4 flex flex-col justify-center relative">
       <div id="top" className="h-full flex flex-col">
-        <div className="w-full flex justify-between 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs text-blue-600 mb-5">
+        <div className="w-full flex justify-between 2xl:text-xl xl:text-lg lg:text-base md:text-sm text-xs text-blue-600 mb-2 2xl:mb-5">
           <p className="font-bold text-orange-600">Featured Article</p>
           <p>
             {lastEdited ? (
@@ -46,23 +46,25 @@ const FeaturedBlogCard = ({
           </p>
         </div>
         <div className="overflow-hidden rounded-t-3xl w-full lg:h-full relative md:min-h-[250px] min-h-[100px]">
-          <Image
-            fill
-            src={featureImage}
-            alt={title + " image"}
-            placeholder="blur"
-            blurDataURL={blurDataURLPath}
-            className="object-cover object-center"
-          />
+          <Link href={"/blog/" + slug}>
+            <Image
+              fill
+              src={featureImage}
+              alt={title + " image"}
+              placeholder="blur"
+              blurDataURL={blurDataURLPath}
+              className="object-cover object-center"
+            />
+          </Link>
         </div>
       </div>
-      <div id="bottom" className="h-full mt-5 flex flex-col">
+      <div id="bottom" className="h-full 2xl:mt-5 mt-3 flex flex-col">
         <Link href={"/blog/" + slug}>
           <h2 className="font-bold 2xl:text-6xl lg:text-4xl md:text-2xl text-base text-blue-700 hover:text-orange-600 transition-all">
             {title}
           </h2>
         </Link>
-        <p className="2xl:text-xl md:text-lg my-4">{description}</p>
+        <p className="2xl:text-xl md:text-lg 2xl:my-5 my-2">{description}</p>
       </div>
     </div>
   );
@@ -82,11 +84,11 @@ const BlogEntry = ({
   }
 
   return (
-    <div className="w-full min-h-fit flex justify-center ">
+    <div className="w-full min-h-fit flex justify-center my-2 ">
       <div className="justify-center lg:basis-1/2 items-center hidden lg:flex h-full w-full">
         <Link
           href={"/blog/" + slug}
-          className="h-28 w-28 aspect-square rounded-lg overflow-hidden relative"
+          className="h-28 w-28 aspect-square rounded-lg shadow-lg overflow-hidden relative"
         >
           <Image
             fill
@@ -117,7 +119,7 @@ const BlogEntry = ({
 };
 
 const BlogIndex = () => {
-  const recentBlogs = getMostRecentPublishedBlogs(5);
+  const recentBlogs = getMostRecentPublishedBlogs(4);
   const featuredBlogs = getRandomFeaturedBlogs(2);
   const randomBlog = getRandomPublishedArticle();
 
@@ -125,8 +127,28 @@ const BlogIndex = () => {
     return (
       <Layout dark={true} active={"blog"}>
         <div className="w-full lg:h-full flex lg:flex-row flex-col xl:gap-5 gap-3 lg:pb-0 pb-2">
-          <div className="w-full lg:h-full flex flex-col justify-between items-center xl:gap-5 gap-3">
-            <h1 className="hidden">Blog</h1>
+          <h1 className="hidden">Blog</h1>
+          <div
+            id="featured-post"
+            className="lg:h-full w-full flex flex-col 2xl:flex-row 2xl:gap-5 gap-3 justify-center items-center lg:justify-evenly"
+          >
+            <Trail>
+              {featuredBlogs.map((blog) => {
+                return <FeaturedBlogCard key={"feat" + blog.slug} {...blog} />;
+              })}
+            </Trail>
+          </div>
+          <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
+            <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2 lg:mb-6">
+              Recently Posted
+            </h3>
+            <div className="w-full lg:h-full gap-3 flex flex-col ">
+              <HorizontalTrail>
+                {recentBlogs.map((blog) => {
+                  return <BlogEntry key={"blog" + blog.slug} {...blog} />;
+                })}
+              </HorizontalTrail>
+            </div>
             <div
               id="blog-info"
               className="w-full h-fit flex justify-around md:text-base text-xs font-bold"
@@ -141,30 +163,6 @@ const BlogIndex = () => {
                   Random Article
                 </button>
               </Link>
-            </div>
-            <div
-              id="featured-post"
-              className="lg:h-full w-full flex flex-col lg:flex-row xl:gap-5 justify-center items-center lg:order-first lg:justify-evenly"
-            >
-              <Trail>
-                {featuredBlogs.map((blog) => {
-                  return (
-                    <FeaturedBlogCard key={"feat" + blog.slug} {...blog} />
-                  );
-                })}
-              </Trail>
-            </div>
-          </div>
-          <div className="w-full lg:max-w-[400px] md:flex-shrink flex-shrink-0 flex flex-col items-center lg:justify-between bg-gradient-to-b from-white rounded-3xl shadow-xl p-4">
-            <h3 className="font-bold text-blue-600 md:text-3xl text-xl text-center mb-2">
-              Recently Posted
-            </h3>
-            <div className="w-full lg:h-full gap-3 lg:gap-0 flex flex-col lg:justify-around">
-              <HorizontalTrail>
-                {recentBlogs.map((blog) => {
-                  return <BlogEntry key={"blog" + blog.slug} {...blog} />;
-                })}
-              </HorizontalTrail>
             </div>
           </div>
         </div>

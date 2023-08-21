@@ -1,0 +1,164 @@
+---
+title: From YelpCamp to Museo
+subtitle: Making a popular project original
+description: How do you take a project that nearly every self-taught developer has done and innovate upon it to make it uniquely yours?
+publishedAt: "2023-06-11"
+lastEdited: "2023-08-17 20:51"
+isDraft: false
+tags: "node, node js, js, javascript, full stack, crud, mongo, mongodb, database, joi, css, html, project ideas, developer portfolio"
+featuredTags: "#Project Ideas, #CRUD, #Mongo"
+isFeaturable: true
+featureImage: "/blog/posts/yelpcamp-to-museo/header.png"
+---
+
+Colt Steele's [Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/?utm_source=adwords&utm_medium=udemyads&utm_campaign=WebDevelopment_Search_la.EN_cc.US_PP_Experiment&utm_content=deal4584&utm_term=_._ag_138827691729_._ad_595066845345_._kw__._de_c_._dm__._pl__._ti_dsa-1652654191345_._li_9001667_._pd__._&matchtype=&gclid=CjwKCAjwivemBhBhEiwAJxNWNxrzg14TTlL84J_tteRy6grPGV5p9hCbiUpCVovBThPQ6ljHiswYHBoCb2QQAvD_BwE) is huge (so huge that I'm hesitant to link to it, but my academic training is telling me to cite my sources).
+
+As of writing, there are **876,083** students enrolled in the course. I, of course, have no way of estimating how many of those students might finish the 70+ hours of coursework, but even a conservative estimate of 1% completion would still mean there are _at least_ 8,760 versions of YelpCamp floating around the internet.
+
+With so many versions of the same application out there, there's really no use in putting YelpCamp in your portfolio. Your portfolio should be a representation of you and your original ideas. How do you innovate on a project that's been done literally thousands of times though?
+
+## Overview
+
+## Change focus
+
+The most obvious thing you can change is the focus of your app. I don't know about you, but I have next to no interest in camping.
+
+My background is actually in art history. I have a master's degree in the art and archaeology of Ancient Rome, and I love museums. In my academic training, I had access to resources like [ArtStor](https://www.artstor.org/), but such resources are expensive, poorly designed, and not-at-all user-friendly.
+
+I knew that there was not an application dedicated solely to finding artistic inspiration. I was envisioning part-Pinterest, part-art-publication.
+
+I decided that my reinvention of YelpCamp would focus on art rather than camping, and rather than emphasizing _reviews_, it would be primarily concerned with _inspiration_. Hence museo's tagline: _a repository for inspiration._
+
+## UI redesign
+
+<ArticleImage
+  src="/blog/posts/yelpcamp-to-museo/ui-comparison.png"
+  alt="UI comparison of Museo and YelpCamp"
+  caption="UI comparison between museo (left) and YelpCamp (right)"
+/>
+
+I'm a graphic designer by trade, so the UI was the first place I thought I could easily improve things. Throughout my journey as a developer, my design background has been both a curse and a blessing. My expectations for the UI of my apps (still) are often much higher than my technical skills allow, and this was particularly frustrating earlier on.
+
+Luckily, I was able to find libraries to help, and I relied on MasonryJS for index layouts (you can see an example in the above screenshot). I still had to further complicate things (naturally) by adding decently complex custom CSS for hover states.
+
+Prior to museo, I was frankly afraid of CSS. It seemed so impenetrably complex, and all of the difficult syntax was enough to make my head spin. Building the indices alone forced me to dive head-first into the deep-end of CSS, and I left this project much more confident in my ability to write custom CSS styles. Looking at them now, I think there's a lot of room for simplification and avoiding duplication, but that's a job for another day.
+
+By the end of working on museo, I was working largely in custom CSS, and because of this, when I went back to Bootstrap, I was using it differently—like a utility or a tool as opposed to the structure itself.
+
+## Add complexity
+
+While shifting themes and updating the look might be enough to convince a layperson that your app is brand new and completely original, you will have to change things even more if you want to convince a hiring manager who is reviewing your portfolio.
+
+This is the most important part, though, because it is where the growth and learning will happen. Stretch yourself and try new things, even though you will probably hit some roadblocks.
+
+In my case, I decided to add:
+
+### More data
+
+I decided to add additional schemas for museo. YelpCamp had models for campground, user, and review, but I wanted to have artists, artworks, and museums, too.
+
+By nature, these models were highly interconnected. Every artwork is tied to a museum and an artist. Each artist can have many artworks and museums, and the museums will have many artists and artworks. I didn't feel like learning a new database, so I stuck with Mongo, even though now I realize that something more relational (PostgreSQL, perhaps) would be better suited for the job.
+
+### Atlas Search
+
+Museo, like YelpCamp, was built with a Mongo database, which comes with Atlas Search. As I was billing my app as a way to _find inspiration_, I figured I had best allow users to search the content.
+
+Getting things to work with Atlas took a lot of trial-and-error and StackOverflow questioning. I struggled to formulate the perfect aggregate query—and also to understand what exactly an aggregate query even was. In the end, I was able to—because of the limitations of my free instance of MongoDB—have three Atlas Search indices for the names of the 3 main data structures: art, artists, and museums.
+
+Building a dropdown search was relatively easy thanks to Bootstrap, and I was able to work with EJS to make one singular page that went for all types of search.
+
+### Filtering Data
+
+Similarly, I wanted users to be able to filter the data on museo. Filtering was easy to implement for both artworks and museums, but for the artists, it was very difficult.
+
+This was largely a problem of my own making, having to do with how I structured my data: if an artist was still living, they still had a `deathDate` on their document, but it was `null`. To get around this, I ended up having to build out my JS form handler to selectively require/disable different parts of the form:
+
+```js
+lifeSelect.addEventListener("click", () => {
+  // enable and require the correct criteria
+  birthInput.addEventListener("click", () => {
+    birthInput.setAttribute("required", "");
+    deathInput.removeAttribute("required");
+  });
+  deathInput.addEventListener("click", () => {
+    deathInput.setAttribute("required", "");
+    birthInput.removeAttribute("required");
+  });
+
+  birthInput.removeAttribute("disabled");
+  deathInput.removeAttribute("disabled");
+  submitBtn.removeAttribute("disabled");
+  birthInput.setAttribute("required", "");
+  deathInput.setAttribute("required", "");
+
+  // display proper sections
+  artistLifeContainer.style.display = "flex";
+  artistMuseumContainer.style.display = "none";
+  artistNameContainer.style.display = "none";
+  submitBtn.style.display = "block";
+
+  // disable other inputs
+  nameInput.setAttribute("disabled", "").removeAttribute("required");
+  museumInput.setAttribute("disabled", "").removeAttribute("required");
+});
+```
+
+Looking back on this now, I am not very thrilled with my solution. I think I could go back and come up with something a little more sophisticated, but for now, it works.
+
+### Form Validation
+
+Similarly, validating my forms was difficult. My goal was for museo to be an authoritative source of truth, and as such, it was important to me that all erroneous form submissions be ignored. An example of this is in the handling of the lifespan on the artist forms. For this, I used Joi—the same tool from YelpCamp, but handled in a more robust way:
+
+```js
+module.exports.artistSchema = Joi.object({
+  name: Joi.string().required(),
+  bornDate: Joi.number().required(),
+  deathDate: Joi.optional().allow("").allow(null),
+}).when(Joi.object({ deathDate: Joi.exist() }), {
+  then: Joi.object({
+    deathDate: Joi.number().greater(Joi.ref("bornYear")),
+  }),
+});
+```
+
+I don't think I truly understood what Joi was doing when I was coding along with Colt. I didn't realize that it was only validating your req.body and wasn't actually validating the data, per se. It took me a lot of fiddling around with my Joi schema definitions to get the validation to where it is now, and while there are certainly edge cases that I'm not accounting for, I'm ultimately quite proud of this.
+
+## Necessities v. Filler
+
+When you are considering your application, you need to think about what it needs. It is very easy to fall in to a trap of 'flexing' or adding extraneous features just for the sake of saying you did. I'm of the mindset, though, that every feature needs to be carefully considered before shipping at production.
+
+I had initially planned for museo to have a comments/review like feature similar to YelpCamp—a plan which you can probably find remnants of in the code. I decided eventually to eschew this feature, thinking that it did not ultimately make much sense to allow museo to be a platform for debate or commentary on art. My goal was for museo to be a repository, and that required it to be more _objective_ than _subjective_.
+
+One of the last features that I ended up adding is ultimately one of my favorites. Thinking about my goals with museo, I realized that the landing page was requiring people to make choices. Which of the three delineated categories of data do they want to browse?
+
+I decided that in keeping with my mission of inspiring people, there needed to be a way for people to randomly access an entry in museo's collection. I ended up making a `/random` API endpoint:
+
+```js
+app.get(
+  "/random",
+  catchAsync(async (req, res) => {
+    const randomCategory = Math.floor(Math.random() * 3);
+    if (randomCategory === 0) {
+      const museums = await Museum.find({});
+      const randomMuseum = Math.floor(Math.random() * museums.length);
+      const museum = museums[randomMuseum];
+      return res.redirect(`/museums/${museum._id}`);
+    } else if (randomCategory === 1) {
+      const artists = await Artist.find({});
+      const randomArtist = Math.floor(Math.random() * artists.length);
+      const artist = artists[randomArtist];
+      return res.redirect(`/artists/${artist._id}`);
+    }
+    const artworks = await Artwork.find({});
+    const randomArtwork = Math.floor(Math.random() * artworks.length);
+    const artwork = artworks[randomArtwork];
+    return res.redirect(`/artworks/${artwork._id}`);
+  })
+);
+```
+
+With the addition of `/random`, I was satisfied with publishing museo for good. I'm sure to many developers, its links with YelpCamp are still very clear, but I'm of the camp that it's different and unique enough to hold a prominent place in my [portfolio](/projects/museo).
+
+_Note: this article is adapted from my [museo project readme](https://github.com/jacqueschuis/museo/blob/main/README.md)_
+
+<Author />

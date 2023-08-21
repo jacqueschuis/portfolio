@@ -1,15 +1,17 @@
 ---
-title: My Experience with Frontend Mentor
+title: Growing with Frontend Mentor
 subtitle:
-description: Frontend mentor is a great service that allows you to get a taste of what the actual day-to-day is like for a web developer
+description: Frontend Mentor is a great service that allows you to get a taste of what the actual day-to-day is like for a web developer
 publishedAt: "2023-08-16 14:31"
 lastEdited: ""
-isDraft: true
+isDraft: false
 tags: "frontend mentor, learning, project ideas, teach yourself, tutorial hell"
 featuredTags: "#Learn, #Article, #Review"
 isFeaturable: true
-featureImage: "/images/age-calculator.png"
+featureImage: "/blog/posts/frontend-mentor/header.png"
 ---
+
+After finishing my [first full stack app](https://museo.onrender.com), I was burnt-out. I was out of ideas, and I wanted to take a break from coding. I knew that taking an extended hiatus was not a great idea at this point, as I was still very new to web development. It was at this point that I found **Frontend Mentor**, which would go on to play a pivotal role in my developer journey.
 
 ## Overview
 
@@ -21,11 +23,11 @@ A challenge can be divided into three steps:
 
 1. Choose a challenge
 
-You can pick from a broad range of [challenges](https://www.frontendmentor.io/challenges)—all filterable by difficulty, languages/skills involved, and price.
+You can pick from a broad range of [challenges](https://www.frontendmentor.io/challenges)—all filterable by difficulty, languages/skills involved, and price([either free or premium](#free-vs-premium)).
 
 2. Complete your challenge
 
-This is a big step! You are given a set of design files—screenshots of different dynamic states/error messages/viewport sizes/etc. From this, you build. Most challenges come with "Ideas to test yourself" (which are largely the same between challenges). The most growth will come from _setting your own goals/rules._
+This is a big step! You are given a set of design files—screenshots of different dynamic states/error messages/viewport sizes/etc. From this, you build. Most challenges come with "Ideas to test yourself" (which are largely the same between challenges).
 
 3. Submit your solution
 
@@ -33,23 +35,51 @@ You submit your solution to the Frontend Mentor platform—complete with a link 
 
 ### Free vs. Premium
 
-Much of the content on Frontend Mentor is available for
+Much of the content on Frontend Mentor is available for free, and you absolutely _do not need to buy Pro_ to learn from Frontend Mentor. Pro offers you a wider array of challenges (designated 'Premium') from which to choose—particularly on the more complex side of things. At the time of writing, there are [6 'Guru' level challenges](https://www.frontendmentor.io/challenges?difficulty=5), all of which are only accessible to Pro members. If you are looking solely for project ideas on the more complex side, then this may benefit you, but I feel that for most people—especially relatively new developers—the free tier will likely be enough.
+
+It should be noted, though, that it is not just the premium challenges that Pro subscribers get. They also get access to Sketch and Figma design files for all challenges, the ability to make solutions private, and unlimited solution screenshots.
+
+Of these perks, though, the most beneficial is the access to the premium challenges, and only yearly subscribers get unlimited access to these, with monthly subscribers having access to just two per month. In fact, the access to Figma and Sketch files seems to contradict the tip that Frontend Mentor gives you on each challenge: "Train your eye for detail by getting your solution as close to the design as you can."
 
 ### Should you use it?
 
 Definitively, **yes**! Whether you are at a loss for new project ideas, want to flex your web-dev fundamentals, or just want to build something quickly, Frontend Mentor is great. I have learned a lot from it, and I would highly recommend it to developers of all skill-levels.
 
+I would situate Frontend Mentor challenges in a spot between the dreaded 'tutorial hell' and building your own, original projects. The challenges are perfect for the developer who knows enough to be more-or-less self-sufficient but is lacking the confidence to dive in on an original project.
+
+## My approach
+
+Since I did all of my challenges consecutively, I had a set of unified goals governing them:
+
+1. Just vanilla HTML, CSS, JS.
+
+I was primarily interested in these challenges as a way of bolstering my foundational skills, so I wanted to make sure that I was not unnecessarily relying on a framework or library. I was fresh off the tails of building my first independent full-stack application, but I still found these comparatively simple challenges quite difficult since I had gotten comfortable with a basic CRUD application.
+
+Focusing on just HTML, CSS, and JS made me a much better developer—especially in regards to CSS, which I was terrified of before completing my [second challenge](#css-landing-page).
+
+2. Set a time limit.
+
+I didn't do this with my first, but for each consecutive challenge, I gave myself just two or three days in which I could complete the challenge. For the most part, I was successful, and rather than feeling stressful, the self-imposed time limit was highly motivating—especially when I met or exceeded the deadline.
+
+3. Try something new
+
+If you're at a point where you're completing Frontend Mentor challenges, you're likely at a point where you could also fall into a comfort zone and not progress. Learning new things can be uncomfortable and difficult, but these challenges are low-stakes, so why not use these as an opportunity to try to do something new?
+
+For example, I completed two challenges which require input validation and error handling. Prior to doing these challenges, I had relied on frameworks/libraries/packages to handle these things for me, so building these functionalities from scratch was entirely new to me.
+
+I decided to take it a step further, though, and I handled validation/errors differently in both of the applications. I could have just transferred the first app's validation/error handling to the second, but this wouldn't have given me the opportunity to try something new that ended up being—in my opinion, at least—much more successful.
+
 ## My completed challenges
 
-To date, I have completed 3 Frontend Mentor projects: [Age calculator](#age-calculator), [CSS landing page](#css-landing-page), and [Tip calculator](#tip-calculator)
+To date, I have completed 3 Frontend Mentor projects (from oldest to newest): [Age calculator](#age-calculator), [CSS landing page](#css-landing-page), and [Tip calculator](#tip-calculator)
 
 ### Age calculator
 
 <ArticleImage
   src="/images/age-calculator.png"
   alt="Screenshot of age calculator"
-  imageClass="w-full h-auto"
-  parentClass="w-full lg:max-h-[250px] max-h-[100px] flex items-center"
+  imageClass="w-full h-auto max-h-[400px] max-w-[500px]"
+  parentClass="flex items-center"
 />
 
 <div className="w-full text-center flex justify-evenly font-bold ">
@@ -73,29 +103,17 @@ To date, I have completed 3 Frontend Mentor projects: [Age calculator](#age-calc
   </a>
 </div>
 
-#### The challenge
+This challenge was incredibly difficult for me. As I've mentioned, I found Frontend Mentor right as I was finishing up [museo](/projects/museo). While museo was a big, original project, much of it felt very familiar, as it was largely based on the capstone project of Colt Steele's Web Developer Bootcamp—YelpCamp. I had learned about DOM manipulation and query selectors and the like along the way of Colt's course, but at this point, I was no longer very familiar with the concepts, and succeeding at this simple widget kept me moving forward into my next challenge.
 
-Users should be able to:
-
-- View an age in years, months, and days after submitting a valid date through the form
-- Receive validation errors if:
-  - Any field is empty when the form is submitted
-  - The day number is not between 1-31
-  - The month number is not between 1-12
-  - The year is in the future
-  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
-- View the optimal layout for the interface depending on their device's screen size
-- See focus states for all interactive elements on the page
-
-#### My take
+You can read my thoughts about this project from the time of its completion [here.](https://github.com/jacqueschuis/frontend-mentor/blob/main/age-calculator/README.md)
 
 ### CSS landing page
 
 <ArticleImage
   src="/images/css-landing.png"
-  alt="Screenshot of age calculator"
-  imageClass="w-full h-auto"
-  parentClass="w-full lg:max-h-[250px] max-h-[100px] flex items-center"
+  alt="Screenshot of CSS landing page"
+  imageClass="w-full h-auto max-h-[400px] max-w-[500px]"
+  parentClass="flex items-center"
 />
 
 <div className="w-full text-center flex justify-evenly font-bold ">
@@ -119,25 +137,19 @@ Users should be able to:
   </a>
 </div>
 
-#### The challenge
-
-Users should be able to:
-
-- View the optimal layout for the component depending on their device's screen size
-
-#### My take
-
 While I think this is the least impressive at first glance of the challenges I completed, it is probably the one I am the most proud of. The only asset for this design was the 4 photos. Everything else is illustrated completely with vanilla CSS.
 
 Prior to this project, I had only dabbled lightly in CSS. I hadn't _dared_ to make a full landing page—especially a very complex landing page—with just CSS.
+
+You can read my thoughts about this project from the time of its completion [here.](https://github.com/jacqueschuis/frontend-mentor/blob/main/css-illustration/README.md)
 
 ### Tip calculator
 
 <ArticleImage
   src="/images/tip-calculator.png"
-  alt="Screenshot of age calculator"
-  imageClass="w-full h-auto"
-  parentClass="w-full lg:max-h-[250px] max-h-[150px] flex items-start"
+  alt="Screenshot of tip calculator"
+  imageClass="w-full h-auto max-h-[400px] max-w-[500px]"
+  parentClass="flex items-center"
 />
 
 <div className="w-full text-center flex justify-evenly font-bold ">
@@ -161,14 +173,14 @@ Prior to this project, I had only dabbled lightly in CSS. I hadn't _dared_ to ma
   </a>
 </div>
 
-#### The challenge
+This is the challenge that I completed most recently, and I think it shows. Of the three, it is the most sophisticated implementation—that is not to say that it is _perfect_ by any means. I think I could build a much better version of this app with React, but I was operating in the confines I had laid out for myself: HTML, CSS, and JS only—no frameworks, no libraries.
 
-Users should be able to:
+You can read my thoughts about this project from the time of its completion [here.](https://github.com/jacqueschuis/frontend-mentor/blob/main/tip-calculator/README.md)
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
+## Conclusion
 
-#### My take
+Frontend Mentor played a pivotal role in my journey as a developer. I found all of the challenges that I did highly motivating—especially given the fast turn-around on them. If I had to go back, I would definitely do it all again, and I often find myself considering re-doing my old projects with new frameworks—maybe a React version of the age calculator?
+
+I'm not currently in a place where I'll likely continue with Frontend Mentor, but I am also not opposed. Maybe in my next slump of ideas, you'll see a new Frontend Mentor challenge added to my portfolio.
 
 <Author />
