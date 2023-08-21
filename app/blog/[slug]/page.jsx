@@ -97,7 +97,7 @@ const SingleBlog = ({ params }) => {
                   blurDataURL="/utils/blur.png"
                   width={1000}
                   height={800}
-                  className="object-cover max-h-[300px] object-center"
+                  className="object-cover max-h-[300px] xl:max-h-[500px] object-center"
                 />
               </div>
             </div>

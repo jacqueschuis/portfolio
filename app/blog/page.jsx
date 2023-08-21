@@ -88,7 +88,7 @@ const BlogEntry = ({
       <div className="justify-center lg:basis-1/2 items-center hidden lg:flex h-full w-full">
         <Link
           href={"/blog/" + slug}
-          className="h-28 w-28 aspect-square rounded-lg shadow-lg overflow-hidden relative transition-all hover:-rotate-2 hover:-translate-y-1"
+          className="h-28 w-28 aspect-square rounded-lg shadow-lg overflow-hidden relative"
         >
           <Image
             fill

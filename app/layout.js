@@ -1,5 +1,7 @@
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
+
 export const metadata = {
   title: "Jacques Pariseau",
   description: "Personal website of Jacques Pariseau, front-end developer",
@@ -23,6 +25,7 @@ export default function RootLayout({ children }) {
       <html lang="en" className="overflow-hidden w-full h-screen">
         <body className="font-sans font-normal h-screen overflow-hidden w-full">
           {children}
+          <Analytics />
         </body>
       </html>
     </>
