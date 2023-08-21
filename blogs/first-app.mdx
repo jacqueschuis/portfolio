@@ -15,7 +15,7 @@ I have not shied away from the fact that I am a self-taught developer. I followe
 
 Museo was, of course, the end result of my course. Along the way, I built countless little exercises demonstrating fundamental ideas of web development. The exercise that made everything click for me, though, was a simple random color generator, which was the project that made me fall in love with development.
 
-Read on for more information on how I took a class exercise into a fully functional widget application.
+Read on to find out how I went from class exercise to [fully functional app](https://simple-color-generator.vercel.app/).
 
 ## Overview
 
@@ -57,10 +57,6 @@ I remember being so incredibly proud of my solution. It was my first programming
 
 ## Constructor/V2
 
-After watching Colt's lessons on OOP and constructor functions, which he explicitly tied back to the random color exercise, I decided I should refactor my code to use a constructor as well, which allowed me to simplify things greatly. Where my initial version had seperate functions for making a new HEX color vs. making a new RGB vs. making light variations and so-on and so-forth, this one had one neatly packaged object `Color`, which would contain all the necessary functions.
-
-This made the code easier to read and understand, and I had cut my `app.js` lines of code almost completely in half! I was happy enough with this version of the app to let things sit for a few months:
-
 <ArticleImage
   src="/blog/posts/first-app/v2.png"
   alt="Screenshot of version two of the color generator app"
@@ -69,11 +65,11 @@ This made the code easier to read and understand, and I had cut my `app.js` line
   parentClass="flex items-center"
 />
 
+After watching Colt's lessons on OOP and constructor functions, which he explicitly tied back to the random color exercise, I decided I should refactor my code to use a constructor as well, which allowed me to simplify things greatly. Where my initial version had seperate functions for making a new HEX color vs. making a new RGB vs. making light variations and so-on and so-forth, this one had one neatly packaged object `Color`, which would contain all the necessary functions.
+
+This made the code easier to read and understand, and I had cut my `app.js` lines of code almost completely in half! I was happy enough with this version of the app to let things sit for a few months.
+
 ## Redesign/V3
-
-The impetus to overhaul the UI actually came when I was building my portfolio (a process which you can read more about [here](/blogs/refactoring-your-portfolio)). I didn't have very many personal projects that were solely of my creation, and this one was the odd-one-out.
-
-I realized that it was not very usable, still functioning like a fleshed-out exercise rather than an app in its own right, and it also was very boring in appearance. The biggest red flag, ironically, was when I realized that I had used Montserrat (a great font!) for all of my personal projects in my portfolio.
 
 <ArticleImage
   src="/blog/posts/first-app/v3.png"
@@ -82,23 +78,21 @@ I realized that it was not very usable, still functioning like a fleshed-out exe
   parentClass="flex items-center"
 />
 
+The impetus to overhaul the UI actually came when I was building my portfolio (a process which you can read more about [here](/blogs/refactoring-your-portfolio)). I didn't have very many personal projects that were solely of my creation, and this one was the odd-one-out.
+
+I realized that it was not very usable, still functioning like a fleshed-out exercise rather than an app in its own right, and it also was very boring in appearance. The biggest red flag, ironically, was when I realized that I had used Montserrat (a great font!) for all of my personal projects in my portfolio.
+
+I started looking for a new font, one with character, and I stumbled upon [Bagel Fat One](https://fonts.google.com/specimen/Bagel+Fat+One). I loved the bubbly, playful shapes, and I decided to let it inform some of my further design decisions.
+
+Besides make things look better, I wanted to make things more functional.
+
+My code was already generating a simple monochromatic scheme to style the UI dynamically, so why not present it as such? I added a palette card to one side of the app, complete with rounded corners and pills filled with the scheme, complementing the font's design.
+
+I added some simple CSS animations to liven up a very plain, framework-less application. I also decided to remove the ability to generate a HEX color to simplify the UI: there are now just two buttons: one to generate a color (defaulting to RGB) and one to translate to HEX.
+
+The biggest thing for me is that this had to be usable somehow. Displaying a color or even a scheme wasn't enough, even if it was now doing so in a much more visually impactful way. I ended up integrating clipboard API and event handlers that allowed you to auto-copy singular colors or the whole scheme to bring outside of the app. I also added small quality of life details: the ability to show/hide color names, confirmation messages of copying to clipboard, validation of copy success, etc.
+
 ## Next steps
-
-This color generator is the first app that I ever built. As I was following along with Colt Steele's Web Developer Bootcamp, there was a project to build a simple RGB color generator, demonstrating the basic ideas behind DOM manipulation with vanilla JS. I built this alongside him, and then I gave myself the challenge to make this work with Hex colors as well. To simplify the code, I ended up making a class constructor function to handle all things color (which goes deeper than is currently used here). Based on this Color function, I can then easily set the text of the app.
-
-I initially built this in the fall of 2022, but I revisited in summer 2023, rehauling the design of the app to fit with my current style. All of the same functionality is there, but things are (I'd like to think) much clearer now, and the code is simpler and more efficient than it was previously.
-
-I've added a show/hide button, as well as event handlers to show/hide individual color names. I have added integration with the Clipboard API that allows you to copy the entire palette or just individual colors, and I use set timeout functions to show temporary messages when colors are copied. Initially, this was just an exercise in DOM manipulation, but now I would say that it is a self-contained and both functional and usable app for anyone looking to generate a simple monochromatic color palette.
-
-## Challenges
-
-### Redesign
-
-Because I had set the app down for quite a long time, revisiting it was a little tough. I hadn't made my functions very clear, and it took me a good bit of experimenting to find out exactly what I was doing. I changed the functions to rely on a constructor for Colors, and this clarifies things immensely.
-
-I also am revisiting this after building my portfolio in React and Tailwind, so going to Vanilla JS and Bootstrap again took a second. I had to reference the docs (especially for Bootstrap) very frequently, and eventually, I would like to bring this app into the Tailwind world.
-
-## Things to Add
 
 1. Add features
 
