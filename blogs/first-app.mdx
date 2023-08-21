@@ -2,8 +2,8 @@
 title: My First App
 subtitle: Growing a simple exercise into a portfolio piece
 description: How I took my first ever application—an exercise on DOM manipulation—and fleshed it out to be a useful widget application
-publishedAt: "2023-06-20"
-lastEdited: "2023-08-11 08:24"
+publishedAt: "2023-08-21"
+lastEdited: "2023-08-21 10:57"
 isDraft: false
 tags: "css, html, js, javascript, dom manipulation, dom, refactoring, learning, programming, front end"
 featuredTags: "#DOM Manipulation, #JS"
@@ -92,22 +92,24 @@ I added some simple CSS animations to liven up a very plain, framework-less appl
 
 The biggest thing for me is that this had to be usable somehow. Displaying a color or even a scheme wasn't enough, even if it was now doing so in a much more visually impactful way. I ended up integrating clipboard API and event handlers that allowed you to auto-copy singular colors or the whole scheme to bring outside of the app. I also added small quality of life details: the ability to show/hide color names, confirmation messages of copying to clipboard, validation of copy success, etc.
 
-## Next steps
+## Future
 
-1. Add features
+There's a lot of room for my simple color generator to grow, and I see 2 likely paths moving forward:
 
-This app is very simple. You make a 3-stop monochromatic scheme with the click of a button, which definitely serves its purpose, but it is not the comprehensive tool which I would like it to be. I would like to add options for different color schemes (i.e., complementary, tertiary, triadic, etc.)
+1. Migrate to React
 
-2. Download scheme
+Since this is just a vanilla HTML, CSS, JS app at the moment, the possibilities for templating are low. I've done a lot of research on templating (to generate different palettes), but it is very complex without a framework.
 
-I would like to be able to export the scheme card to an image that the client can download for referencing later.
+Something with components would seem to make a lot of sense here. I can set up a Palette component with different props to control the number of colors/type of scheme/layout/etc, all while keeping the basis of my original constructor function intact.
 
-3. History
+2. Add features
 
-I would like there to be some sort of history functionality whereby the app remembers your 5 or so most recent colors, and there's an option to save/pin these using local memory.
+This app is very simple. You make a 3-stop monochromatic scheme with the click of a button, which definitely serves its purpose, but it is not the comprehensive tool which I would like it to be. I would like to add:
 
-4. Transfer the app to a new framework
-
-To deal with the added complexities which I would like to add, I will likely need this to be built on a framework, like React.
+- Different color schemes (i.e., complementary, tertiary, triadic, etc.)
+- History of schemes generated
+- Saving of individual colors while randomizing the remainder
+- Downloading scheme (either an image file, PDF, AI/PSD, or Figma)
+- Scheme previewer for ideas of implementing the scheme
 
 <Author />
